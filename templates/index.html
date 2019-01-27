@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -14,21 +15,11 @@
 </div>
 <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    var newsString = ['Here are the latest news','Yue Ma','Hello','World'];
-    var newsCounter = 0;
-    setInterval(myTimer, 1500);
 
-    function myTimer() {
-        if(newsCounter<newsString.length-1){
-            newsCounter+=1;
-        }
-        else{
-            newsCounter=0;
-        }
-        document.getElementById("newsTitle").innerHTML = newsString[newsCounter];
-    }
 
 </script>
+
+<script src="../newsfeed/newsfeed.js"></script>
 <!-- start feedwind code --> <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="100867/"></script> <!-- end feedwind code --><!-- end feedwind code -->
 </body>
 </html>
