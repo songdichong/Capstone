@@ -7,8 +7,26 @@
 <body bgcolor="#000000">
 <div style="text-align:left;padding:0;"><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/<div style="text-align:left;padding:0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/5946768"></a></h3> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=America%2FEdmonton" width="400" height="105" frameborder="0" seamless></iframe> </div>
 <a style="width:400px" class="weatherwidget-io" href="https://forecast7.com/en/53d54n113d49/edmonton/" data-label_1="EDMONTON" data-label_2="WEATHER" data-theme="dark" data-basecolor="rgba(0, 0, 0, 0.01)" >EDMONTON WEATHER</a>
+<div id="news">
+    <p id='newsTitle' style="color:white">I am the news</p>
+
+
+</div>
 <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    var newsString = ['Here are the latest news','Yue Ma','Hello','World'];
+    var newsCounter = 0;
+    setInterval(myTimer, 1500);
+
+    function myTimer() {
+        if(newsCounter<newsString.length-1){
+            newsCounter+=1;
+        }
+        else{
+            newsCounter=0;
+        }
+        document.getElementById("newsTitle").innerHTML = newsString[newsCounter];
+    }
 
 </script>
 <!-- start feedwind code --> <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="100867/"></script> <!-- end feedwind code --><!-- end feedwind code -->
