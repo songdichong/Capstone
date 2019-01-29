@@ -1,0 +1,901 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+  <channel>
+    <title>NYT &gt; Home Page</title>
+    <link>http://www.nytimes.com/pages/index.html?partner=rss&amp;emc=rss</link>
+    <atom:link rel="self" type="application/rss+xml" href="http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"/>
+    <description/>
+    <language>en-us</language>
+    <copyright>Copyright 2019  The New York Times Company</copyright>
+    <lastBuildDate>Sun, 27 Jan 2019 23:58:24 GMT </lastBuildDate>
+    <image>
+      <title>NYT &gt; Home Page</title>
+      <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
+      <link>http://www.nytimes.com/pages/index.html?partner=rss&amp;emc=rss</link>
+    </image>
+    <item>
+      <title>As Government Reopens, the New Congress Tries to Begin Again</title>
+      <link>https://www.nytimes.com/2019/01/27/us/politics/shutdown-congress-trump-wall.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/us/politics/shutdown-congress-trump-wall.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/us/politics/shutdown-congress-trump-wall.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/us/politics/28dc-cong/28dc-cong-moth-v2.jpg" medium="image" height="151" width="151"/>
+      <media:description>House Speaker Nancy Pelosi at the Capitol on Friday. The House will turn to legislation high on the Democrats&#x2019; priority list this week, including a bill to raise pay for civilian federal employees.</media:description>
+      <media:credit>Erin Schaff for The New York Times</media:credit>
+      <description>The end of the shutdown means that the agendas of both chambers of Congress, overshadowed for weeks by the struggle to reopen government, will get a restart.</description>
+      <dc:creator>NICHOLAS FANDOS</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 22:56:34 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Law and Legislation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Shutdowns (Institutional)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Immigration and Emigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Boycott, Divestment and Sanctions (BDS)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Collins, Susan M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Graham, Lindsey</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Grassley, Charles E</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">McConnell, Mitch</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Nadler, Jerrold</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Omar, Ilhan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Pelosi, Nancy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Rubio, Marco</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Tlaib, Rashida</category>
+    </item>
+    <item>
+      <title>Your 2019 Tax Refund Might Be Higher, Lower or Later Than Usual</title>
+      <link>https://www.nytimes.com/2019/01/27/us/politics/tax-refund-code-shutdown.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/us/politics/tax-refund-code-shutdown.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/us/politics/tax-refund-code-shutdown.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/28/business/28DC-REFUND-01/28DC-REFUND-01-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>While furloughed federal workers will return to their jobs on Monday, it will take time to get parts of the I.R.S. running smoothly again.</media:description>
+      <media:credit>Andrew Harrer/Bloomberg</media:credit>
+      <description>It&#x2019;s unclear how the Trump tax law will affect refunds in what has been a clockwork injection of cash into the economy. The shutdown&#x2019;s effects are murkier still.</description>
+      <dc:creator>JIM TANKERSLEY and MATT PHILLIPS</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 21:59:07 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Federal Taxes (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Tax Preparers and Preparation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Tax Cuts and Jobs Act (2017)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Economy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Internal Revenue Service</category>
+    </item>
+    <item>
+      <title>On Washington: With Pain Still Fresh, Lawmakers Make Push to Outlaw Shutdowns</title>
+      <link>https://www.nytimes.com/2019/01/26/us/politics/government-shutdown-legislation.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/us/politics/government-shutdown-legislation.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/26/us/politics/government-shutdown-legislation.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/us/politics/27dc-hulse/27dc-hulse-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Reporters followed Senator Joe Manchin III, Democrat of West Virginia, on Thursday after two measures to reopen the government failed in the Senate.</media:description>
+      <media:credit>Erin Schaff for The New York Times</media:credit>
+      <description>The toll of the latest impasse has prompted members of both parties to push for legislation that would ensure that the government wouldn&#x2019;t be closed again as part of a budget negotiation.</description>
+      <dc:creator>CARL HULSE</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 16:14:26 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Shutdowns (Institutional)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Law and Legislation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Federal Budget (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">House of Representatives</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Senate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Portman, Rob</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Warner, Mark R</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Government Employees</category>
+    </item>
+    <item>
+      <title>America Pushes Allies to Fight Huawei in New Arms Race With China</title>
+      <link>https://www.nytimes.com/2019/01/26/us/politics/huawei-china-us-5g-technology.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/us/politics/huawei-china-us-5g-technology.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/us/politics/huawei-china-us-5g-technology.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/us/politics/27dc-huawei1/00dc-huawei1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Huawei&#x2019;s offices in Warsaw. Polish officials recently came under pressure from the United States to bar Huawei from building its 5G communications network.</media:description>
+      <media:credit>Maciek Nabrdalik for The New York Times</media:credit>
+      <description>With 5G networks about to remake the internet, the Trump administration fears decisions made in the next six months on China&#x2019;s role will resonate for decades.</description>
+      <dc:creator>DAVID E. SANGER, JULIAN E. BARNES, RAYMOND ZHONG and MARC SANTORA</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 01:00:06 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Huawei Technologies Co Ltd</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Cyberwarfare and Defense</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Surveillance of Citizens by Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Telephones and Telecommunications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Wireless Communications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Espionage and Intelligence Services</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Industrial Espionage</category>
+    </item>
+    <item>
+      <title>The World Economy Just Can&#x2019;t Escape Its Low-Growth, Low-Inflation Rut</title>
+      <link>https://www.nytimes.com/2019/01/27/upshot/world-economy-low-growth-low-interest-deflation.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/upshot/world-economy-low-growth-low-interest-deflation.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/upshot/world-economy-low-growth-low-interest-deflation.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/24/upshot/up-lowflation/up-lowflation-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>The New York Stock Exchange this month. Markets went haywire at the end of 2018, but what story were they telling?</media:description>
+      <media:credit>Johannes Eisele/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>Just when we thought we were out, global deflationary forces have pulled us back in.</description>
+      <dc:creator>NEIL IRWIN</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 18:05:53 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Economic Conditions and Trends</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">International Trade and World Market</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Interest Rates</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Inflation (Economics)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Recession and Depression</category>
+    </item>
+    <item>
+      <title>To Rise Above the Democratic Pack, Elizabeth Warren Tries &#x2018;Nerding Out&#x2019;</title>
+      <link>https://www.nytimes.com/2019/01/27/us/politics/elizabeth-warren-democrats-policy.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/us/politics/elizabeth-warren-democrats-policy.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/us/politics/elizabeth-warren-democrats-policy.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/26/us/politics/26nerdy-1/26nerdy-1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Senator Elizabeth Warren of Massachusetts and her advisers believe her enthusiasm for policy details will inspire Democratic primary voters.</media:description>
+      <media:credit>Travis Dove for The New York Times</media:credit>
+      <description>Ms. Warren&#x2019;s passion for policy minutiae has become her way of standing out in an increasingly crowded Democratic field. But some voters say she risks being seen as out-of-touch and too intellectual.</description>
+      <dc:creator>ASTEAD W. HERNDON</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:14:47 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2020</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Warren, Elizabeth</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Federal Taxes (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Voting and Voters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Consumer Protection</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+    </item>
+    <item>
+      <title>The Tabloid Myths of Jennifer Aniston and Donald Trump</title>
+      <link>https://www.nytimes.com/2019/01/27/business/media/jennifer-aniston-donald-trump-tabloid-media-pregnancy.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/business/media/jennifer-aniston-donald-trump-tabloid-media-pregnancy.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/business/media/jennifer-aniston-donald-trump-tabloid-media-pregnancy.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/21/business/21Rutenberg-01/21Rutenberg-01-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>The numerous tabloid reports that Jennifer Aniston is back together with Brad Pitt and pregnant are &#x201C;completely false,&#x201D; her publicist said.</media:description>
+      <media:credit>Valerie Macon/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>She wants to reunite with Brad Pitt and have a baby. He&#x2019;s a self-made guy from the streets. Or so certain segments of the media would have you believe.</description>
+      <dc:creator>JIM RUTENBERG</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 20:03:58 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Aniston, Jennifer</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Gossip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">In Touch Weekly</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">News and News Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">American Media Inc</category>
+    </item>
+    <item>
+      <title>Bill de Blasio May Be Running for President, if Only People Would Listen</title>
+      <link>https://www.nytimes.com/2019/01/27/nyregion/bill-de-blasio-2020-mayor.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/nyregion/bill-de-blasio-2020-mayor.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/nyregion/bill-de-blasio-2020-mayor.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/26/nyregion/26nymayor1/26nymayor1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Mayor Bill de Blasio, speaking at the United States Conference on Thursday, intends to &#x201C;preach the gospel&#x201D; of liberal governance in appearances across the country.</media:description>
+      <media:credit>Tom Brenner for The New York Times</media:credit>
+      <description>Mr. de Blasio, the mayor of New York, went to Washington to &#x201C;preach the gospel&#x201D; of liberal governance.</description>
+      <dc:creator>J. DAVID GOODMAN</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:34:55 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">de Blasio, Bill</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Garcetti, Eric M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Buttigieg, Pete (1982- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2020</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mayors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">United States Conference of Mayors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">New York City</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">South Carolina</category>
+    </item>
+    <item>
+      <title>These Patients Had Sickle-Cell Disease. Experimental Therapies Might Have Cured Them.</title>
+      <link>https://www.nytimes.com/2019/01/27/health/sickle-cell-gene-therapy.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/health/sickle-cell-gene-therapy.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/health/sickle-cell-gene-therapy.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/science/27SICKLE-p1-sub/merlin_148328547_981e1fd3-9003-4b6c-b757-bee47c0af2b5-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Brandon Williams received gene therapy to replace sickle cells with healthy hemoglobin. His sister, Britney, died of complications of sickle-cell disease. He has a tattoo of her name on his right arm.</media:description>
+      <media:credit>Alyssa Schukar for The New York Times</media:credit>
+      <description>Success against sickle-cell would be &#x201C;the first genetic cure of a common genetic disease&#x201D; and could free tens of thousands of Americans from agonizing pain.</description>
+      <dc:creator>GINA KOLATA</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:06:54 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sickle Cell Anemia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Clinical Trials</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Blacks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Genetics and Heredity</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hemoglobin</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Crispr (DNA)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Blood</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Pain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">National Institutes of Health</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Harvard University</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">bluebird bio Inc.</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Africa</category>
+    </item>
+    <item>
+      <title>Elite Law Firm&#x2019;s All-White Partner Class Stirs Debate on Diversity</title>
+      <link>https://www.nytimes.com/2019/01/27/us/paul-weiss-partner-diversity-law-firm.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/us/paul-weiss-partner-diversity-law-firm.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/us/paul-weiss-partner-diversity-law-firm.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/23/business/00weiss09/00weiss09-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>A group of Paul, Weiss partners at the law firm&#x2019;s Midtown Manhattan office with the chairman, Brad Karp, center in blue tie. &#x201C;We have a very good track record in terms of diversity,&#x201D; Mr. Karp said.</media:description>
+      <media:credit>Joshua Bright for The New York Times</media:credit>
+      <description>Paul, Weiss is more diverse at its top ranks than most of its peers. But its recent promotions underscored how far big firms have to go to elevate women and people of color.</description>
+      <dc:creator>NOAM SCHEIBER and JOHN ELIGON</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 20:24:49 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Discrimination</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Legal Profession</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Race and Ethnicity</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Hiring and Promotion</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Women and Girls</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Blacks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Paul Weiss Rifkind Wharton &amp; Garrison</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Minorities</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Appointments and Executive Changes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">internal-national collaboration</category>
+    </item>
+    <item>
+      <title>Another Side of #MeToo: Male Managers Fearful of Mentoring Women</title>
+      <link>https://www.nytimes.com/2019/01/27/world/europe/metoo-backlash-gender-equality-davos-men.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/world/europe/metoo-backlash-gender-equality-davos-men.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/world/europe/metoo-backlash-gender-equality-davos-men.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/28/world/28backlash-2/28backlash-2-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Vice President Mike Pence has said he never dines alone with a woman other than his wife, a maxim that has become widely known as the Pence Rule.</media:description>
+      <media:credit>Alex Wong/Getty Images</media:credit>
+      <description>At the World Economic Forum in Davos, Switzerland, some male leaders said they were avoiding one-on-one time with junior female colleagues, a trend that could deprive women of valuable exposure.</description>
+      <dc:creator>KATRIN BENNHOLD</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 21:57:45 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Women and Girls</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">#MeToo Movement</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sexual Harassment</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Workplace Hazards and Violations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Men and Boys</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Workplace Environment</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Mentors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">World Economic Forum</category>
+    </item>
+    <item>
+      <title>Afghan Women Fear Peace With Taliban May Mean War on Them</title>
+      <link>https://www.nytimes.com/2019/01/27/world/asia/taliban-peace-deal-women-afghanistan.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/world/asia/taliban-peace-deal-women-afghanistan.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/world/asia/taliban-peace-deal-women-afghanistan.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/28/world/28afghan-women-1/28afghan-women-1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Afghan women lining up to vote in a parliamentary election in Herat Province in October.</media:description>
+      <media:credit>Hoshang Hashimi/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>The idea of an American troop withdrawal fills Afghan women with dread, as they see Westerners as their only protectors not just from the Taliban, but also the &#x201C;Taliban mentality&#x201D; among other men.</description>
+      <dc:creator>ROD NORDLAND, FATIMA FAIZI and FAHIM ABED</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:17:27 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Taliban</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Women's Rights</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Afghanistan War (2001- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Women and Girls</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Afghanistan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Farkhunda (d 2015)</category>
+    </item>
+    <item>
+      <title>Huawei, Roger Stone, Venezuela: Your Monday Briefing</title>
+      <link>https://www.nytimes.com/2019/01/27/briefing/huawei-roger-stone-venezuela.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/briefing/huawei-roger-stone-venezuela.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/briefing/huawei-roger-stone-venezuela.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/briefing/28Briefing-asia-slide-UNKQ/28Briefing-asia-slide-UNKQ-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Poland is under pressure to limit its  business dealings with Huawei. Above, Warsaw. </media:description>
+      <media:credit>Maciek Nabrdalik for The New York Times</media:credit>
+      <description>Let us help you start your day.</description>
+      <dc:creator>ALISHA HARIDASANI GUPTA</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 19:09:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>Steve Jobs Never Wanted Us to Use Our iPhones Like This</title>
+      <link>https://www.nytimes.com/2019/01/25/opinion/sunday/steve-jobs-never-wanted-us-to-use-our-iphones-like-this.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/opinion/sunday/steve-jobs-never-wanted-us-to-use-our-iphones-like-this.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/25/opinion/sunday/steve-jobs-never-wanted-us-to-use-our-iphones-like-this.html?partner=rss&amp;emc=rss"/>
+      <description>The devices have become our constant companions. This was not the plan.</description>
+      <dc:creator>CAL NEWPORT</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 00:12:42 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mobile Applications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Smartphones</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">iPhone</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Apple Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Jobs, Steven P</category>
+    </item>
+    <item>
+      <title>The Real Wall Isn&#x2019;t at the Border</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/border-wall-immigration-trump.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/border-wall-immigration-trump.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/opinion/sunday/border-wall-immigration-trump.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/opinion/27abrahamian/merlin_149047119_46bfa3cb-dc4c-4aa6-b02a-b01a33c06e2b-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>An aerial view of the fence between California and Tijuana, Mexico.</media:description>
+      <media:credit>Guillermo Arias/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>It&#x2019;s everywhere, and we&#x2019;re fighting against the wrong one.</description>
+      <dc:creator>ATOSSA ARAXIA ABRAHAMIAN</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 04:56:31 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Illegal Immigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Immigration and Emigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Border Barriers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Citizenship and Naturalization</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Customs and Border Protection (US)</category>
+    </item>
+    <item>
+      <title>A Time to Remember Portugal&#x2019;s Schindler</title>
+      <link>https://www.nytimes.com/2019/01/27/opinion/sousa-mendes-holocaust-jews.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/opinion/sousa-mendes-holocaust-jews.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/opinion/sousa-mendes-holocaust-jews.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <description>Aristides de Sousa Mendes, a diplomat who helped thousands of Jews escape the Holocaust, died a pauper.</description>
+      <dc:creator>RICHARD HUROWITZ</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 19:45:45 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Refugees and Displaced Persons</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Jews and Judaism</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Holocaust and the Nazi Era</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Sousa Mendes, Aristides de</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Portugal</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Bordeaux (France)</category>
+    </item>
+    <item>
+      <title>Op-Ed Columnist: Stone-Cold Loser</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/maureen-dowd-trump-roger-stone.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/maureen-dowd-trump-roger-stone.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/opinion/sunday/maureen-dowd-trump-roger-stone.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/opinion/27dowd/27dowd-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Roger Stone posed for a portrait in his Upper East Side apartment in 2015.</media:description>
+      <media:credit>Jesse Dittmar for The New York Times</media:credit>
+      <description>Will the dawn raid on the Prince of Darkness shine a light on the Trump campaign&#x2019;s original sin?</description>
+      <dc:creator>MAUREEN DOWD</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:43:48 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Stone, Roger J Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">WikiLeaks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Manafort, Paul J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Interference in 2016 US Elections and Ties to Trump Associates</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Mueller, Robert S III</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Special Prosecutors (Independent Counsel)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+    </item>
+    <item>
+      <title>A Case Against Impeachment</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/a-case-against-impeachment.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/a-case-against-impeachment.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/26/opinion/sunday/a-case-against-impeachment.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/opinion/27douthat/merlin_149760924_603ee921-20c9-4e00-b35f-0be94ce4285a-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>President Trump walks into the Oval Office after announcing a temporary end to the government shutdown on Friday.</media:description>
+      <media:credit>Sarah Silbiger/The New York Times</media:credit>
+      <description>Three (provisional) reasons not to put the president on trial.</description>
+      <dc:creator>ROSS DOUTHAT</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 19:30:03 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Interference in 2016 US Elections and Ties to Trump Associates</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Impeachment</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Shutdowns (Institutional)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Mueller, Robert S III</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Stone, Roger J Jr</category>
+    </item>
+    <item>
+      <title>She Wanted to Drive, So Saudi Arabia&#x2019;s Ruler Imprisoned and Tortured Her</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/loujain-al-hathloul-saudi.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/loujain-al-hathloul-saudi.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/opinion/sunday/loujain-al-hathloul-saudi.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/opinion/27KRISTOF02/27KRISTOF02-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Loujain al-Hathloul recorded a video in 2014 showing her driving in the United Arab Emirates toward the border with Saudi Arabia.</media:description>
+      <media:credit>Loujain al-Hathloul, via Associated Press</media:credit>
+      <description>The U.S. should pressure Saudis to respect the human rights of outspoken women.</description>
+      <dc:creator>NICHOLAS KRISTOF</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 19:30:06 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Saudi Arabia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Hathloul, Loujain al-</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Women's Rights</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Torture</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Political Prisoners</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Human Rights and Human Rights Violations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Mohammed bin Salman (1985- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Khashoggi, Jamal</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Assassinations and Attempted Assassinations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Nobel Prizes</category>
+    </item>
+    <item>
+      <title>The Loneliness of the Moderate Democrat</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/gina-raimondo-2020.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/gina-raimondo-2020.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/opinion/sunday/gina-raimondo-2020.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/opinion/27bruni/27bruni-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description> Gov. Gina Raimondo of Rhode Island.  She argues that Democrats are too unfriendly to business. </media:description>
+      <media:credit>Gretchen Ertl for The New York Times</media:credit>
+      <description>&#x2018;It takes a lot of spine to be a centrist in America today.&#x2019;</description>
+      <dc:creator>FRANK BRUNI</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 19:30:04 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Raimondo, Gina M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2020</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Governors (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Rhode Island</category>
+    </item>
+    <item>
+      <title>Saving NATO</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/nato-trump.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/nato-trump.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/opinion/sunday/nato-trump.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/opinion/27natoWeb/27natoWeb-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>President Trump with Mike Pompeo and John Bolton at a NATO summit in 2018.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>The House voted overwhelmingly to block President Trump&#x2019;s threat to quit the Atlantic alliance. The Senate should promptly follow suit.</description>
+      <dc:creator>THE EDITORIAL BOARD</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 21:35:30 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">North Atlantic Treaty Organization</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">House of Representatives</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Senate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Law and Legislation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Treaties</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Europe</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Russia</category>
+    </item>
+    <item>
+      <title>Mueller&#x2019;s Real Target in the Roger Stone Indictment</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/roger-stone-indictment-mueller-investigation.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/roger-stone-indictment-mueller-investigation.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/26/opinion/roger-stone-indictment-mueller-investigation.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/26/opinion/26sanchez/26sanchez-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Roger Stone in Washington in December 2018. </media:description>
+      <media:credit>Sarah Silbiger/The New York Times</media:credit>
+      <description>It was probably not Stone himself, but rather his electronic devices.</description>
+      <dc:creator>JULIAN SANCHEZ</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 16:49:34 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Stone, Roger J Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">WikiLeaks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Interference in 2016 US Elections and Ties to Trump Associates</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Special Prosecutors (Independent Counsel)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Mueller, Robert S III</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">United States Politics and Government</category>
+    </item>
+    <item>
+      <title>&#x2018;This Is Our Land&#x2019;</title>
+      <link>https://www.nytimes.com/2019/01/26/opinion/sunday/congo-mining-election-fraud.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/opinion/sunday/congo-mining-election-fraud.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/26/opinion/sunday/congo-mining-election-fraud.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/06/opinion/06kavanagh1/06kavanagh1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>A digger with bags of cobalt in Kolwezi, Democratic Republic of Congo. Congo abounds in cobalt, crucial for electronic devices.</media:description>
+      <media:credit>Sebastian Meyer/Corbis News, via Getty Images</media:credit>
+      <description>Mineral riches should make Congo prosperous. Instead, they fuel corruption, which has kept the people poor and compromised elections.</description>
+      <dc:creator>MICHAEL J. KAVANAGH</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 19:30:05 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Congo, Democratic Republic of (Congo-Kinshasa)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Elections</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Corruption (Institutional)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Mines and Mining</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Bribery and Kickbacks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Carter Center</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Eurasian Natural Resources Corp</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Global Witness</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Fayulu, Martin</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kabila, Joseph</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Tshisekedi, Felix</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Gertler, Dan (1973- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Kolwezi (Congo, Democratic Republic of)</category>
+    </item>
+    <item>
+      <title>The Secret Sushi Bar on the 10th Floor</title>
+      <link>https://www.nytimes.com/2019/01/25/nyregion/david-bouhadana-sushi.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/nyregion/david-bouhadana-sushi.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/25/nyregion/david-bouhadana-sushi.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/nyregion/27sushi1/27sushi1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>David Bouhadana works behind his four-seat sushi counter.</media:description>
+      <media:credit>Caitlin Ochs for The New York Times</media:credit>
+      <description>A controversial chef has created a sort of sushi speakeasy in a hotel room. It&#x2019;s not easy to get a reservation. For one thing, there are only four seats at the bar.</description>
+      <dc:creator>HELENE STAPINSKI</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 10:00:09 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sushi</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Sushi by Bou (Manhattan, NY, Restaurant)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Sushi on Jones (Manhattan, NY, Restaurant)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">NoMad (Manhattan, NY)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bouhadana, David</category>
+    </item>
+    <item>
+      <title>Surfacing: In Britain, Enraptured by the Wild, Lonely and Remote</title>
+      <link>https://www.nytimes.com/2019/01/21/travel/in-search-of-britains-bothies.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/21/travel/in-search-of-britains-bothies.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/21/travel/in-search-of-britains-bothies.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2018/12/02/travel/surfacing-bothies-1/surfacing-bothies-1-moth-v2.jpg" medium="image" height="151" width="151"/>
+      <media:description>The Hutchison Memorial Hut, colloquially called the Hutchie Hut, illuminated by moonlight in Scotland&#x2019;s Cairngorms National Park.</media:description>
+      <media:credit>Stephen Hiltner/The New York Times</media:credit>
+      <description>Rustic shelters called bothies &#x2014; more than 100 of which are scattered throughout England, Wales and Scotland &#x2014; are an indispensable, if little-known, element of British hill culture.</description>
+      <dc:creator>STEPHEN HILTNER</dc:creator>
+      <pubDate>Mon, 21 Jan 2019 17:42:31 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Travel and Vacations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Great Britain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hikes and Hiking</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_keyword">Surfacing 2018</category>
+    </item>
+    <item>
+      <title>Big City: The Rich Didn&#x2019;t Always Need $238 Million Penthouses</title>
+      <link>https://www.nytimes.com/2019/01/26/nyregion/ken-griffin-238-million-penthouse.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/26/nyregion/ken-griffin-238-million-penthouse.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/26/nyregion/ken-griffin-238-million-penthouse.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/26/nyregion/26BIG1/26BIG1-moth-v2.jpg" medium="image" height="151" width="151"/>
+      <media:description>Brooke Astor, the socialite and philanthropist, seemed just fine living within 5,000 square feet.</media:description>
+      <media:credit>William E. Sauro/The New York Times</media:credit>
+      <description>Wealthy Americans, like Ken Griffin, who bought a 24,000-square-foot apartment on Central Park, weren&#x2019;t always obsessed with larger-than-fantasy real estate.</description>
+      <dc:creator>GINIA BELLAFANTE</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 08:00:04 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Real Estate and Housing (Residential)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Griffin, Kenneth C</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Manhattan (NYC)</category>
+    </item>
+    <item>
+      <title>Trump Thought Firing Flynn Would End &#x2018;Russia Thing,&#x2019; Chris Christie Writes in Book</title>
+      <link>https://www.nytimes.com/2019/01/27/us/politics/chris-christie-book-trump.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/us/politics/chris-christie-book-trump.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/us/politics/chris-christie-book-trump.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/us/28dc-christie1/28dc-christie1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Chris Christie, a two-term governor of New Jersey, delivering the State of the State address in 2017.</media:description>
+      <media:credit>Bryan Anselm for The New York Times</media:credit>
+      <description>The former New Jersey governor&#x2019;s memoir paints President Trump as highly effective as a candidate &#x2014; but someone who since has been ill-served by many advisers, including some members of his family.</description>
+      <dc:creator>MAGGIE HABERMAN</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:29:56 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Interference in 2016 US Elections and Ties to Trump Associates</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Christie, Christopher J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kushner, Jared</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bannon, Stephen K</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Flynn, Michael T</category>
+    </item>
+    <item>
+      <title>Charles Kettles, Who Rescued Dozens of Troops in Vietnam, Dies at 89</title>
+      <link>https://www.nytimes.com/2019/01/27/obituaries/charles-kettles-dies-at-89.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/obituaries/charles-kettles-dies-at-89.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/obituaries/charles-kettles-dies-at-89.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/28/obituaries/28kettles-OBIT2/merlin_149856069_9d49aa01-52fa-47c0-b48c-33fb756b20fc-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Charles Kettles at the controls of an Army helicopter in 1954. Thirteen years later, in Vietnam, he led a rescue mission that eventually earned him the Medal of Honor.</media:description>
+      <media:credit>Courtesy of Charles Kettles</media:credit>
+      <description>&#x201C;A soldier who was there said, &#x2018;That day, Major Kettles became our John Wayne.&#x2019; With all due respect to John Wayne, he couldn&#x2019;t do what Chuck Kettles did.&#x201D;</description>
+      <dc:creator>RICHARD GOLDSTEIN</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 22:01:00 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Medal of Honor (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Vietnam War</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kettles, Charles S</category>
+    </item>
+    <item>
+      <title>Books News: Jay Asher, Author of &#x2018;Thirteen Reasons Why,&#x2019; Files Defamation Lawsuit</title>
+      <link>https://www.nytimes.com/2019/01/25/books/jay-asher-lawsuit-thirteen-reasons-why.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/books/jay-asher-lawsuit-thirteen-reasons-why.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/25/books/jay-asher-lawsuit-thirteen-reasons-why.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/26/books/26Asher1-print/22Asher1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>In the wake of accusations of sexual misconduct, Jay Asher&#x2019;s literary agency dropped him, speaking engagements and book signings were canceled, and some bookstores removed his novels from their shelves.</media:description>
+      <media:credit>Left: Steve Cohn/Netflix, via Associated Press</media:credit>
+      <description>After accusations of sexual harassment were made public, Mr. Asher&#x2019;s book sales declined, and he was dropped by his literary agent. He is seeking a trial and damages.</description>
+      <dc:creator>ALEXANDRA ALTER</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 19:34:47 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Books and Literature</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Writing and Writers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">#MeToo Movement</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Asher, Jay</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">13 Reasons Why (TV Program)</category>
+    </item>
+    <item>
+      <title>Banksy Mural Is Stolen From Bataclan, Site of Paris Attacks</title>
+      <link>https://www.nytimes.com/2019/01/27/arts/design/banksy-mural-stolen-bataclan-paris-attacks.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/arts/design/banksy-mural-stolen-bataclan-paris-attacks.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/arts/design/banksy-mural-stolen-bataclan-paris-attacks.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/arts/27banksy-still/27banksy-still-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>The mural attributed to Banksy appeared on a door to the Bataclan venue in June 2018.</media:description>
+      <media:credit>Thomas Samson/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>The venue said the work, painted on an emergency exit door, was a memorial to the victims of the 2015 terror attacks.</description>
+      <dc:creator>LAUREN MESSMAN</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 19:32:32 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Art</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Paris Attacks (November 2015)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Murals</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Robberies and Thefts</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Bataclan (Paris, France)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Islamic State in Iraq and Syria (ISIS)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Banksy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Paris (France)</category>
+    </item>
+    <item>
+      <title>Philippines Cathedral Bombing Kills 20</title>
+      <link>https://www.nytimes.com/2019/01/27/world/asia/philippines-jolo-cathedral-bombing.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/world/asia/philippines-jolo-cathedral-bombing.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/world/asia/philippines-jolo-cathedral-bombing.html?partner=rss&amp;emc=rss"/>
+      <description>Scores more were wounded in twin blasts in a predominantly Muslim area of the southern Philippines where the government has been fighting Islamist separatists.</description>
+      <dc:creator>JASON GUTIERREZ</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:08:25 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Philippines</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Mindanao (Philippines)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Abu Sayyaf</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Terrorism</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Bombs and Explosives</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Muslims and Islam</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Secession and Independence Movements</category>
+    </item>
+    <item>
+      <title>Too Ugly to Be Saved? Singapore Weighs Fate of Its Brutalist Buildings</title>
+      <link>https://www.nytimes.com/2019/01/27/world/asia/singapore-brutalist-buildings.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/world/asia/singapore-brutalist-buildings.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/27/world/asia/singapore-brutalist-buildings.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/28/world/xxsingapore-brutalism1/xxsingapore-brutalism1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>The Pearl Bank Apartment in Singapore. So-called Brutalist landmarks are emerging havens for the sort of gritty, artsy subcultures that are mostly absent in Singapore.</media:description>
+      <media:credit>Ore Huiying for The New York Times</media:credit>
+      <description>A few landmarks of so-called Brutalist architecture are on the verge of being sold to private developers, prompting a last-ditch scramble by enthusiasts to have the buildings protected.</description>
+      <dc:creator>MIKE IVES</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:09:09 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Architecture</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Singapore</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Buildings (Structures)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Demolition</category>
+    </item>
+    <item>
+      <title>Senator Joni Ernst Speaks Out About Being a Survivor of Sexual Assault</title>
+      <link>https://www.nytimes.com/2019/01/24/us/politics/joni-ernst-sexual-assault-survivor.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/us/politics/joni-ernst-sexual-assault-survivor.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/24/us/politics/joni-ernst-sexual-assault-survivor.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/25/us/politics/25dc-ernst/25dc-ernst-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>&#x201C;What I want people to understand is that I am the same person as I was last week,&#x201D; Senator Joni Ernst said. &#x201C;You just know more about what&#x2019;s inside of me now.&#x201D;</media:description>
+      <media:credit>Sarah Silbiger/The New York Times</media:credit>
+      <description>Ms. Ernst, Republican of Iowa, spoke out after court papers in her divorce briefly became public. She pledged to support other survivors.</description>
+      <dc:creator>ELIZABETH WILLIAMSON</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 00:36:17 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Elections, Senate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Senate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ernst, Joni</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kavanaugh, Brett M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Iowa</category>
+    </item>
+    <item>
+      <title>On Tennis: Novak Djokovic Passes His Idol and Sets a New Target: Roger Federer</title>
+      <link>https://www.nytimes.com/2019/01/27/sports/tennis/novak-djokovic-roger-federer.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/sports/tennis/novak-djokovic-roger-federer.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/sports/tennis/novak-djokovic-roger-federer.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/29/sports/29open-column-top/29open-column-top-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Novak Djokovic grew up idolizing Pete Sampras and now, at least in the record books, Sampras will have to look up to him.</media:description>
+      <media:credit>Kim Kyung-Hoon/Reuters</media:credit>
+      <description>Djokovic broke a tie with Pete Sampras for third-most men&#x2019;s Grand Slam titles by winning his 15th &#x2014; the Australian Open &#x2014; on Sunday. Federer&#x2019;s record of 20 is within sight.</description>
+      <dc:creator>KAREN CROUSE</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 21:01:45 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Australian Open (Tennis)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Djokovic, Novak</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Emerson, Roy (1936- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Sampras, Pete</category>
+    </item>
+    <item>
+      <title>International Pickpockets Ride New York&#x2019;s Subway, Pilfering and Profiting</title>
+      <link>https://www.nytimes.com/2019/01/27/nyregion/pickpockets-nyc-crime.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/27/nyregion/pickpockets-nyc-crime.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/27/nyregion/pickpockets-nyc-crime.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/21/nyregion/00PICKPOCKET1/00PICKPOCKET1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>International visitors who pick pockets lack a criminal history in New York, which is an advantage: When they are caught, they tend to get light sentences.</media:description>
+      <media:credit>John Taggart for The New York Times</media:credit>
+      <description>The thieves are not known to the police, which helps them evade detection. They also move from city to city, trying to stay ahead of investigators.</description>
+      <dc:creator>MICHAEL WILSON</dc:creator>
+      <pubDate>Sun, 27 Jan 2019 23:04:17 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Transit Systems</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Subways</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Robberies and Thefts</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Manhattan (NYC)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Colombia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Chile</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Police Department (NYC)</category>
+    </item>
+    <item>
+      <title>How to Use &#x2018;Do Not Disturb&#x2019; on Your Phone (While Still Letting Important Calls Through)</title>
+      <link>https://www.nytimes.com/2019/01/24/smarter-living/how-to-use-do-not-disturb-iphone.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/smarter-living/how-to-use-do-not-disturb-iphone.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/24/smarter-living/how-to-use-do-not-disturb-iphone.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/24/autossell/24sl-donotdisturb/merlin_149073588_17998cfa-34ce-4a6d-8749-93c77aef1a05-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description/>
+      <media:credit>Getty Images</media:credit>
+      <description>The bliss of turning off all notifications on your phone doesn&#x2019;t have to come with the anxiety of potentially missing an important call or text. Here&#x2019;s how you can have it all.</description>
+      <dc:creator>WHITSON GORDON</dc:creator>
+      <pubDate>Sat, 26 Jan 2019 21:45:34 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Smartphones</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Text Messaging</category>
+    </item>
+    <item>
+      <title>Playlist: The Playlist: Vampire Weekend&#x2019;s Plucky Return, and 15 More New Songs</title>
+      <link>https://www.nytimes.com/2019/01/25/arts/music/playlist-j-cole-vampire-weekend-dua-lipa-daddy-yankee.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/arts/music/playlist-j-cole-vampire-weekend-dua-lipa-daddy-yankee.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/25/arts/music/playlist-j-cole-vampire-weekend-dua-lipa-daddy-yankee.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/28/arts/28playlist/26playlist-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>After a six-year gap, Vampire Weekend has returned.</media:description>
+      <media:credit>Byron Smith for The New York Times</media:credit>
+      <description>Hear tracks by Phoebe Bridgers and Conor Oberst, Dua Lipa, J. Cole and others.</description>
+      <dc:creator>JON PARELES, JON CARAMANICA and GIOVANNI RUSSONELLO</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 17:35:50 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Pop and Rock Music</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Rap and Hip-Hop</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Jazz</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Florence and the Machine</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Vampire Weekend (Music Group)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ayala Rodriguez, Ramon (Daddy Yankee)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bridgers, Phoebe (1994- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Oberst, Conor</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">J Cole</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Lipa, Dua</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Lovano, Joe</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Michaels, Julia (1993- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Moolchan, Eva (Sneaks)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Shorter, Wayne</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Welch, Florence</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Better Oblivion Community Center (Music Group)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Fender, Sam (1996- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Parriott, Morgan (Call Me Karizma)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Fisher, Sage (Dolphin Midwives)</category>
+    </item>
+    <item>
+      <title>Why People Ghost &#x2014; and How to Get Over It</title>
+      <link>https://www.nytimes.com/2019/01/22/smarter-living/why-people-ghost-and-how-to-get-over-it.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/22/smarter-living/why-people-ghost-and-how-to-get-over-it.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/22/smarter-living/why-people-ghost-and-how-to-get-over-it.html?partner=rss&amp;emc=rss"/>
+      <description>Time to go ghostbusting.</description>
+      <dc:creator>ADAM POPESCU</dc:creator>
+      <pubDate>Wed, 23 Jan 2019 03:00:00 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Dating and Relationships</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Psychology and Psychologists</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Friendship</category>
+    </item>
+    <item>
+      <title>Crowdwise: How to Handle the Dreaded &#x2018;Reply All Moment&#x2019;</title>
+      <link>https://www.nytimes.com/2019/01/17/smarter-living/crowdwise-reply-all-embarrassment-email-etiquette.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/17/smarter-living/crowdwise-reply-all-embarrassment-email-etiquette.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/17/smarter-living/crowdwise-reply-all-embarrassment-email-etiquette.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/25/smarter-living/25crowdwise_pink/crowdwise_pink-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description/>
+      <media:credit>Graham Roumieu</media:credit>
+      <description>You know that sinking feeling when you accidentally click "Reply All" instead of "Reply?" It's awful. Here's how to handle it, and make sure it never happens again.</description>
+      <dc:creator>DAVID POGUE</dc:creator>
+      <pubDate>Thu, 24 Jan 2019 22:15:47 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">E-Mail</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Software</category>
+    </item>
+    <item>
+      <title>Lens: Helen Levitt&#x2019;s Street Photos Blend the Poetic With the Political</title>
+      <link>https://www.nytimes.com/2019/01/16/lens/helen-levitts-street-photos-blend-the-poetic-with-the-political.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/16/lens/helen-levitts-street-photos-blend-the-poetic-with-the-political.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/16/lens/helen-levitts-street-photos-blend-the-poetic-with-the-political.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <description>Examining the overlooked work of a photographer whose images brought awareness to social issues.</description>
+      <dc:creator>RENA SILVERMAN</dc:creator>
+      <pubDate>Wed, 16 Jan 2019 10:00:14 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Photography</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Levitt, Helen</category>
+    </item>
+    <item>
+      <title>What Penn Badgley Wants Us to Learn From &#x2018;You&#x2019;</title>
+      <link>https://www.nytimes.com/2019/01/24/arts/television/penn-badgley-you-netflix.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/arts/television/penn-badgley-you-netflix.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/24/arts/television/penn-badgley-you-netflix.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <description>When viewers swooned over his creepy character on the hit series, Badgley fired back on social media. Now, he reflects on his tweets and the show&#x2019;s impact.</description>
+      <dc:creator>ELEANOR STANFORD</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 13:44:14 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Television</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Badgley, Penn</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">You (TV Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Netflix Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Gossip Girl (TV Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Lifetime Television</category>
+    </item>
+    <item>
+      <title>Critic&#x2019;s Pick: Review: Revisiting a Film from Ida Lupino, Hollywood Star Turned Director</title>
+      <link>https://www.nytimes.com/2019/01/24/movies/never-fear-the-young-lovers-review.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/movies/never-fear-the-young-lovers-review.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/24/movies/never-fear-the-young-lovers-review.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/25/arts/25neverfear/25neverfear-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Sally Forrest plays a dancer who contracts polio, and Keefe Brasselle is her husband in Ida Lupino&#x2019;s &#x201C;Never Fear.&#x201D;</media:description>
+      <media:credit>MoMA</media:credit>
+      <description>&#x201C;Never Fear,&#x201D; a 1949 movie directed by Lupino that has been superbly restored, tells the story of a dancer felled by polio.</description>
+      <dc:creator>MANOHLA DARGIS</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 18:28:23 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Never Fear (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Lupino, Ida</category>
+    </item>
+    <item>
+      <title>Social Q&#x2019;s: Just So We&#x2019;re Clear: I&#x2019;m Also Paying the Bill</title>
+      <link>https://www.nytimes.com/2019/01/24/style/paying-the-bill-dinner-sexism.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/style/paying-the-bill-dinner-sexism.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/24/style/paying-the-bill-dinner-sexism.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <description>A gainfully employed reader wonders why her in-laws only ever thank her husband for picking up the tab.</description>
+      <dc:creator>PHILIP GALANES</dc:creator>
+      <pubDate>Thu, 24 Jan 2019 18:54:31 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Customs, Etiquette and Manners</category>
+    </item>
+    <item>
+      <title>Anatomy of a Scene: &#x2018;Spider-Man: Into the Spider-Verse&#x2019; and How a Scene Crawled to Life</title>
+      <link>https://www.nytimes.com/2019/01/25/movies/spider-man-into-the-spider-verse-clip.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/movies/spider-man-into-the-spider-verse-clip.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/25/movies/spider-man-into-the-spider-verse-clip.html?partner=rss&amp;emc=rss"/>
+      <description>The directors of the Oscar-nominated film discuss the spider-bite sequence that changes everything for its main character, Miles Morales.</description>
+      <dc:creator>MEKADO MURPHY</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 13:32:06 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Comic Books and Strips</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Persichetti, Robert Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ramsey, Peter A</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Rothman, Rodney</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Spider-Man: Into the Spider-Verse (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kirby, Jack</category>
+    </item>
+    <item>
+      <title>&#x2018;This Could Be the End&#x2019; for NASA&#x2019;s Mars Opportunity Rover</title>
+      <link>https://www.nytimes.com/2019/01/25/science/mars-opportunity-rover.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/science/mars-opportunity-rover.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/25/science/mars-opportunity-rover.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/26/science/26MARS/merlin_78086699_efc64197-afe3-4d04-91b6-b4c3a888350a-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>An artist's rendering of NASA's Opportunity rover on the surface of Mars.</media:description>
+      <media:credit>NASA, via Associated Press</media:credit>
+      <description>The agency has received only silence from the intrepid explorer since contact was lost during a global dust storm on the red planet last June.</description>
+      <dc:creator>KENNETH CHANG</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 22:11:26 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mars (Planet)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Opportunity (Mars Rover)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Space and Astronomy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">National Aeronautics and Space Administration</category>
+    </item>
+    <item>
+      <title>&#x2018;Hamlet&#x2019; in Virtual Reality Casts the Viewer in the Play</title>
+      <link>https://www.nytimes.com/2019/01/25/theater/hamlet-virtual-reality-google.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/25/theater/hamlet-virtual-reality-google.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/25/theater/hamlet-virtual-reality-google.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/27/arts/27HAMLETVR5/27HAMLETVR5-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Steven Maler directed &#x201C;Hamlet 360&#x201D; and is the founding artistic director of Commonwealth Shakespeare Company. &#x201C;This is a way to put into the classroom an extraordinary experience of this play,&#x201D; he said.</media:description>
+      <media:credit>Cody O'Loughlin for The New York Times</media:credit>
+      <description>A joint production by a Boston theater company and Google hopes to bring high-quality Shakespeare to wider audiences, and new audiences into theaters.</description>
+      <dc:creator>ELIZABETH A. HARRIS</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 20:49:52 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Hamlet 360: Thy Father's Spirit (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Commonwealth Shakespeare Co</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Google Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Virtual Reality (Computers)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">3-D Devices and Effects</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Theater</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Hamlet (Play)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Shakespeare, William</category>
+    </item>
+    <item>
+      <title>Are Electric Cars Only for the Rich? Sacramento Is Challenging That Notion</title>
+      <link>https://www.nytimes.com/2019/01/24/business/electric-vehicles-electrify-america-sacramento.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/business/electric-vehicles-electrify-america-sacramento.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/01/24/business/electric-vehicles-electrify-america-sacramento.html?partner=rss&amp;emc=rss" rel="standout"/>
+      <media:content url="https://static01.nyt.com/images/2019/01/25/business/25wheels-1/merlin_149658972_51141a94-33ab-459d-a8a9-0ebcce36ce54-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Sarah Quismondo and Alberto Ayala at an Our CarShare location in Sacramento.</media:description>
+      <media:credit>Bradley Berman for The New York Times</media:credit>
+      <description>With funding from a surprising source, Volkswagen, California is making sure low-income communities have the chance to gain access to electric vehicles.</description>
+      <dc:creator>BRADLEY BERMAN</dc:creator>
+      <pubDate>Fri, 25 Jan 2019 19:50:08 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Electric and Hybrid Vehicles</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Fuel Emissions (Transportation)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Electrify America LLC</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">California Air Resources Board</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Sacramento (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Volkswagen AG</category>
+    </item>
+    <item>
+      <title>A Race Against Space</title>
+      <link>https://www.nytimes.com/2019/01/24/well/live/a-race-against-space.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/01/24/well/live/a-race-against-space.html</guid>
+      <atom:link rel="standout" href="https://www.nytimes.com/2019/01/24/well/live/a-race-against-space.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2018/11/15/well/doctors-brain/merlin_131812907_e43f2f01-3711-482c-b1e9-eafa3f146352-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description/>
+      <media:credit>Beatrice de Gea for The New York Times</media:credit>
+      <description>One of the tenets of neurosurgery is that the cranium, the bone that encases the brain, can fit only so much.</description>
+      <dc:creator>ABDUL-KAREEM AHMED, M.D.</dc:creator>
+      <pubDate>Thu, 24 Jan 2019 10:01:00 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Brain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Doctors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Surgery and Surgeons</category>
+    </item>
+  </channel>
+</rss>
