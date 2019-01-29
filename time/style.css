@@ -114,22 +114,21 @@
       font-size: 3em;
       margin: 0;
       margin-top: 0px;
-      font-weight: 200;
-      font-family: 'San Francisco Light', Arial, sans-serif}
+      font-weight: 100;}
       .container .content-analog .time span#text-hours {
-        font-weight: 200; }
+        font-weight: 100; }
       .container .content-analog .time span#text-ampm {
-        font-weight: 600;
+        font-weight: 200;
         font-size: 0.7em; }
     .container .content-analog .date {
-      font-size: 1.5em;
+      font-size: 1.3em;
       margin: 0;
       font-weight: 100; }
     .container .content-analog .region {
       font-size: 1.1em;
       margin: 0;
       font-weight: 100;
-      margin-top: 0px;
+      margin-top: 5px;
       margin-bottom: 0px; }
       .container .content-analog .region span {
         font-weight: 600; }
@@ -140,7 +139,7 @@
 body {
   background-color: #000000;
   color: #333;
-  font-family: 'Roboto', Helvetica, arial;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
   margin: 0px;
   padding: 0px; }
