@@ -29,9 +29,9 @@ def index():
 	if request.method == "POST":
 		return jsonify(data = some_data)
 	# website get method
-	some_data = "some data from back"
+	some_data = {'a':"some data from back"}
 	#jsonify(data = some_data)
-	return render_template('index.html')
+	return render_template('index.html',data = some_data)
 
 if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
