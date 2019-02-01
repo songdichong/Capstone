@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- Imported Css files -->
-    <link rel="stylesheet" type="text/css" href="../time/style.css">  
+    <link rel="stylesheet" type="text/css" href="../static/upload/time/style.css">
 </head>
 <body bgcolor="#000000">
     <div class="container-header">
@@ -36,7 +36,6 @@ here gives an example to get info from backend
 <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
-<script src="../newsfeed/newsfeed.js"></script>
 <!-- start feedwind code --> <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="100867/"></script> <!-- end feedwind code --><!-- end feedwind code -->
 </body>
 </html>
@@ -61,6 +60,42 @@ here gives an example to get info from backend
             region: 'Athens',
             displayTextTime: "hh-mm-ss-date-region" 
         };
+
+        var newsString = '';
+        var newsCounter = 0;
+        $.getJSON( "../static/outfile.json", function( data ) {
+            newsString = data;
+
+        });
+        setInterval(myTimer, 2000);
+        setInterval(newsUpdateTime, 1800000);
+        function myTimer() {
+
+            if(newsCounter<newsString.length-1){
+                newsCounter+=1;
+            }
+            else{
+                newsCounter=0;
+            }
+            var currentNews = newsString[newsCounter];
+            if(typeof(currentNews)!=='undefined' && currentNews.indexOf('Home Page')<0 ){
+                document.getElementById("newsTitle").innerHTML = newsString[newsCounter];
+
+            }
+        }
+
+        function newsUpdateTime() {
+
+            $.getJSON( "../static/outfile.json", function( data ) {
+                newsString = data;
+
+            });
+
+        }
     </script>
-    <!-- Import the lib --> 
-    <script type="text/javascript" src="../time/lib/pkclock.js"></script>
+    <!-- Import the lib -->
+    <script src="../static/outfile.json"></script>
+
+    <script type="text/javascript" src="../static/upload/newsfeed/newsfeed.js"></script>
+
+    <script type="text/javascript" src="../static/upload/time/lib/pkclock.js"></script>

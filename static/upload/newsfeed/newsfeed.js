@@ -2,14 +2,9 @@ var newsString = '';
 var newsCounter = 0;
 setInterval(myTimer, 2000);
 setInterval(newsUpdateTime, 1800000);
-
+console.log(1111)
 function myTimer() {
 
-    $.getJSON( "../newsfeed/outfile.json", function( data ) {
-        var items = [];
-        newsString = data;
-
-    });
 
     if(newsCounter<newsString.length-1){
         newsCounter+=1;
