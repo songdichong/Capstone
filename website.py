@@ -17,8 +17,8 @@ def xmlfetcher(filename):
 
 def write_to_json(): 
 	my_list = xmlfetcher("HomePage.xml")
-	f1 = open("outfile.json","w")
-	with io.open('outfile.json', 'w', encoding='utf-8') as f:
+	f1 = open("./static/outfile.json","w")
+	with io.open('./static/outfile.json', 'w', encoding='utf-8') as f:
 		f.write(json.dumps(my_list, ensure_ascii=False))
 	s.enter(3600, 1, write_to_json)
 	s.run()
