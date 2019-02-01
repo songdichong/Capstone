@@ -1,0 +1,10 @@
+div {
+  height: 100vh;
+  line-height: 100vh;
+  font-weight: 200;
+  font-size: 5em;
+  background-color: #000000;
+  color: rgb(200, 200, 200);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: center;
+}
