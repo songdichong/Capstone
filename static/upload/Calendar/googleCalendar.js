@@ -51,7 +51,7 @@
             apiKey:"Public_API_Key",
             dateFormat:"LongDate",
             errorMsg:"No events in calendar",
-            maxEvents:50,
+            maxEvents:10,
             sortDescending:true},
         t);
     var i="";
@@ -59,16 +59,13 @@
     e.ajax({url:s,dataType:"json",success:function(t){if(r.sortDescending){t.items=t.items.reverse()}t.items=t.items.slice(0,r.maxEvents);
     e.each(t.items,function(t,s){var u=s.start.dateTime||s.start.date||"";
     var a=s.summary||"";
-    var f=s.description;
     var l=s.location;
     i='<div class="eventtitle">'+a+"</div>";
     i+='<div class="eventdate"> When: '+o(u,r.dateFormat.trim())+"</div>";
     if(l){
         i+='<div class="location">Where: '+l+"</div>"
     }
-    if(f){
-        i+='<div class="description">'+f+"</div>"
-    }
+
     e(n).append("<li>"+i+"</li>")
     }
     )
