@@ -1,3 +1,4 @@
+// https://github.com/bradoyler/GoogleCalReader-jquery-plugin/issues/12
 (function($) {
 
     $.fn.gCalReader = function(options) {
