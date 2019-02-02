@@ -3,7 +3,10 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../static/upload/Calendar/googleCalendar.js"></script>
+
     <meta charset="UTF-8">
+
     <title>Title</title>
     <!-- Imported Css files -->
     <link rel="stylesheet" type="text/css" href="../static/upload/time/style.css">
@@ -40,8 +43,10 @@ here gives an example to get info from backend
 </body>
 </html>
 {% endblock %}
-<script>
 
+<script>
+        var userName = 'Tester';
+        var userEmail = 'Tester@gmail.com';
         var pkClock = {
             id: 152,
             className: 'clock',
@@ -66,7 +71,6 @@ here gives an example to get info from backend
     </script>
     <!-- Import the lib -->
     <script src="../static/outfile.json"></script>
-
     <script type="text/javascript" src="../static/upload/newsfeed/newsfeed.js"></script>
-
+    <script type="text/javascript" src="../static/upload/Calendar/updateCalendar.js"></script>
     <script type="text/javascript" src="../static/upload/time/lib/pkclock.js"></script>
