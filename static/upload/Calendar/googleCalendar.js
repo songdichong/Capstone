@@ -1,73 +1,178 @@
-(function(e){e.fn.gCalReader=function(t){
-    function o(e,t){
-        var n,r,i,s;
-        var o={months:{full:["","January","February","March","April","May","June","July","August","September","October","November","December"],
-            "short":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},
-            days:{full:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun"]}};
-            if(e.length>10){
-                r=/(\d+)\-(\d+)\-(\d+)T(\d+)\:(\d+)/.exec(e);
-                i=r[4]<12;
-                s=i?parseInt(r[4])+":"+r[5]+" AM":r[4]-12+":"+r[5]+" PM";
-                if(s.indexOf("0")===0) {
-                    if(s.indexOf(":00")===1){
-                        if(s.indexOf("AM")===5){
-                            s="MIDNIGHT"}else{s="NOON"
-                        }
-                    }
-                    else{s=s.replace("0:","12:")
-                    }
-                }
-            }
-            else{r=/(\d+)\-(\d+)\-(\d+)/.exec(e);
-            s="Time not present in feed."
-            }
-            var u=parseInt(r[1]);
-            var a=parseInt(r[2]);
-            var f=parseInt(r[3]);
-            var l=new Date(u,a-1,f);
-            switch(t){
-                case"ShortTime":n=s;
-                break;
-                case"ShortDate":n=a+"/"+f+"/"+u;
-                break;
-                case"LongDate":n=o.days.full[l.getDay()]+" "+o.months.full[a]+" "+f+", "+u;
-                break;
-                case"LongDate+ShortTime":n=o.days.full[l.getDay()]+" "+o.months.full[a]+" "+f+", "+u+" "+s;
-                break;
-                case"ShortDate+ShortTime":n=a+"/"+f+"/"+u+" "+s;
-                break;
-                case"DayMonth":n=o.days.short[l.getDay()]+", "+o.months.full[a]+" "+f;
-                break;
-                case"MonthDay":n=o.months.full[a]+" "+f;
-                break;
-                case"YearMonth":n=o.months.full[a]+" "+u;
-                break;
-                default:n=o.days.full[l.getDay()]+" "+o.months.short[a]+" "+f+", "+u+" "+s
-            }return n
-    }
-    var n=e(this);
-    var r=e.extend(
-        {calendarId:"en.usa#holiday@group.v.calendar.google.com",
-            apiKey:"Public_API_Key",
-            dateFormat:"LongDate",
-            errorMsg:"No events in calendar",
-            maxEvents:10,
-            sortDescending:true},
-        t);
-    var i="";
-    var s="https://www.googleapis.com/calendar/v3/calendars/"+encodeURIComponent(r.calendarId.trim())+"/events?key="+r.apiKey+"&orderBy=startTime&singleEvents=true";
-    e.ajax({url:s,dataType:"json",success:function(t){if(r.sortDescending){t.items=t.items.reverse()}t.items=t.items.slice(0,r.maxEvents);
-    e.each(t.items,function(t,s){var u=s.start.dateTime||s.start.date||"";
-    var a=s.summary||"";
-    var l=s.location;
-    i='<div class="eventtitle">'+a+"</div>";
-    i+='<div class="eventdate"> When: '+o(u,r.dateFormat.trim())+"</div>";
-    if(l){
-        i+='<div class="location">Where: '+l+"</div>"
-    }
+(function($) {
 
-    e(n).append("<li>"+i+"</li>")
-    }
-    )
-    },error:function(t){
-        e(n).append("<p>"+r.errorMsg+" | "+t+"</p>")}})}})(jQuery)
+    $.fn.gCalReader = function(options) {
+      var $div = $(this);
+  
+      var defaults = $.extend({
+          calendarId: 'en.usa#holiday@group.v.calendar.google.com',
+          apiKey: 'Public_API_Key',
+          dateFormat: 'LongDate',
+          errorMsg: 'No events in calendar',
+          maxEvents: 200,
+          futureEventsOnly: true,
+          sortDescending: false
+        },
+        options);
+  
+      var s = '';
+      var feedUrl = 'https://www.googleapis.com/calendar/v3/calendars/' +
+        encodeURIComponent(defaults.calendarId.trim()) +'/events?key=' + defaults.apiKey +
+        '&orderBy=startTime&singleEvents=true';
+        if(defaults.futureEventsOnly) {
+          feedUrl+='&timeMin='+ new Date().toISOString();
+        }  
+      $.ajax({
+        url: feedUrl,
+        dataType: 'json',
+        success: function(data) {
+          if(defaults.sortDescending){
+            data.items = data.items.reverse();
+          }
+          data.items = data.items.slice(0, defaults.maxEvents);
+  
+          $.each(data.items, function(e, item) {
+            var eventdate = item.start.dateTime || item.start.date ||'';
+            var eventdate2 = item.end.dateTime || item.end.date ||'';
+  
+  
+            if(item.start.dateTime == null){
+                var mydate = new Date(eventdate2);
+               eventdate2 = date2str(mydate, 'yyyy-MM-dd');
+            }
+  
+            console.log("0- "+eventdate);
+            console.log("00- "+eventdate2);
+            var summary = item.summary || '';
+                      var description = item.description;
+                      var location = item.location;
+                      var eventDate = formatDate(eventdate, defaults.dateFormat.trim());
+                      var eventDate2 = formatDate(eventdate2, defaults.dateFormat.trim());
+                      console.log("2- "+eventDate);
+                      console.log("3- "+eventDate2);
+                      console.log("4- "+location);
+                      console.log("5- "+description);
+                      console.log("6- "+summary);
+                      s ='<div class="eventtitle">'+ summary +'</div>';
+                      s +='<div class="eventdate"> Starts: '+ eventDate +'</div>';
+                      s +='<div class="eventdate2"> Ends: '+ eventDate2 +'</div>';
+                      if(location) {
+                          s +='<div class="location">Where: '+ location +'</div>';
+                      }
+                      if(description) {
+  
+                      }
+                      $($div).append('<li>' + s + '</li>');
+          });
+        },
+        error: function(xhr, status) {
+          $($div).append('<p>' + status +' : '+ defaults.errorMsg +'</p>');
+        }
+      });
+  
+  function date2str(x, y) {
+      var z = {
+          M: x.getMonth() + 1,
+          d: x.getDate(),
+          h: x.getHours(),
+          m: x.getMinutes(),
+          s: x.getSeconds()
+      };
+      y = y.replace(/(M+|d+|h+|m+|s+)/g, function(v) {
+          return ((v.length > 1 ? "0" : "") + eval('z.' + v.slice(-1))).slice(-2)
+      });
+  
+      return y.replace(/(y+)/g, function(v) {
+          return x.getFullYear().toString().slice(-v.length)
+      });
+  }
+  
+      function formatDate(strDate, strFormat) {
+        var fd, arrDate, am, time;
+        var calendar = {
+          months: {
+            full: ['', 'January', 'February', 'March', 'April', 'May',
+              'June', 'July', 'August', 'September', 'October',
+              'November', 'December'
+            ],
+            short: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+              'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ]
+          },
+          days: {
+            full: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+              'Friday', 'Saturday', 'Sunday'
+            ],
+            short: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat',
+              'Sun'
+            ]
+          }
+        };
+  
+        if (strDate.length > 10) {
+          arrDate = /(\d+)\-(\d+)\-(\d+)T(\d+)\:(\d+)/.exec(strDate);
+  
+          am = (arrDate[4] < 12);
+          time = am ? (parseInt(arrDate[4]) + ':' + arrDate[5] + ' AM') : (
+            arrDate[4] - 12 + ':' + arrDate[5] + ' PM');
+  
+          if (time.indexOf('0') === 0) {
+            if (time.indexOf(':00') === 1) {
+              if (time.indexOf('AM') === 5) {
+                time = 'MIDNIGHT';
+              } else {
+                time = 'NOON';
+              }
+            } else {
+              time = time.replace('0:', '12:');
+            }
+          }
+  
+        } else {
+          arrDate = /(\d+)\-(\d+)\-(\d+)/.exec(strDate);
+          time = 'Time not present in feed.';
+        }
+  
+        var year = parseInt(arrDate[1]);
+        var month = parseInt(arrDate[2]);
+        var dayNum = parseInt(arrDate[3]);
+  
+        var d = new Date(year, month - 1, dayNum);
+  
+        switch (strFormat) {
+          case 'ShortTime':
+            fd = time;
+            break;
+          case 'ShortDate':
+            fd = month + '/' + dayNum + '/' + year;
+            break;
+          case 'LongDate':
+            fd = calendar.days.full[d.getDay()] + ' ' + calendar.months.full[
+              month] + ' ' + dayNum + ', ' + year;
+            break;
+          case 'LongDate+ShortTime':
+            fd = calendar.days.full[d.getDay()] + ' ' + calendar.months.full[
+              month] + ' ' + dayNum + ', ' + year + ' ' + time;
+            break;
+          case 'ShortDate+ShortTime':
+            fd = month + '/' + dayNum + '/' + year + ' ' + time;
+            break;
+          case 'DayMonth':
+            fd = calendar.days.short[d.getDay()] + ', ' + calendar.months.full[
+              month] + ' ' + dayNum;
+            break;
+          case 'MonthDay':
+            fd = calendar.months.full[month] + ' ' + dayNum;
+            break;
+          case 'YearMonth':
+            fd = calendar.months.full[month] + ' ' + year;
+            break;
+          default:
+            fd = calendar.days.full[d.getDay()] + ' ' + calendar.months.short[
+              month] + ' ' + dayNum + ', ' + year + ' ' + time;
+        }
+  
+        return fd;
+      }
+    };
+  
+  }(jQuery));
