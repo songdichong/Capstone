@@ -1,3 +1,9 @@
+/*
+Original Author: Shengyao Lu
+Creation date: Jan 27th, 2019
+Contents of file:
+	1. Set an animated clock and date to the div in specialUserPage.html
+*/
 var pkClock = {
     id: 152,
     className: 'clock',

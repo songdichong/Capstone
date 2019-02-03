@@ -1,4 +1,12 @@
-//Original Source: https://github.com/bradoyler/GoogleCalReader-jquery-plugin/issues/12
+/*
+Original Source: https://github.com/bradoyler/GoogleCalReader-jquery-plugin/issues/12
+Original Author: bradoyler
+Second Editor: Shengyao Lu & Yue Ma
+Creation date: Jan 27th, 2019
+Contents of file:
+	1. Google Calendar feed reader - plugin to get upcoming events from a public google calendar
+*/
+
 (function($) {
 
     $.fn.gCalReader = function(options) {

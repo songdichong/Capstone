@@ -1,6 +1,10 @@
-/*=============================================
-=            SVG Clock Style                  =
-=============================================*/
+/*
+Original Author: Petros Kontakis
+Second Editor: Shengyao Lu
+Creation date: Jan 27th, 2019
+Contents of file:
+	1. Edit the shape and the outlook of the animated clock and date
+*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,greek);
 .outer {
   fill: transparent;

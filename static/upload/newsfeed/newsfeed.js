@@ -1,3 +1,10 @@
+/*
+Original Author: Yue ma
+Creation date: Jan 26th, 2019
+Contents of file:
+	1. read news.json file every certain interval
+	2. update the content of the news DIV every certain interval
+*/
 var newsString = '';
 var newsCounter = 0;
 var NewsTitle = 'CBC';
