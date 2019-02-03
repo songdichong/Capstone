@@ -1,6 +1,6 @@
 $(function() {	
 		//定时请求刷新
-		setInterval(runAjax,10000);	
+		setInterval(runAjax,5000);
 	});
 var username;
 function runAjax() {
