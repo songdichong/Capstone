@@ -8,6 +8,7 @@ app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 islogin = 0
 
+
 def xmlfetcher(urllink):
 	xml_file = urlopen(urllink)
 	mydoc = minidom.parse(xml_file)
