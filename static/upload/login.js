@@ -1,7 +1,7 @@
 $(function() {	
 		//ask for updating after 5 ms
 		setInterval(runAjax,5000);
-	});
+});
 var username;
 function runAjax() {
 	$.ajax({
