@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="../static/upload/Calendar/googleCalendar.js"></script>
+        <script src="../static/upload/Calendar/lib/googleCalendar.js"></script>
 
     <meta charset="UTF-8">
-
     <title>Title</title>
     <!-- Imported Css files -->
-    <link rel="stylesheet" type="text/css" href="../static/upload/time/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/upload/time/lib/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/index.css">
+
 </head>
 <body bgcolor="#000000">
     <div class="container-header">
@@ -21,7 +22,10 @@
             <div class="content-analog">
                 <div class='clock-txt'></div>
             </div>
-            </div>
+    </div>
+    <div id="calendarList">
+
+    </div>
 <!-- <div style="text-align:left;padding:0;"><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/<div style="text-align:left;padding:0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/5946768"></a></h3> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=America%2FEdmonton" width="400" height="105" frameborder="0" seamless></iframe> </div> -->
 <a style="width:400px" class="weatherwidget-io" href="https://forecast7.com/en/53d54n113d49/edmonton/" data-label_1="EDMONTON" data-label_2="WEATHER" data-theme="dark" data-basecolor="rgba(0, 0, 0, 0.01)" >EDMONTON WEATHER</a>
 <div id="news">
@@ -39,38 +43,12 @@ here gives an example to get info from backend
 <script>
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
-<!-- start feedwind code --> <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="100867/"></script> <!-- end feedwind code --><!-- end feedwind code -->
 </body>
 </html>
 {% endblock %}
 
-<script>
-        var userName = 'Tester';
-        var userEmail = 'Tester@gmail.com';
-        var pkClock = {
-            id: 152,
-            className: 'clock',
-
-            //Clock display
-            displayHouresMinutes: false,
-            displayHouresMinutesSeconds: true,
-
-            //Graphical settings
-            size: 100
-        };
-        var pkTxtClock = {
-            id: 154,
-            className: 'clock-txt',
-            //Text time
-            TextTime: true,
-            region: 'Athens',
-            displayTextTime: "hh-mm-ss-date-region"
-        };
-
-
-    </script>
-    <!-- Import the lib -->
-    <script src="../static/upload/newsfeed/news.json"></script>
-    <script type="text/javascript" src="../static/upload/newsfeed/newsfeed.js"></script>
-    <script type="text/javascript" src="../static/upload/Calendar/updateCalendar.js"></script>
-    <script type="text/javascript" src="../static/upload/time/lib/pkclock.js"></script>
+<script src="../static/upload/newsfeed/news.json"></script>
+<script type="text/javascript" src="../static/upload/time/clock.js"></script>
+<script type="text/javascript" src="../static/upload/newsfeed/newsfeed.js"></script>
+<script type="text/javascript" src="../static/upload/Calendar/updateCalendar.js"></script>
+<script type="text/javascript" src="../static/upload/time/lib/pkclock.js"></script>
