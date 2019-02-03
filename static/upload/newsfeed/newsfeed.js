@@ -1,5 +1,6 @@
 var newsString = '';
 var newsCounter = 0;
+var NewsTitle = 'CBC';
 $.getJSON( "../static/upload/newsfeed/news.json", function( data ) {
     newsString = data;
 
@@ -15,7 +16,7 @@ function myTimer() {
         newsCounter=0;
     }
     var currentNews = newsString[newsCounter];
-    if(typeof(currentNews)!=='undefined' && currentNews.indexOf('Home Page')<0 ){
+    if(typeof(currentNews)!=='undefined' && currentNews.indexOf(NewsTitle)<0 ){
         document.getElementById("newsTitle").innerHTML = newsString[newsCounter];
 
     }
