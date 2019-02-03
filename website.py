@@ -1,3 +1,16 @@
+'''
+Original Author: Dichong Song
+Creation date: Jan 10, 2019
+Contents of file: 
+	1. Flask framework (main thread) 
+		1.1 render static html source
+		1.2 communicate with frontend web page
+		1.3 always on
+	2. Xml fetcher (sub-thread)
+		2.1 parse content from given url
+		2.2 output in json format
+		2.3 repeat every hour
+'''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from flask_bootstrap import Bootstrap
 from xml.dom import minidom
@@ -17,7 +30,6 @@ def xmlfetcher(urllink):
 		result.append(item.firstChild.data)
 	return result
 
-
 def write_to_json(): 
 	my_list = xmlfetcher("https://www.cbc.ca/cmlink/rss-topstories")
 	f1 = open("./static/upload/newsfeed/news.json","w")
@@ -25,7 +37,6 @@ def write_to_json():
 		f.write(json.dumps(my_list, ensure_ascii=False))
 	s.enter(3600, 1, write_to_json)
 	s.run()
-	
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -43,6 +54,5 @@ def login():
 
 if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
-	bootstrap=Bootstrap(app)
 	app.debug=True
 	app.run(host='0.0.0.0',port='4110')
