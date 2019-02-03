@@ -20,8 +20,8 @@ def xmlfetcher(urllink):
 
 def write_to_json(): 
 	my_list = xmlfetcher("https://www.cbc.ca/cmlink/rss-topstories")
-	f1 = open("./static/outfile.json","w")
-	with io.open('./static/outfile.json', 'w', encoding='utf-8') as f:
+	f1 = open("./static/upload/newsfeed/news.json","w")
+	with io.open('./static/upload/newsfeed/news.json', 'w', encoding='utf-8') as f:
 		f.write(json.dumps(my_list, ensure_ascii=False))
 	s.enter(3600, 1, write_to_json)
 	s.run()
@@ -45,4 +45,4 @@ if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
 	bootstrap=Bootstrap(app)
 	app.debug=True
-	app.run(host='0.0.0.0')
+	app.run(host='0.0.0.0',port='4300')
