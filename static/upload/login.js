@@ -1,5 +1,5 @@
 $(function() {	
-		//定时请求刷新
+		//ask for updating after 5 ms
 		setInterval(runAjax,5000);
 	});
 var username;
