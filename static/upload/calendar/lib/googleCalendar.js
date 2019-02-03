@@ -9,8 +9,8 @@
           apiKey: 'Public_API_Key',
           dateFormat: 'LongDate',
           errorMsg: 'No events in calendar',
-          maxEvents: 10,
-          futureEventsOnly: true,
+          maxEvents: 5,
+          futureEventsOnly: false,
           sortDescending: false
         },
         options);
