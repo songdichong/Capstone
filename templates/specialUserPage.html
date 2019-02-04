@@ -6,7 +6,7 @@ Contents of file:
 	2. It contains information such as news, time, weather, and calendar
 -->
 <!DOCTYPE html>
-<!-- {% block content %} -->
+{% block content %}
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -37,24 +37,20 @@ Contents of file:
         <p id='newsTitle' style="color:white;font-family:'Helvetica'">Here are the latest news</p>
     </div>
     <div style="list-style-type: none;" id="calendarList">
-        <!-- <li><div>Player 1 + </div>>good" class="list-group-item"</li>
-        <li>Player 2</li>
-        <li>Player 3</li>
-        <li>Player 4</li> -->
     </div>
     
 
     <!--
     here gives an example to get info from backend
     -->
-    <!-- <div id="backend">
+    <div id="backend">
         <p id='backendData' style="color:white">
             {{data['a']}}
         </p>
-    </div> -->
+    </div>
 </body>
 </html>
-<!-- {% endblock %} -->
+{% endblock %}
 <script src="../static/upload/calendar/lib/googleCalendar.js"></script>
 
 <script src="../static/upload/newsfeed/news.json"></script>
