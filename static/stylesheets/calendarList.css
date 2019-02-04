@@ -4,6 +4,16 @@ Creation date: Jan 18th, 2019
 Contents of file:
 	1. adjust calendar's style
 */
-#calendarList{
-    color:white;
+#calendarList {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+#calendarList > li {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    color: white;
 }

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-1.9.1.js"
+    
+  ></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="/css/result-light.css"> -->
+
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <style id="compiled-css" type="text/css">
+      .players {
+  position: absolute;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.players>li {
+  position: absolute;
+  width: 100%;
+}
+
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    $(function(){
+      
+window.players = function($elem) {
+  var top = parseInt($elem.css("top"));
+  var temp = -1 * $('.players > li').height();
+  if (top < temp) {
+    top = $('.players').height()
+    $elem.css("top", top);
+  }
+  $elem.animate({
+    top: (parseInt(top) - 60)
+  }, 600, function() {
+    window.players($(this))
+  });
+}
+$(document).ready(function() {
+  var i = 0;
+  $(".players > li").each(function() {
+    $(this).css("top", i);
+    i += 60;
+    window.players($(this));
+  });
+});
+    });
+
+</script>
+
+</head>
+<body>
+    <div class="players">
+  
+  <li class="list-group-item">"Player 1 + good"</li>
+  <li class="list-group-item">Player 2</li>
+  <li class="list-group-item">Player 3</li>
+  <li class="list-group-item">Player 4</li>
+</div>
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "u758hrfd"
+      }], "*")
+    }
+  </script>
+</body>
+</html>
