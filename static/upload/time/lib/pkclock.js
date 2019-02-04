@@ -1,7 +1,7 @@
 
 /*
 Original Author: Petros Kontakis
-Second Editor: Shengyao Lu
+Secondary Editor: Shengyao Lu
 Creation date: Jan 27th, 2019
 Contents of file:
 	1. A library of animated clock and date
