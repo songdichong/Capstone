@@ -17,7 +17,7 @@ Contents of file:
           dateFormat: 'LongDate',
           errorMsg: 'No events in calendar',
           maxEvents: 5,
-          futureEventsOnly: false,
+          futureEventsOnly: true,
           sortDescending: false
         },
         options);
@@ -58,11 +58,11 @@ Contents of file:
             console.log("4- "+location);
             console.log("5- "+description);
             console.log("6- "+summary);
-            s ='<div class="eventtitle">'+ summary +'</div>';
-            s +='<div class="eventdate"> Starts: '+ eventDate +'</div>';
+            s ='<div class="eventtitle"> &nbsp&nbsp'+ summary +'</div>';
+            s +='<div class="eventdate"> &nbsp&nbsp&nbsp&nbsp&nbsp'+ eventDate +'</div>';
             // s +='<div class="eventdate2"> Ends: '+ eventDate2 +'</div>';
             if(location) {
-                s +='<div class="location">Where: '+ location +'</div>';
+                s +='<div class="location">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+ location +'</div>';
             }
             $($div).append('<li>' + s + '</li>');
           });
@@ -149,8 +149,8 @@ Contents of file:
         fd = month + '/' + dayNum + '/' + year;
         break;
       case 'LongDate':
-        fd = calendar.days.full[d.getDay()] + ' ' + calendar.months.full[
-          month] + ' ' + dayNum + ', ' + year;
+        fd = calendar.months.full[
+          month] + ' ' + dayNum + ', ' + year + '&nbsp&nbsp' + calendar.days.short[d.getDay()];
         break;
       case 'LongDate+ShortTime':
         fd = calendar.days.full[d.getDay()] + ' ' + calendar.months.full[
@@ -179,9 +179,7 @@ Contents of file:
   };
 
   function Scroll() {
-
     var lis = document.getElementById("calendarList").getElementsByTagName("li");
-    // console.log(lis);
 
     var j=0;
     var i = 0;
