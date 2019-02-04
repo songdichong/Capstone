@@ -5,7 +5,7 @@ Contents of file:
 	1. fetch calendar events based on the calendar ID
 */
 $(function() {
-    $('#calendarList').gCalReader({ calendarId:'shengyao@ualberta.ca', apiKey:'AIzaSyBvbDOa1m-gETLQgRjN5nHPt2xElEFiTZ8'});
+    $('#calendarList').gCalReader({ calendarId:'en.usa#holiday@group.v.calendar.google.com', apiKey:'AIzaSyBvbDOa1m-gETLQgRjN5nHPt2xElEFiTZ8'});
 });
 
 // window.calendarList = function($elem) {

@@ -187,8 +187,8 @@ Contents of file:
     var i = 0;
     $('#calendarList > li').each(function() {
       scrollanItem($(lis[j]),i);
-      j +=1;
-      i += 100;
+      j += 1;
+      i += $('#calendarList > li').height();
       $(lis[j]).css("top", i);
     });
 
