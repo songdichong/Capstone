@@ -14,7 +14,7 @@ Contents of file:
       var defaults = $.extend({
           calendarId: 'en.usa#holiday@group.v.calendar.google.com',
           apiKey: 'Public_API_Key',
-          dateFormat: 'LongDate',
+          dateFormat: 'ShortDate+ShortTime',
           errorMsg: 'No events in calendar',
           maxEvents: 5,
           futureEventsOnly: true,
