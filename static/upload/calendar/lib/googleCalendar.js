@@ -184,13 +184,13 @@ Contents of file:
     var j=0;
     var i = 0;
     $('#calendarList > li').each(function() {
-      scrollanItem($(lis[j]),i);
+      scrollanItem($(lis[j]));
       j += 1;
       i += $('#calendarList > li').height();
       $(lis[j]).css("top", i);
     });
 
-    function scrollanItem($elem, i) {
+    function scrollanItem($elem) {
       var top = parseInt($elem.css("top"));
       var temp = -1 * $('#calendarList > li').height();
       if (top <= temp) {
