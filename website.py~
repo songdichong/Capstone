@@ -12,14 +12,15 @@ Contents of file:
 		2.3 repeat every hour
 '''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
+from flask_bootstrap import Bootstrap
 from xml.dom import minidom
 from urllib.request import urlopen
-import sched, time, _thread,json,io,shlex,subprocess,datetime
+import sched, time, _thread,json,io,shlex,subprocess
 
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 islogin = 0
-username = "songdichong"
+username = "songdi chong"
 
 def xmlfetcher(urllink):
 	xml_file = urlopen(urllink)
@@ -54,7 +55,7 @@ def index():
 			return jsonify(result = {'username':'songdichong'})
 		if islogin == 1:
 			execute_cmd("mkdir -p " + username)
-			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
+			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_" +time.time() +".jpg")
 	return render_template('mainPage.html')
 		
 @app.route('/specialUserPage',methods = ['GET','POST'])
@@ -66,6 +67,6 @@ if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	app.debug=True
-	app.run(host='0.0.0.0',port=4110)
+	app.run(host='0.0.0.0',port='4110')
 
 

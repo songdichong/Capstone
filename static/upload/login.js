@@ -9,16 +9,15 @@ document.addEventListener('keydown', function(e) {
 	if (e.keyCode == 113 || e.keyCode == 81){
 	  e.keypress = '1';
 	//   alert("pressed");
-	  PHOTO = 1;
 	  runAjax(1)
 	}
 });
-function runAjax(signal) {
+function runAjax(REQUEST) {
 	$.ajax({
 		type: "post",
 		url: "/",
 		dataType: "json",
-		data: {'request':signal},
+		data: {'request':REQUEST},
 		success: function(result){
 			username = result;
 			window.location.href="/specialUserPage";   
