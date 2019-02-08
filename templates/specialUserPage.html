@@ -33,13 +33,50 @@ Contents of file:
         </div>
     </div>
     <div id="weather">
-        <a style="width:200px" class="weatherwidget-io" href="https://forecast7.com/en/53d54n113d49/edmonton/" data-label_1="EDMONTON" data-label_2="WEATHER" data-theme="dark" data-basecolor="rgba(0, 0, 0, 0.01)" >EDMONTON WEATHER</a>
+        <a style="width:300px" class="weatherwidget-io" href="https://forecast7.com/en/53d54n113d49/edmonton/" data-label_1="EDMONTON" data-label_2="WEATHER" data-theme="dark" data-basecolor="rgba(0, 0, 0, 0.01)" >EDMONTON WEATHER</a>
     </div>
     <div id="news">
         <p id='newsTitle' style="color:white;font-family:'Helvetica';font-size:30px">Here are the latest news</p>
     </div>
     <div style="list-style-type: none;" id="calendarList"></div>
-    
+    <!-- TradingView Widget BEGIN -->
+	<div id="trade">
+	<div class="tradingview-widget-container">
+	  <div class="tradingview-widget-container__widget"></div>
+
+	  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+	  {
+	  "symbols": [
+	    {
+	      "title": "S&P 500",
+	      "proName": "INDEX:SPX"
+	    },
+	    {
+	      "title": "Shanghai Composite",
+	      "proName": "INDEX:XLY0"
+	    },
+	    {
+	      "title": "EUR/USD",
+	      "proName": "FX_IDC:EURUSD"
+	    },
+	    {
+	      "title": "BTC/USD",
+	      "proName": "BITFINEX:BTCUSD"
+	    },
+	    {
+	      "title": "ETH/USD",
+	      "proName": "BITFINEX:ETHUSD"
+	    }
+	  ],
+	  "theme": "light",
+	  "isTransparent": true,
+	  "displayMode": "compact",
+	  "locale": "en"
+	}
+	  </script>
+	</div>
+</div>
+	<!-- TradingView Widget END -->
     <!--
     here gives an example to get info from backend
     -->
@@ -48,6 +85,7 @@ Contents of file:
             {{data['a']}}
         </p>
     </div>
+   
 </body>
 </html>
 {% endblock %}

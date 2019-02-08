@@ -1,9 +1,9 @@
 #news{
     position:absolute;
-    width:100%;
+    left:25%;
+    width:50%;
     justify-content: center;
-
-    bottom:50px;
+    bottom:40px;
 }
 #newsTitle{
   text-align: center;
@@ -13,4 +13,9 @@
     top:10px;
     position:absolute;
     right:0;
+}
+#trade{
+	position:absolute;
+	bottom:20px;
+	right:0;
 }
