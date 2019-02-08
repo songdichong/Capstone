@@ -51,9 +51,9 @@ def index():
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print(data)
-		if islogin == 1:
-			return jsonify(result = {'username':'songdichong'})
 		if islogin == 0:
+			return jsonify(result = {'username':'songdichong'})
+		if islogin == 1:
 			execute_cmd("mkdir -p " + username)
 			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_" +time.time() +".jpg")
 	return render_template('mainPage.html')
