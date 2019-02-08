@@ -1,5 +1,7 @@
 #news{
     position:absolute;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 200;
     left:25%;
     width:50%;
     justify-content: center;
@@ -7,7 +9,6 @@
 }
 #newsTitle{
   text-align: center;
-
 }
 #weather{
     top:10px;
