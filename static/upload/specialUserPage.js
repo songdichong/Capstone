@@ -1,8 +1,8 @@
 document.addEventListener('keydown', function(e) {
-	if (e.keyCode == 113 || e.keyCode == 81){
+	if (e.keyCode == 13){
 	  e.keypress = '1';
 	  alert("pressed");
-	  runAjax(1)
+	  runAjax(2)
 	}
 });
 function runAjax(REQUEST) {
