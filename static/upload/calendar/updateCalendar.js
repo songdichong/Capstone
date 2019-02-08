@@ -8,5 +8,8 @@ $(function() {
     $('#calendarList').gCalReader({ calendarId:'shengyaotest@gmail.com', apiKey:'AIzaSyBvbDOa1m-gETLQgRjN5nHPt2xElEFiTZ8'});
 });
   
-  
+// $('body').keypress(function(e) {
+//     console.log(111)
+//     console.log('keypress',String.fromCharCode(e.which))
+// });
 
