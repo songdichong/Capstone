@@ -54,7 +54,7 @@ def index():
 			return jsonify(result = {'username':'songdichong'})
 		if islogin == 1:
 			execute_cmd("mkdir -p " + username)
-			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"  +".jpg")
+			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
 	return render_template('mainPage.html')
 		
 @app.route('/specialUserPage',methods = ['GET','POST'])
