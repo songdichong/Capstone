@@ -33,11 +33,12 @@ Contents of file:
 .clock {
   position: relative;
   height: 400px; }
-  .clock svg {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 0px; }
+
+.clock svg {
+  position: relative;
+  top: -20px;
+  left: -40px;
+  margin: 0px; }
 
 .container-header {
   position: relative;
@@ -49,8 +50,9 @@ Contents of file:
   padding: 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 160px;
+  height: 180px;
   overflow: hidden; }
+  
   .container-header:before {
     content: '';
     position: relative;
@@ -91,9 +93,9 @@ Contents of file:
 =======================================*/
 .container {
   position: fixed;
-  height: 120px; 
-  top: 40px;
-  left: 200px;}
+  height: 150px; 
+  top: 20px;
+  left: 120px;}
   .container h3 {
     text-align: right;
     font-weight: 200; }
