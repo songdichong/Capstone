@@ -16,7 +16,7 @@ from flask_bootstrap import Bootstrap
 from xml.dom import minidom
 from urllib.request import urlopen
 from pygame.locals import *
-import sched, time, _thread,json,io,shlex,subprocess,pygame
+import sched, time, _thread,json,io,shlex,subprocess
 
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
@@ -46,14 +46,7 @@ def execute_cmd(cmd):
 	print(result)
 	
 def remote_controller():
-	pygame.init()
-	windowSurface = pygame.display.set_mode((100, 100), 0, 32)
-	windowSurface.fill((0,0,0))
-	while True:
-		for event in pygame.event.get():
-			if event.type == KEYUP:
-				if event.key == pygame.K_RETURN:
-					execute_cmd("rm -rf 1.txt")
+	pass
 				
 		
 @app.route('/',methods=['GET','POST'])
