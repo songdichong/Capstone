@@ -15,7 +15,6 @@ from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from flask_bootstrap import Bootstrap
 from xml.dom import minidom
 from urllib.request import urlopen
-from pygame.locals import *
 import sched, time, _thread,json,io,shlex,subprocess
 
 app=Flask(__name__)
@@ -44,10 +43,7 @@ def execute_cmd(cmd):
 	p = subprocess.run(args,stdout = subprocess.PIPE)
 	result = p.stdout
 	print(result)
-	
-def remote_controller():
-	pass
-				
+
 		
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -65,7 +61,7 @@ def login():
 
 if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
-	_thread.start_new_thread(remote_controller,())
+	# _thread.start_new_thread(remote_controller,())
 	app.debug=True
 	app.run(host='0.0.0.0',port='4110')
 
