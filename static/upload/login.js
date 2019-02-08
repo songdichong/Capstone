@@ -14,7 +14,7 @@ function runAjax() {
 		type: "post",
 		url: "/",
 		dataType: "json",
-		data: {'request':0},
+		data: {'request':REQUEST},
 		success: function(result){
 			username = result;
 			window.location.href="/specialUserPage";   

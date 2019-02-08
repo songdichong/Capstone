@@ -12,15 +12,14 @@ Contents of file:
 		2.3 repeat every hour
 '''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
-from flask_bootstrap import Bootstrap
 from xml.dom import minidom
 from urllib.request import urlopen
-import sched, time, _thread,json,io,shlex,subprocess
+import sched, time, _thread,json,io,shlex,subprocess,datetime
 
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 islogin = 0
-username = "songdi chong"
+username = "songdichong"
 
 def xmlfetcher(urllink):
 	xml_file = urlopen(urllink)
@@ -51,11 +50,11 @@ def index():
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print(data)
-		if islogin == 1:
-			return jsonify(result = {'username':'songdichong'})
 		if islogin == 0:
+			return jsonify(result = {'username':'songdichong'})
+		if islogin == 1:
 			execute_cmd("mkdir -p " + username)
-			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_" +time.time() +".jpg")
+			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"  +".jpg")
 	return render_template('mainPage.html')
 		
 @app.route('/specialUserPage',methods = ['GET','POST'])
@@ -67,6 +66,6 @@ if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	app.debug=True
-	app.run(host='0.0.0.0',port='4110')
+	app.run(host='0.0.0.0',port=4110)
 
 
