@@ -6,8 +6,9 @@ Contents of file:
 */
 #calendarList {
     position: absolute;
+    top:300px;
     width: 400px;
-    height: 400px;
+    height: 600px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 300;
     font-size: 1.0em;

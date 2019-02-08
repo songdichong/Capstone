@@ -1,0 +1,16 @@
+#news{
+    position:absolute;
+    width:100%;
+    justify-content: center;
+
+    bottom:50px;
+}
+#newsTitle{
+  text-align: center;
+
+}
+#weather{
+    top:10px;
+    position:absolute;
+    right:0;
+}
