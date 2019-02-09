@@ -18,7 +18,6 @@ import sched, time, _thread,json,io,shlex,subprocess,datetime
 
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
-islogin = 0
 username = "songdichong"
 
 def xmlfetcher(urllink):
@@ -42,28 +41,41 @@ def execute_cmd(cmd):
 	args = shlex.split(cmd)
 	p = subprocess.run(args,stdout = subprocess.PIPE)
 	result = p.stdout
-	print(result)
+	return result
 
 		
 @app.route('/',methods=['GET','POST'])
 def index():
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
-		print(data)
-		if islogin == 0:
-			return jsonify(result = {'username':'songdichong'})
-		if islogin == 1:
-			execute_cmd("mkdir -p " + username)
-			execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
+		if int(data) == 1:
+			return jsonify({"username":username})
+		elif int(data) == 2:
+			try:
+				execute_cmd("mkdir -p " + username)
+				msg = execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
+				return jsonify({"status":msg})
+			except Exception:
+				print("some error happens 1")
+				return render_template("specialUserPage.html")
 	return render_template('mainPage.html')
 		
 @app.route('/specialUserPage',methods = ['GET','POST'])
-def login():
-	some_data1 = {'a':"some data from back123"}
-	return render_template('specialUserPage.html',data = some_data1)
-
+def specialUserPage():
+	if request.method == "POST":
+		data = request.form['request'].encode('utf-8')
+		if int(data) == 2:
+			try:
+				execute_cmd("mkdir -p " + username)
+				msg = execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
+				return jsonify({"status":msg})
+			except Exception:
+				print("some error happens 2")
+				return render_template("specialUserPage.html")
+			
+	return render_template("specialUserPage.html")
 if __name__=="__main__":
-	_thread.start_new_thread(write_to_json,())
+	#~ _thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	app.debug=True
 	app.run(host='0.0.0.0',port=4110)
