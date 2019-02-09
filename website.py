@@ -53,7 +53,8 @@ def index():
 		elif int(data) == 2:
 			try:
 				execute_cmd("mkdir -p " + username)
-				msg = execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
+				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
+				msg = execute_cmd("raspistill -n -o "+"./"+username +"/"+filename)
 				return jsonify({"status":msg})
 			except Exception:
 				print("some error happens 1")
