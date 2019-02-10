@@ -79,6 +79,6 @@ if __name__=="__main__":
 	#~ _thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	app.debug=True
-	app.run(host='0.0.0.0',port=4110)
+	app.run(host='0.0.0.0',port=4310)
 
 

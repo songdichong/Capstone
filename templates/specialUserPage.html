@@ -41,41 +41,87 @@ Contents of file:
     <div style="list-style-type: none;" id="calendarList"></div>
     <!-- TradingView Widget BEGIN -->
 	<div id="trade">
-	<div class="tradingview-widget-container">
-	  <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-container stockprice" id = 'spx'>
+            <div class="border"></div>
+            <div class="linkPatch"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+              {
+              "symbol": "INDEX:SPX",
+              "width": "300",
+              "height": "200",
+              "locale": "en",
+              "dateRange": "1d",
+              "colorTheme": "dark",
+              "trendLineColor": "rgba(250, 0, 0, 0)",
+              "underLineColor": "rgba(250, 0, 0, 0)",
+              "isTransparent": true,
+              "autosize": false,
+              "largeChartUrl": ""
+                }
+              </script>
+        </div>
+        <div class="tradingview-widget-container stockprice" id="bitcoin">
+            <div class="border"></div>
+            <div class="linkPatch"></div>
 
-	  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-	  {
-	  "symbols": [
-	    {
-	      "title": "S&P 500",
-	      "proName": "INDEX:SPX"
-	    },
-	    {
-	      "title": "Shanghai Composite",
-	      "proName": "INDEX:XLY0"
-	    },
-	    {
-	      "title": "EUR/USD",
-	      "proName": "FX_IDC:EURUSD"
-	    },
-	    {
-	      "title": "BTC/USD",
-	      "proName": "BITFINEX:BTCUSD"
-	    },
-	    {
-	      "title": "ETH/USD",
-	      "proName": "BITFINEX:ETHUSD"
-	    }
-	  ],
-	  "theme": "light",
-	  "isTransparent": true,
-	  "displayMode": "compact",
-	  "locale": "en"
-	}
-	  </script>
-	</div>
-</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+              {
+              "symbol": "BITFINEX:BTCUSD",
+              "width": "300",
+              "height": "200",
+              "locale": "en",
+              "dateRange": "1d",
+              "colorTheme": "dark",
+              "trendLineColor": "rgba(250, 0, 0, 0)",
+              "underLineColor": "rgba(250, 0, 0, 0)",
+              "isTransparent": true,
+              "autosize": false,
+              "largeChartUrl": ""
+                }
+              </script>
+        </div>
+        <div class="tradingview-widget-container stockprice" id="oil">
+            <div class="border"></div>
+            <div class="linkPatch"></div>
+
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+              {
+              "symbol": "TVC:USOIL",
+              "width": "300",
+              "height": "200",
+              "locale": "en",
+              "dateRange": "1d",
+              "colorTheme": "dark",
+              "trendLineColor": "rgba(250, 0, 0, 0)",
+              "underLineColor": "rgba(250, 0, 0, 0)",
+              "isTransparent": true,
+              "autosize": false,
+              "largeChartUrl": ""
+                }
+              </script>
+        </div>
+          <div class="tradingview-widget-container stockprice" id="dja">
+            <div class="border"></div>
+              <div class="linkPatch"></div>
+
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+              {
+              "symbol": "DJ:DJA",
+              "width": "300",
+              "height": "200",
+              "locale": "en",
+              "dateRange": "1d",
+              "colorTheme": "dark",
+              "trendLineColor": "rgba(250, 0, 0, 0)",
+              "underLineColor": "rgba(250, 0, 0, 0)",
+              "isTransparent": true,
+              "autosize": false,
+              "largeChartUrl": ""
+                }
+              </script>
+        </div>
+    </div>
+
 </body>
 </html>
 {% endblock %}
