@@ -12,7 +12,7 @@ $.getJSON( "../static/upload/newsfeed/news.json", function( data ) {
     newsString = data;
 
 });
-setInterval(myTimer, 2000);
+setInterval(myTimer, 4000);
 setInterval(newsUpdateTime, 1800000);
 function myTimer() {
 
