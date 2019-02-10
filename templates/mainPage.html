@@ -10,12 +10,15 @@ Contents of file:
 <!DOCTYPE html>
 {% block content %}
 <html lang="en">
-<head>t
+<head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
     <script src= "/static/upload/login.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
+
 </head>
 
 <body bgcolor="#000000">
@@ -23,7 +26,19 @@ Contents of file:
        For testing (Please Wait For 5 Seconds!)
 
     </div>
-
+     <script>
+    window.onload = function(){
+        if (annyang) {
+            var commands = {
+                'Hello': function() {
+                    alert('Hi! I can hear you.');
+                }
+            };
+            annyang.addCommands(commands);
+            annyang.start();
+        }
+    }
+    </script>
 </body>
 {% endblock %}
 
