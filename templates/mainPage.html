@@ -8,37 +8,64 @@ Contents of file:
 
 -->
 <!DOCTYPE html>
-{% block content %}
-<html lang="en">
+<html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/upload/time/lib/style.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/main.css">
 
     <script src= "/static/upload/login.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body bgcolor="#000000">
-    <div>
-       For testing (Please Wait For 5 Seconds!)
+<div class="container-header clock">
+    <div class="content">
+        <div class="clock"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="content-analog">
+        <div class='clock-txt'></div>
+    </div>
+</div>
+
+<div id = 'weather'>
+    <a style="width:300px" class="weatherwidget-io" href="https://forecast7.com/en/53d54n113d49/edmonton/" data-label_1="EDMONTON" data-label_2="WEATHER" data-icons="Climacons Animated" data-mode="Current" data-theme="dark" >EDMONTON WEATHER</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+</div>
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="/signup" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="containerForm">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="gml"><b>Gmail</b></label>
+      <input type="text" placeholder="Enter Gmail Address" name="gml" required>
+
+      <button type="submit">Sign Up</button>
 
     </div>
-     <script>
-    window.onload = function(){
-        if (annyang) {
-            var commands = {
-                'Hello': function() {
-                    alert('Hi! I can hear you.');
-                }
-            };
-            annyang.addCommands(commands);
-            annyang.start();
-        }
-    }
-    </script>
-</body>
-{% endblock %}
 
+    <div class="containerForm" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+
+
+
+<script type="text/javascript" src="../static/upload/time/clock.js"></script>
+<script type="text/javascript" src="../static/upload/time/lib/pkclock.js"></script>

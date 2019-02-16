@@ -60,6 +60,16 @@ def index():
 				print("some error happens 1")
 				return render_template("specialUserPage.html")
 	return render_template('mainPage.html')
+
+
+@app.route('/signup',methods=['POST'])
+def signup():
+	print(1234)
+	if request.method == "POST":
+		print('GMAIL:'+request.form['gml'])
+		print('UserName:'+request.form['uname'])
+
+	return render_template('mainPage.html')
 		
 @app.route('/specialUserPage',methods = ['GET','POST'])
 def specialUserPage():
