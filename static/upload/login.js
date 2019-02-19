@@ -23,7 +23,10 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			username = result;
-			window.location.href="/specialUserPage";   
+			console.log('frontEnd');
+			console.log(username)
+
+			//window.location.href="/specialUserPage";
 		}
 	});
 }
@@ -35,4 +38,12 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+
+
+setInterval(readFace, 2000);
+function readFace() {
+
+    runAjax(3)
 }
