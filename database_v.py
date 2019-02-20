@@ -21,7 +21,8 @@ from watchdog.events import *
 
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
-userID = "-1"
+userID = -1
+currentUser = -1
 isupdated = 0
 
 
@@ -119,21 +120,20 @@ def add_into_database(userID,username,email,preference):
 
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID
+	global userID,currentUser
 	if request.method == "POST":
-		
 		data = request.form['request'].encode('utf-8')
 		print(data)
-		if (int(data) == 3 ) and (userID != "-1"):
+		if (int(data) == 3 ) and (userID != "-1") and (userID != currentUser):
 			#successfully login
-	
+			currentUser = userID
 			result = select_from_database(userID)
 			username = result[1]
 			email = result[2]
 			preference = result[3]
 			print(username)
 
-			return jsonify({"username":userID})
+			return jsonify({"username":username})
 		elif int(data) == 2:
 			try:
 				execute_cmd("mkdir -p " + username)
@@ -219,21 +219,19 @@ def signup():
 		print('UserName:'+request.form['uname'])
 
 	return redirect("/")
-		
-@app.route('/specialUserPage',methods = ['GET','POST'])
+	
+@app.route('/specialUserPage',methods = ['GET'])
 def specialUserPage():
-	if request.method == "POST":
-		data = request.form['request'].encode('utf-8')
-		if int(data) == 2:
-			try:
-				execute_cmd("mkdir -p " + username)
-				msg = execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
-				return jsonify({"status":msg})
-			except Exception:
-				print("some error happens 2")
-				return render_template("specialUserPage.html")
-			
 	return render_template("specialUserPage.html")
+
+@app.route('/login',methods = ['POST'])
+def login():
+	global userID
+	if request.method == "POST":
+		data = request.form['userID']
+		print(data)
+		userID = int(data)
+		return "success"
 
 def print_global():
 	global userID
@@ -242,13 +240,13 @@ def print_global():
 		time.sleep(1)
 	
 if __name__=="__main__":
-	file1 =  open("loginstate.txt","w")
-	file1.write('-1\n')
-	file1.close()
+	#~ file1 =  open("loginstate.txt","w")
+	#~ file1.write('-1\n')
+	#~ file1.close()
 	
 	_thread.start_new_thread(write_to_json,())
 	#~ _thread.start_new_thread(search_fingerprint,())
-	_thread.start_new_thread(update_userID,())
+	#~ _thread.start_new_thread(update_userID,())
 	#~ _thread.start_new_thread(print_global,())
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)

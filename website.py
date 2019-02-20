@@ -1,5 +1,5 @@
 '''
-Original Author: Dichong Song
+Original Author: Dichong Song, Yuhan Ye, Yue Ma
 Creation date: Jan 10, 2019
 Contents of file: 
 	1. Flask framework (main thread) 
@@ -14,7 +14,8 @@ Contents of file:
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
-import sched, time, _thread,json,io,shlex,subprocess,datetime
+from pyfingerprint.pyfingerprint import PyFingerprint
+import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3
 import cv2
 import face_recognition
 
@@ -22,6 +23,8 @@ app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 username = "songdichong"
 DETECTEDUSER = "False"
+currentUser = -1
+userID = -1
 def xmlfetcher(urllink):
 	xml_file = urlopen(urllink)
 	mydoc = minidom.parse(xml_file)
@@ -44,6 +47,26 @@ def execute_cmd(cmd):
 	p = subprocess.run(args,stdout = subprocess.PIPE)
 	result = p.stdout
 	return result
+
+def select_from_database(userID):
+	conn = sqlite3.connect('test.db')
+	c = conn.cursor()
+	t = (int(userID),)
+	c.execute('SELECT * FROM User WHERE findex=?',t)
+	a=c.fetchone()
+	conn.commit()
+	conn.close()
+	return a
+	
+def add_into_database(userID,username,email,preference):
+	conn = sqlite3.connect('test.db')
+	c = conn.cursor()
+	c.execute('''
+	INSERT INTO User(findex,username,email,preference)VALUES(?,?,?,?)
+	''',(userID,username,email,preference))
+	conn.commit()
+	conn.close()
+
 
 def FaceDetection(video_capture):
 
@@ -81,11 +104,22 @@ def task2():
 	while True:
 
 		DETECTEDUSER = FaceDetection(video_capture)
+
 @app.route('/',methods=['GET','POST'])
 def index():
+	global userID,currentUser
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
-		if int(data) == 1:
+		print(data)
+		if (int(data) == 3 ) and (userID != -1) and (userID != currentUser):
+			#successfully login
+			currentUser = userID
+			result = select_from_database(userID)
+			username = result[1]
+			email = result[2]
+			preference = result[3]
+			print(username)
+
 			return jsonify({"username":username})
 		elif int(data) == 2:
 			try:
@@ -96,8 +130,6 @@ def index():
 			except Exception:
 				print("some error happens 1")
 				return render_template("specialUserPage.html")
-		elif int(data) == 3:
-			return jsonify({"username": DETECTEDUSER})
 	return render_template('mainPage.html')
 
 
@@ -110,23 +142,22 @@ def signup():
 
 	return render_template('mainPage.html')
 		
-@app.route('/specialUserPage',methods = ['GET','POST'])
+@app.route('/specialUserPage',methods = ['GET'])
 def specialUserPage():
-	if request.method == "POST":
-		data = request.form['request'].encode('utf-8')
-		if int(data) == 2:
-			try:
-				execute_cmd("mkdir -p " + username)
-				msg = execute_cmd("raspistill -o "+"./"+username +"/"+ username + "_"+ datetime.date.today().strftime("%B_%d_%Y")  +".jpg")
-				return jsonify({"status":msg})
-			except Exception:
-				print("some error happens 2")
-				return render_template("specialUserPage.html")
-
 	return render_template("specialUserPage.html")
+
+@app.route('/login',methods = ['POST'])
+def login():
+	global userID
+	if request.method == "POST":
+		data = request.form['userID']
+		print(data)
+		userID = int(data)
+		return "success"
+
 if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
-	_thread.start_new_thread(task2,())
+	#~ _thread.start_new_thread(task2,())
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
