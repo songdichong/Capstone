@@ -26,7 +26,7 @@ function runAjax(REQUEST) {
 			console.log('frontEnd');
 			console.log(username)
 
-			//window.location.href="/specialUserPage";
+			window.location.href="/specialUserPage";
 		}
 	});
 }

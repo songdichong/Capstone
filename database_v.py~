@@ -99,7 +99,7 @@ def update_userID():
 					pass
 		time.sleep(1)
 def select_from_database(userID):
-	conn = sqlite3.connect('test.db')
+	conn = sqlite3.connect('user.db')
 	c = conn.cursor()
 	t = (int(userID),)
 	c.execute('SELECT * FROM User WHERE findex=?',t)
@@ -109,7 +109,7 @@ def select_from_database(userID):
 	return a
 	
 def add_into_database(userID,username,email,preference):
-	conn = sqlite3.connect('test.db')
+	conn = sqlite3.connect('user.db')
 	c = conn.cursor()
 	c.execute('''
 	INSERT INTO User(findex,username,email,preference)VALUES(?,?,?,?)
@@ -121,10 +121,8 @@ def add_into_database(userID,username,email,preference):
 def index():
 	global userID
 	if request.method == "POST":
-		
 		data = request.form['request'].encode('utf-8')
-		print(data)
-		if (int(data) == 3 ) and (userID != "-1"):
+		if (int(data) == 1 ) and (userID != "-1"):
 			#successfully login
 	
 			result = select_from_database(userID)
@@ -144,7 +142,6 @@ def index():
 				print("some error happens 1")
 				return render_template("specialUserPage.html")
 	return render_template('mainPage.html')
-	
 def search_fingerprint():
 	## Tries to initialize the sensor
         try:
@@ -218,7 +215,7 @@ def signup():
 		print('GMAIL:'+request.form['gml'])
 		print('UserName:'+request.form['uname'])
 
-	return redirect("/")
+	return render_template('mainPage.html')
 		
 @app.route('/specialUserPage',methods = ['GET','POST'])
 def specialUserPage():
@@ -242,14 +239,13 @@ def print_global():
 		time.sleep(1)
 	
 if __name__=="__main__":
-	file1 =  open("loginstate.txt","w")
-	file1.write('-1\n')
-	file1.close()
-	
 	_thread.start_new_thread(write_to_json,())
 	#~ _thread.start_new_thread(search_fingerprint,())
 	_thread.start_new_thread(update_userID,())
 	#~ _thread.start_new_thread(print_global,())
+	
+	
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
-	
+	conn.commit()
+	conn.close()
