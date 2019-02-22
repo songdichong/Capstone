@@ -21,10 +21,12 @@ import face_recognition
 
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
-username = "songdichong"
-DETECTEDUSER = "False"
-currentUser = -1
+username = ""
+email = ""
 userID = -1
+DETECTEDUSER = "False"
+mode = 0
+
 def xmlfetcher(urllink):
 	xml_file = urlopen(urllink)
 	mydoc = minidom.parse(xml_file)
@@ -107,20 +109,31 @@ def task2():
 
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID,currentUser
+	global userID,username,email,mode
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print(data)
-		if (int(data) == 3 ) and (userID != -1) and (userID != currentUser):
+		print(userID)
+		print(mode)
+		if (int(data) == 3 ) and (userID != -1) and (mode == 1):
 			#successfully login
-			currentUser = userID
 			result = select_from_database(userID)
 			username = result[1]
 			email = result[2]
 			preference = result[3]
+			mode = 0
 			print(username)
-
-			return jsonify({"username":username})
+			return jsonify({"mode":"login_success","username":username})
+			
+		elif (int(data) == 3) and (userID != -1) and (mode == 2):
+			preference = "11111"
+			add_into_database(userID,username,email,preference)
+			print("here2")
+			mode = 0
+			r = execute_cmd("sudo python3 example_search.py")
+			print(r)
+			return jsonify({"mode":"register_success","username":username})
+		
 		elif int(data) == 2:
 			try:
 				execute_cmd("mkdir -p " + username)
@@ -135,12 +148,17 @@ def index():
 
 @app.route('/signup',methods=['POST'])
 def signup():
-	print(1234)
+	global username,email
 	if request.method == "POST":
-		print('GMAIL:'+request.form['gml'])
-		print('UserName:'+request.form['uname'])
-
-	return render_template('mainPage.html')
+		email = request.form['gml']
+		username = request.form['uname']
+		print(email)
+		print(username)
+		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
+		print(r1)
+		r2 = execute_cmd("sudo python3 example_enroll.py")
+		print(r2)
+	return redirect('/')
 		
 @app.route('/specialUserPage',methods = ['GET'])
 def specialUserPage():
@@ -148,11 +166,22 @@ def specialUserPage():
 
 @app.route('/login',methods = ['POST'])
 def login():
-	global userID
+	global userID,mode
 	if request.method == "POST":
 		data = request.form['userID']
 		print(data)
 		userID = int(data)
+		mode = 1
+		return "success"
+
+@app.route('/register',methods = ['POST'])
+def register():
+	global userID,mode
+	if request.method == "POST":
+		print("here")
+		userID = request.form['positionNumber']
+		print(userID)
+		mode = 2
 		return "success"
 
 if __name__=="__main__":

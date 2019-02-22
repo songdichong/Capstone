@@ -26,12 +26,8 @@ def search_fingerprint():
 				print('The fingerprint sensor could not be initialized!')
 				print('Exception message: ' + str(e))
 				#~ exit(1)
-
-		
-		
 		## Gets some sensor information
 		print('Currently used templates: ' + str(f.getTemplateCount()) +'/'+ str(f.getStorageCapacity()))
-
 				## Tries to search the finger and calculate hash
 		try:
 				print('Waiting for finger...')
