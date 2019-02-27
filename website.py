@@ -129,9 +129,9 @@ def index():
 	global userID,username,email,mode
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
-		print(data)
-		print(userID)
-		print(mode)
+		print("data",data)
+		print("userID",userID)
+		print("mode",mode)
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID)
@@ -195,8 +195,12 @@ def login():
 	if request.method == "POST":
 		data = request.form['userID']
 		print(data)
-		userID = int(data)
-		mode = MODE_LOGIN
+		if userID == int(data) and (userID != INVALID_USER):
+			mode = MODE_LOGOUT
+		else:
+			userID = int(data)
+			mode = MODE_LOGIN
+		
 		return "success"
 
 @app.route('/register',methods = ['POST'])
@@ -208,6 +212,7 @@ def register():
 		print(userID)
 		mode = MODE_REGISTER
 		return "success"
+		
 ########################################################################
 
 ######################### Main Function ################################
