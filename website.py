@@ -19,14 +19,27 @@ import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3
 import cv2
 import face_recognition
 
+######################### Constant Division ############################
+FRONT_END_MSG_RESPOND = 3
+FRONT_END_MSG_TAKE_PHOTO = 2
+INVALID_USER = -1
+MODE_INITIAL = 0
+MODE_LOGIN = 1
+MODE_REGISTER = 2
+MODE_LOGOUT = 3
+########################################################################
+
+###################### Initialization Division #########################
 app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
-userID = -1
+userID = INVALID_USER
 DETECTEDUSER = "False"
-mode = 0
+mode = MODE_INITIAL
+########################################################################
 
+################### Useful Function Division ###########################
 def xmlfetcher(urllink):
 	xml_file = urlopen(urllink)
 	mydoc = minidom.parse(xml_file)
@@ -68,8 +81,10 @@ def add_into_database(userID,username,email,preference):
 	''',(userID,username,email,preference))
 	conn.commit()
 	conn.close()
+########################################################################
 
 
+####################### OpenCV Division ################################
 def FaceDetection(video_capture):
 
 	process_this_frame = True
@@ -106,7 +121,9 @@ def task2():
 	while True:
 
 		DETECTEDUSER = FaceDetection(video_capture)
+########################################################################
 
+########################## Flask Division ##############################
 @app.route('/',methods=['GET','POST'])
 def index():
 	global userID,username,email,mode
@@ -115,26 +132,35 @@ def index():
 		print(data)
 		print(userID)
 		print(mode)
-		if (int(data) == 3 ) and (userID != -1) and (mode == 1):
+		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID)
 			username = result[1]
 			email = result[2]
 			preference = result[3]
-			mode = 0
+			mode = MODE_INITIAL
 			print(username)
 			return jsonify({"mode":"login_success","username":username})
 			
-		elif (int(data) == 3) and (userID != -1) and (mode == 2):
+		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_REGISTER):
+			#register
 			preference = "11111"
 			add_into_database(userID,username,email,preference)
-			print("here2")
-			mode = 0
+			mode = MODE_INITIAL
 			r = execute_cmd("sudo python3 example_search.py")
 			print(r)
+			#TODO: logout after timeout
 			return jsonify({"mode":"register_success","username":username})
 		
-		elif int(data) == 2:
+		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGOUT):
+			#logout 
+			mode = MODE_INITIAL
+			username = ""
+			email = ""
+			userID = INVALID_USER
+			return redirect('/')
+		
+		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
 			try:
 				execute_cmd("mkdir -p " + username)
 				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
@@ -144,7 +170,6 @@ def index():
 				print("some error happens 1")
 				return render_template("specialUserPage.html")
 	return render_template('mainPage.html')
-
 
 @app.route('/signup',methods=['POST'])
 def signup():
@@ -171,7 +196,7 @@ def login():
 		data = request.form['userID']
 		print(data)
 		userID = int(data)
-		mode = 1
+		mode = MODE_LOGIN
 		return "success"
 
 @app.route('/register',methods = ['POST'])
@@ -181,12 +206,15 @@ def register():
 		print("here")
 		userID = request.form['positionNumber']
 		print(userID)
-		mode = 2
+		mode = MODE_REGISTER
 		return "success"
+########################################################################
 
+######################### Main Function ################################
 if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	#~ _thread.start_new_thread(task2,())
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
+########################################################################
