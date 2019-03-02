@@ -86,14 +86,12 @@ def add_into_database(userID,username,email,preference):
 ########################################################################
 
 ####################### FaceDetection Division #########################
-def FaceDetection(camera,frame):
-	print('Capturing') # for test purpose
-	process_this_frame = True
+def FaceDetection(frame):
+	# print('Capturing') # for test purpose
 	# Grab a single frame of video
-	camera.capture(frame, format="rgb")
 	face_locations = face_recognition.face_locations(frame)
 	# print for testing purpose
-	print("Found {} faces in image.".format(len(face_locations)))
+	# print("Found {} faces in image.".format(len(face_locations)))
 	face_encodings = face_recognition.face_encodings(frame, face_locations)
 	if len(face_encodings)>0:
 		print('Detected')
@@ -107,8 +105,9 @@ def task2():
 	camera.resolution = (320, 240)
 	output = np.empty((240, 320, 3), dtype=np.uint8)
 	while True:		
+		camera.capture(output, format="rgb")
 		# enabled your camera in raspi-config and rebooted first.
-		DETECTEDUSER = FaceDetection(camera,output)
+		DETECTEDUSER = FaceDetection(output)
 		
 ########################################################################
 
