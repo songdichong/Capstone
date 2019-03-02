@@ -86,7 +86,7 @@ def add_into_database(userID,username,email,preference):
 ########################################################################
 
 
-####################### OpenCV Division ################################
+####################### FaceDetection Division #########################
 def FaceDetection(camera,frame):
 	print('CAp')
 
@@ -145,16 +145,25 @@ def index():
 			mode = MODE_INITIAL
 			print(username)
 			return jsonify({"mode":"login_success","username":username})
-			
+		
+		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID == INVALID_USER) and (mode == MODE_LOGIN):
+			#unknown user
+			mode = MODE_INITIAL
+			return jsonify({"mode":"login_fail"})
+		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_REGISTER):
 			#register
-			preference = "11111"
-			add_into_database(userID,username,email,preference)
-			mode = MODE_INITIAL
-			r = execute_cmd("sudo python3 example_search.py")
-			print(r)
-			#TODO: logout after timeout
-			return jsonify({"mode":"register_success","username":username})
+			try:
+				preference = "11111"
+				add_into_database(userID,username,email,preference)
+				mode = MODE_INITIAL
+				r = execute_cmd("sudo python3 example_search.py")
+				print(r)
+				#TODO: logout after timeout
+				return jsonify({"mode":"register_success","username":username})
+			except Exception:
+				mode = MODE_INITIAL
+				return jsonify({"mode":"register_fail"})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGOUT):
 			#logout 
@@ -169,10 +178,11 @@ def index():
 				execute_cmd("mkdir -p " + username)
 				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
 				msg = execute_cmd("raspistill -n -o "+"./"+username +"/"+filename)
-				return jsonify({"status":msg})
+				return jsonify({"mode":"photo_success"})
 			except Exception:
 				print("some error happens 1")
 				return render_template("specialUserPage.html")
+				
 	return render_template('mainPage.html')
 
 @app.route('/signup',methods=['POST'])
@@ -204,7 +214,6 @@ def login():
 		else:
 			userID = int(data)
 			mode = MODE_LOGIN
-		
 		return "success"
 
 @app.route('/register',methods = ['POST'])
@@ -216,7 +225,6 @@ def register():
 		print(userID)
 		mode = MODE_REGISTER
 		return "success"
-		
 ########################################################################
 
 ######################### Main Function ################################
