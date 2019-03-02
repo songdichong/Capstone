@@ -85,7 +85,6 @@ def add_into_database(userID,username,email,preference):
 	conn.close()
 ########################################################################
 
-
 ####################### FaceDetection Division #########################
 def FaceDetection(camera,frame):
 	print('Capturing') # for test purpose
@@ -101,8 +100,7 @@ def FaceDetection(camera,frame):
 		return "True"
 	return "False"
 		
-def task2():
-	
+def task2():	
 	global DETECTEDUSER
 	#video_capture = cv2.VideoCapture(0)
 	camera = picamera.PiCamera()
