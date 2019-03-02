@@ -1,6 +1,4 @@
 import unittest, requests
-
-
 class BasicTests(unittest.TestCase):
     ###############
     #### tests ####
