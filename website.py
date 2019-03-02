@@ -18,7 +18,7 @@ from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3
 import cv2
 import face_recognition
-import picamera
+#import picamera
 import numpy as np
 
 ######################### Constant Division ############################
@@ -216,7 +216,7 @@ def register():
 if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
-	_thread.start_new_thread(task2,())
+	#_thread.start_new_thread(task2,())
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
 ########################################################################
