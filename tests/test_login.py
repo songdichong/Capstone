@@ -1,8 +1,4 @@
-import os
 import unittest,requests
-from flask import Flask
-TEST_DB = 'test.db'
-app = Flask(__name__)
 class BasicTests(unittest.TestCase): 
 ###############
 #### tests ####
