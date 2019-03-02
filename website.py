@@ -88,20 +88,16 @@ def add_into_database(userID,username,email,preference):
 
 ####################### FaceDetection Division #########################
 def FaceDetection(camera,frame):
-	print('CAp')
-
+	print('Capturing') # for test purpose
 	process_this_frame = True
-
-
 	# Grab a single frame of video
-	
 	camera.capture(frame, format="rgb")
-
 	face_locations = face_recognition.face_locations(frame)
+	# print for testing purpose
 	print("Found {} faces in image.".format(len(face_locations)))
 	face_encodings = face_recognition.face_encodings(frame, face_locations)
 	if len(face_encodings)>0:
-		print('DEtected')
+		print('Detected')
 		return "True"
 	return "False"
 		
