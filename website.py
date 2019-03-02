@@ -108,18 +108,9 @@ def task2():
 	camera = picamera.PiCamera()
 	camera.resolution = (320, 240)
 	output = np.empty((240, 320, 3), dtype=np.uint8)
-	while True:
-		
+	while True:		
 		# enabled your camera in raspi-config and rebooted first.
-
 		DETECTEDUSER = FaceDetection(camera,output)
-
-
-		
-		
-	#while True:
-		# Grab a single frame of video from the RPi camera as a numpy array
-
 		
 ########################################################################
 
