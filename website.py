@@ -1,5 +1,5 @@
 '''
-Original Author: Dichong Song, Yuhan Ye, Yue Ma
+Original Author: Dichong Song, Yuhan Ye, Yue Ma, Shengyao Lu
 Creation date: Jan 10, 2019
 Contents of file: 
 	1. Flask framework (main thread) 
@@ -13,7 +13,7 @@ Contents of file:
 		2.1 parse content from given url
 		2.2 output in json format
 		2.3 repeat every hour
-	3. 
+	3. FaceDetection
 '''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
