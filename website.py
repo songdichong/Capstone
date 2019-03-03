@@ -16,9 +16,8 @@ from xml.dom import minidom
 from urllib.request import urlopen
 from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3
-import cv2
 import face_recognition
-#import picamera
+import picamera
 import numpy as np
 
 ######################### Constant Division ############################

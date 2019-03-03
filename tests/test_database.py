@@ -1,5 +1,5 @@
 import unittest
-from .. import website
+import website
 ##Only can be tested on Raspberry Pi
 class BasicTests(unittest.TestCase):
     ###############
