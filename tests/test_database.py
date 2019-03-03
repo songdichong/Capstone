@@ -6,6 +6,7 @@ class BasicTests(unittest.TestCase):
     #### tests ####
     ###############
     def test_add_to_database(self):
+        databaseName = 'unitTestDatabase.db'
         userID = '1'
         username = 'YuGa'
         email = 'YuGa@gmail.com'
