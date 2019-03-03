@@ -1,5 +1,5 @@
 '''
-Original Author: Dichong Song, Yuhan Ye, Yue Ma
+Original Author: Dichong Song, Yuhan Ye, Yue Ma, Shengyao Lu
 Creation date: Jan 10, 2019
 Contents of file: 
 	1. Flask framework (main thread) 
