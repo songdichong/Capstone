@@ -39,6 +39,7 @@ email = ""
 userID = INVALID_USER
 DETECTEDUSER = "False"
 mode = MODE_INITIAL
+databaseName = 'test.db'
 ########################################################################
 
 ################### Useful Function Division ###########################
@@ -66,7 +67,7 @@ def execute_cmd(cmd):
 	return result
 
 def select_from_database(userID):
-	conn = sqlite3.connect('test.db')
+	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	t = (int(userID),)
 	c.execute('SELECT * FROM User WHERE findex=?',t)
@@ -74,9 +75,9 @@ def select_from_database(userID):
 	conn.commit()
 	conn.close()
 	return a
-	
+
 def add_into_database(userID,username,email,preference):
-	conn = sqlite3.connect('test.db')
+	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	c.execute('''
 	INSERT INTO User(findex,username,email,preference)VALUES(?,?,?,?)
