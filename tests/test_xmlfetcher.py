@@ -1,3 +1,9 @@
+'''
+Original Author: Yue Ma
+Creation date: Mar 2, 2019
+Contents of file: 
+	Unit testing of database
+'''
 import unittest, requests
 #~ from ... import website
 ##Only can be tested on Raspberry Pi

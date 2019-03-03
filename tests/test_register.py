@@ -1,3 +1,10 @@
+'''
+Original Author: Yuhan Ye
+Creation date: Mar 2, 2019
+Contents of file: 
+	Unit testing of database
+'''
+
 import unittest, requests
 class BasicTests(unittest.TestCase):
     ###############
