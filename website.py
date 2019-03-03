@@ -1,15 +1,19 @@
 '''
-Original Author: Dichong Song, Yuhan Ye, Yue Ma, Shengyao Lu
+Original Author: Dichong Song, Yuhan Ye, Yue Ma
 Creation date: Jan 10, 2019
 Contents of file: 
 	1. Flask framework (main thread) 
 		1.1 render static html source
-		1.2 communicate with frontend web page
-		1.3 always on
+		1.2 accept message from frontend web page
+		1.3 monitor the login/register state
+		1.4 handles the login/logout state and send corresponding data to front end
+		1.5 find information in database and register in database
+		1.6 always on
 	2. Xml fetcher (sub-thread)
 		2.1 parse content from given url
 		2.2 output in json format
 		2.3 repeat every hour
+	3. 
 '''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
@@ -81,6 +85,15 @@ def add_into_database(userID,username,email,preference,databaseName):
 	c.execute('''
 	INSERT INTO User(findex,username,email,preference)VALUES(?,?,?,?)
 	''',(userID,username,email,preference))
+	conn.commit()
+	conn.close()
+
+def createTable(databaseName):
+	conn = sqlite3.connect(databaseName)
+	c = conn.cursor()
+	c.execute('''
+    CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
+    ''')
 	conn.commit()
 	conn.close()
 ########################################################################
@@ -210,14 +223,7 @@ def register():
 		mode = MODE_REGISTER
 		return "success"
 ########################################################################
-def createTable(databaseName):
-	conn = sqlite3.connect(databaseName)
-	c = conn.cursor()
-	c.execute('''
-    CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
-    ''')
-	conn.commit()
-	conn.close()
+
 ######################### Main Function ################################
 if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
