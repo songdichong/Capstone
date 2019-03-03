@@ -2,7 +2,7 @@
 Original Author: Yuhan Ye
 Creation date: Mar 2, 2019
 Contents of file: 
-	Unit testing of database
+	Unit testing of register
 '''
 
 import unittest, requests
