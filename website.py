@@ -228,7 +228,7 @@ def register():
 if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
-	#_thread.start_new_thread(task2,())
+	_thread.start_new_thread(task2,())
 	createTable(databaseName)
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
