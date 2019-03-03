@@ -66,7 +66,7 @@ def execute_cmd(cmd):
 	result = p.stdout
 	return result
 
-def select_from_database(userID):
+def select_from_database(userID,databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	t = (int(userID),)
@@ -76,7 +76,7 @@ def select_from_database(userID):
 	conn.close()
 	return a
 
-def add_into_database(userID,username,email,preference):
+def add_into_database(userID,username,email,preference,databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	c.execute('''
@@ -123,7 +123,7 @@ def index():
 		print("mode",mode)
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
-			result = select_from_database(userID)
+			result = select_from_database(userID,databaseName)
 			username = result[1]
 			email = result[2]
 			preference = result[3]
@@ -140,7 +140,7 @@ def index():
 			#register
 			try:
 				preference = "11111"
-				add_into_database(userID,username,email,preference)
+				add_into_database(userID,username,email,preference,databaseName)
 				mode = MODE_INITIAL
 				r = execute_cmd("sudo python3 example_search.py")
 				print(r)
