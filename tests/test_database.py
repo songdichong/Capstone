@@ -8,7 +8,6 @@ class BasicTests(unittest.TestCase):
     def test_add_to_database(self):
         databaseName = 'unitTestDatabase.db'
         website.createTable(databaseName)
-
         userID = '1'
         username = 'YuGa'
         email = 'YuGa@gmail.com'
