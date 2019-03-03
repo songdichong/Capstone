@@ -210,19 +210,20 @@ def register():
 		mode = MODE_REGISTER
 		return "success"
 ########################################################################
-
+def createTable(databaseName):
+	conn = sqlite3.connect(databaseName)
+	c = conn.cursor()
+	c.execute('''
+    CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
+    ''')
+	conn.commit()
+	conn.close()
 ######################### Main Function ################################
 if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	#_thread.start_new_thread(task2,())
-	conn = sqlite3.connect(databaseName)
-	c = conn.cursor()
-	c.execute('''
-	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
-	''')
-	conn.commit()
-	conn.close()
+	createTable(databaseName)
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
 ########################################################################
