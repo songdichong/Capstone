@@ -100,26 +100,26 @@ def createTable(databaseName):
 
 ####################### FaceDetection Division #########################
 def FaceDetection(frame):
-	# print('Capturing') # for test purpose
-	# Grab a single frame of video
+	# detecting faces
 	face_locations = face_recognition.face_locations(frame)
-	# print for testing purpose
-	# print("Found {} faces in image.".format(len(face_locations)))
 	face_encodings = face_recognition.face_encodings(frame, face_locations)
+	# if one or more than one face are detected
 	if len(face_encodings)>0:
-		print('Detected')
+		# print('Detected')
 		return "True"
+	# if no faces are detected.
 	return "False"
 		
 def task2():	
 	global DETECTEDUSER
-	#video_capture = cv2.VideoCapture(0)
+	# get image from camera
 	camera = picamera.PiCamera()
 	camera.resolution = (320, 240)
 	output = np.empty((240, 320, 3), dtype=np.uint8)
 	while True:		
+		# capture a frame
 		camera.capture(output, format="rgb")
-		# enabled your camera in raspi-config and rebooted first.
+		# pass the face detectio result to global var
 		DETECTEDUSER = FaceDetection(output)
 		
 ########################################################################
