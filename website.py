@@ -154,7 +154,7 @@ def index():
 				preference = "11111"
 				add_into_database(userID,username,email,preference,databaseName)
 				mode = MODE_INITIAL
-				r = execute_cmd("sudo python3 example_search.py")
+				r = execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
 				print(r)
 				#TODO: logout after timeout
 				return jsonify({"mode":"register_success","username":username})
@@ -192,7 +192,7 @@ def signup():
 		print(username)
 		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		print(r1)
-		r2 = execute_cmd("sudo python3 example_enroll.py")
+		r2 = execute_cmd("sudo python3 ./pyFingerprint/example_enroll.py")
 		print(r2)
 	return redirect('/')
 		
