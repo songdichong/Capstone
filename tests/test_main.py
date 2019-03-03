@@ -1,3 +1,9 @@
+'''
+Original Author: Dichong Song
+Creation date: Mar 2, 2019
+Contents of file: 
+	Unit testing of main
+'''
 import unittest,requests
 class BasicTests(unittest.TestCase): 
 ###############

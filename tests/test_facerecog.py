@@ -1,3 +1,10 @@
+'''
+Original Author: Shengyao Lu
+Creation date: Mar 2, 2019
+Contents of file: 
+	Unit testing of FaceRecognition
+'''
+
 import unittest,requests
 import face_recognition
 import website
