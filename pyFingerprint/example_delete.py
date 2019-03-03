@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+'''
+Original Author: bastianraschke
+Last Updated Date: Feb 15, 2019
+Contents of file:
+	1. Delete a fingerprint image
+'''
 """
 PyFingerprint
 Copyright (C) 2015 Bastian Raschke <bastian.raschke@posteo.de>

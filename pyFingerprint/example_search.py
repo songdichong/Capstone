@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #https://github.com/bastianraschke/pyfingerprint
+'''
+Original Author: bastianraschke
+Last Updated Date: Feb 15, 2019
+Contents of file:
+	1. Search a fingerprint record
+'''
 """
 PyFingerprint
 Copyright (C) 2015 Bastian Raschke <bastian.raschke@posteo.de>
