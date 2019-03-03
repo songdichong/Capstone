@@ -13,11 +13,12 @@ Contents of file:
 '''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
-from urllib.request import urlopen
-# from pyfingerprint.pyfingerprint import PyFingerprint
+import urllib
+#from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3
-import face_recognition
-# import picamera
+#import cv2
+#import face_recognition
+#import picamera
 import numpy as np
 
 ######################### Constant Division ############################
@@ -38,7 +39,6 @@ email = ""
 userID = INVALID_USER
 DETECTEDUSER = "False"
 mode = MODE_INITIAL
-databaseName = 'test.db'
 ########################################################################
 
 ################### Useful Function Division ###########################
@@ -65,8 +65,8 @@ def execute_cmd(cmd):
 	result = p.stdout
 	return result
 
-def select_from_database(userID,databaseName):
-	conn = sqlite3.connect(databaseName)
+def select_from_database(userID):
+	conn = sqlite3.connect('test.db')
 	c = conn.cursor()
 	t = (int(userID),)
 	c.execute('SELECT * FROM User WHERE findex=?',t)
@@ -74,9 +74,9 @@ def select_from_database(userID,databaseName):
 	conn.commit()
 	conn.close()
 	return a
-
-def add_into_database(userID,username,email,preference,databaseName):
-	conn = sqlite3.connect(databaseName)
+	
+def add_into_database(userID,username,email,preference):
+	conn = sqlite3.connect('test.db')
 	c = conn.cursor()
 	c.execute('''
 	INSERT INTO User(findex,username,email,preference)VALUES(?,?,?,?)
@@ -122,7 +122,7 @@ def index():
 		print("mode",mode)
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
-			result = select_from_database(userID,databaseName)
+			result = select_from_database(userID)
 			username = result[1]
 			email = result[2]
 			preference = result[3]
@@ -139,7 +139,7 @@ def index():
 			#register
 			try:
 				preference = "11111"
-				add_into_database(userID,username,email,preference,databaseName)
+				add_into_database(userID,username,email,preference)
 				mode = MODE_INITIAL
 				r = execute_cmd("sudo python3 example_search.py")
 				print(r)
@@ -216,13 +216,6 @@ if __name__=="__main__":
 	#_thread.start_new_thread(write_to_json,())
 	# _thread.start_new_thread(remote_controller,())
 	#_thread.start_new_thread(task2,())
-	conn = sqlite3.connect(databaseName)
-	c = conn.cursor()
-	c.execute('''
-	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
-	''')
-	conn.commit()
-	conn.close()
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
 ########################################################################
