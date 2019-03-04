@@ -9,6 +9,7 @@ var username;
 var KEY_F2 = 113;
 var KEY_Q = 81;
 var KEY_S = 83;
+var FRONT_END_MSG_RESPOND = 3;
 var LOGIN_FAIL = "login_fail";
 var LOGIN_SUCCESS = "login_success";
 document.addEventListener('keydown', function(e) {
@@ -28,7 +29,7 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			if (result.mode == LOGIN_FAIL){
-				alert("user not correct");
+				alert("User cannot be recognized. Please register first!");
 			}
 			if (result.mode == LOGIN_SUCCESS) {
 				username = result.username;
@@ -50,5 +51,5 @@ window.onclick = function(event) {
 
 setInterval(readFace, 2000);
 function readFace() {
-    runAjax(3)
+    runAjax(FRONT_END_MSG_RESPOND);
 }

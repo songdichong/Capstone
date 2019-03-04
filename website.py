@@ -96,6 +96,7 @@ def createTable(databaseName):
     ''')
 	conn.commit()
 	conn.close()
+
 ########################################################################
 
 ####################### FaceDetection Division #########################
@@ -168,7 +169,7 @@ def index():
 			username = ""
 			email = ""
 			userID = INVALID_USER
-			return redirect('/')
+			return jsonify({"mode":"logout_success"})
 		
 		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
 			try:
@@ -226,8 +227,6 @@ def register():
 
 ######################### Main Function ################################
 if __name__=="__main__":
-	#_thread.start_new_thread(write_to_json,())
-	# _thread.start_new_thread(remote_controller,())
 	_thread.start_new_thread(task2,())
 	createTable(databaseName)
 	app.debug=True
