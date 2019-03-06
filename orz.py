@@ -130,7 +130,8 @@ def PIRtask():
             DETECTEDUSER = True
             execute_cmd("vcgencmd display_power 1")
             disp_on = True
-            time.sleep(300)
+            for i in range(60):
+                time.sleep(1)
         else:
             if disp_on:
                 if not FaceDetection():
