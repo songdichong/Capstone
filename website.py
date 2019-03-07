@@ -20,8 +20,8 @@ from xml.dom import minidom
 from urllib.request import urlopen
 from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests
-#~ import face_recognition
-#~ import picamera
+import face_recognition
+import picamera
 import numpy as np
 
 ######################### Constant Division ############################
@@ -40,7 +40,7 @@ s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
 userID = INVALID_USER
-DETECTEDUSER = "False"
+DETECTEDUSER = False
 mode = MODE_INITIAL
 databaseName = 'test.db'
 ########################################################################
@@ -92,12 +92,22 @@ def createTable(databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	c.execute('''
-    CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
-    ''')
+	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
+	''')
 	conn.commit()
 	conn.close()
+
 def execute_search_fingerprint():
-	execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
+	global DETECTEDUSER
+	history_state = False
+	while True:
+		if DETECTEDUSER == True:
+			if history_state != DETECTEDUSER:
+				execute_cmd("sudo fuser -k /dev/ttyUSB0")
+				execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
+				history_state = DETECTEDUSER
+		else:
+			history_state = False
 	
 def enroll_fingerprint():
 	try:
@@ -149,40 +159,59 @@ def enroll_fingerprint():
 ########################################################################
 
 ####################### FaceDetection Division #########################
-def FaceDetection(frame):
-	# detecting faces
-	face_locations = face_recognition.face_locations(frame)
-	face_encodings = face_recognition.face_encodings(frame, face_locations)
-	# if one or more than one face are detected
-	if len(face_encodings)>0:
-		# print('Detected')
-		return "True"
-	# if no faces are detected.
-	return "False"
-		
-def task2():	
-	global DETECTEDUSER
-	# get image from camera
+def FaceDetection():
+	print("FaceDetection")
 	camera = picamera.PiCamera()
 	camera.resolution = (320, 240)
-	output = np.empty((240, 320, 3), dtype=np.uint8)
-	while True:		
-		# capture a frame
-		camera.capture(output, format="rgb")
-		# pass the face detectio result to global var
-		DETECTEDUSER = FaceDetection(output)
-		
+	frame = np.empty((240, 320, 3), dtype=np.uint8)	
+	# capture a frame
+	camera.capture(frame, format="rgb")
+	for i in range(5):
+		# detecting faces
+		face_locations = face_recognition.face_locations(frame)
+		face_encodings = face_recognition.face_encodings(frame, face_locations)
+		# if one or more than one face are detected
+		if len(face_encodings)>0:
+			print('Detected')
+			camera.close()
+			return True
+	camera.close()
+	return False
+
+def PIRtask():  
+	global DETECTEDUSER,mode 
+	from gpiozero import MotionSensor
+	pir = MotionSensor(4)
+	disp_on = True
+	while True:
+		if pir.motion_detected:
+			print("You moved")
+			DETECTEDUSER = True
+			execute_cmd("vcgencmd display_power 1")
+			disp_on = True
+			for i in range(30):
+				time.sleep(1)
+		else:
+			if disp_on:
+				if not FaceDetection():
+					# turn off monitor
+					execute_cmd("vcgencmd display_power 0")
+					DETECTEDUSER = False
+					disp_on = False
+					mode = MODE_LOGOUT
+					execute_cmd("sudo fuser -k /dev/ttyUSB0")
 ########################################################################
 
 ########################## Flask Division ##############################
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID,username,email,mode
+	global userID,username,email,mode,DETECTEDUSER
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print("data",data)
 		print("userID",userID)
 		print("mode",mode)
+		print("DETECTEDUSER",DETECTEDUSER)
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID,databaseName)
@@ -257,11 +286,8 @@ def login():
 	if request.method == "POST":
 		data = request.form['userID']
 		print(data)
-		if userID == int(data) and (userID != INVALID_USER):
-			mode = MODE_LOGOUT
-		else:
-			userID = int(data)
-			mode = MODE_LOGIN
+		userID = int(data)
+		mode = MODE_LOGIN
 		return "success"
 
 @app.route('/register',methods = ['POST'])
@@ -277,7 +303,8 @@ def register():
 
 ######################### Main Function ################################
 if __name__=="__main__":
-	#~ _thread.start_new_thread(task2,())
+	_thread.start_new_thread(PIRtask,())
+	_thread.start_new_thread(execute_search_fingerprint,())
 	createTable(databaseName)
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
