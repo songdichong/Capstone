@@ -88,7 +88,11 @@ def enroll_fingerprint():
 		#post msg to website:success
 		url = "http://0.0.0.0:4310/register"
 		data = {'positionNumber': positionNumber}
-		r = requests.post(url, data)
+		try:
+			r = requests.post(url, data)
+			
+		except Exception as e:
+			print('Exception message: ' + str(e))
 		exit(0)
 	except Exception as e:
 		print('Operation failed!')

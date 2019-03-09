@@ -81,8 +81,6 @@ def search_fingerprint():
 				print('Operation failed!')
 				print('Exception message: ' + str(e))
 				#~ exit(1)
-		time.sleep(1)
-		search_fingerprint()
 		
 		
 if __name__=="__main__":

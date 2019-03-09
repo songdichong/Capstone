@@ -263,6 +263,7 @@ def register():
 ######################### Main Function ################################
 if __name__=="__main__":
 	#~ _thread.start_new_thread(PIRtask,())
+	execute_cmd("sudo fuser -k /dev/ttyUSB0")
 	_thread.start_new_thread(execute_search_fingerprint,())
 	createTable(databaseName)
 	app.debug=True
