@@ -36,7 +36,7 @@ def PIRtask():
 		if pir.motion_detected:
 			lastmove_time = time.time()
 			if DETECTEDUSER == False: 
-				print("false")
+				print("turn on screen")
 				DETECTEDUSER = True
 				isDetected = 1
 				data = {'isDetected': isDetected}
