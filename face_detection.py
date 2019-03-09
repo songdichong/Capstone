@@ -35,14 +35,13 @@ def PIRtask():
 	while True:
 		if pir.motion_detected:
 			lastmove_time = time.time()
-			#~ print(1) # debug purpose
 			if DETECTEDUSER == False: 
-				print("false" )
+				print("false")
 				DETECTEDUSER = True
 				isDetected = 1
 				data = {'isDetected': isDetected}
 				r = requests.post(url, data)
-				time.sleep(1)
+				# time.sleep(1)
 		else:
 			now_time = time.time()
 			if now_time - lastmove_time > 6:
@@ -54,6 +53,8 @@ def PIRtask():
 					r = requests.post(url, data)
 					print("turn off screen")
 					# time.sleep(0.5)
+				else: 
+					last_time = time.time()
 				
 ########################################################################
 if __name__=="__main__":
