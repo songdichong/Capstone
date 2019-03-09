@@ -4,8 +4,11 @@ Creation date: Jan 27th, 2019
 Contents of file:
 	1. fetch calendar events based on the calendar ID
 */
+
 $(function() {
-    $('#calendarList').gCalReader({ calendarId:'shengyaotest@gmail.com', apiKey:'AIzaSyBvbDOa1m-gETLQgRjN5nHPt2xElEFiTZ8'});
+    let gmail = window.location.href.split('/')[5];
+    console.log(gmail);
+    $('#calendarList').gCalReader({ calendarId:gmail, apiKey:'AIzaSyBvbDOa1m-gETLQgRjN5nHPt2xElEFiTZ8'});
 });
   
 // $('body').keypress(function(e) {

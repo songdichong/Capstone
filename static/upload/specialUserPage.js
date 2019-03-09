@@ -9,6 +9,10 @@ var FRONT_END_MSG_RESPOND = 3;
 var FRONT_END_MSG_TAKE_PHOTO = 2;
 var TAKE_PHOTO_SUCCESS = "photo_success";
 var LOGOUT_SUCCESS = "logout_success";
+
+
+let preference = window.location.href.split('/')[6];
+
 document.addEventListener('keydown', function(e) {
 	if (e.keyCode == KEY_ENTER){
 	  e.keypress = '1';
