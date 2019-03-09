@@ -41,10 +41,9 @@ def PIRtask():
 				isDetected = 1
 				data = {'isDetected': isDetected}
 				r = requests.post(url, data)
-				# time.sleep(1)
 		else:
 			now_time = time.time()
-			if now_time - lastmove_time > 6:
+			if now_time - lastmove_time > 10:
 				if not FaceDetection():
 					# turn off monitor
 					DETECTEDUSER = False
@@ -54,7 +53,7 @@ def PIRtask():
 					print("turn off screen")
 					# time.sleep(0.5)
 				else: 
-					last_time = time.time()
+					lastmove_time = time.time()
 				
 ########################################################################
 if __name__=="__main__":
