@@ -30,16 +30,16 @@ def PIRtask():
 	pir = MotionSensor(4)
 	isDetected = 1
 	lastmove_time = time.time()
-	now_time = last_time
+	now_time = lastmove_time
 	while True:
 		if pir.motion_detected:
 			lastmove_time = time.time()
-			print(this_time) # debug purpose
-			print("You moved")
-			DETECTEDUSER = True
-			isDetected = 1
-			data = {'isDetected': isDetected}
-			r = requests.post(url, data)
+			print(now_time) # debug purpose
+			if DETECTEDUSER == False
+				DETECTEDUSER = True
+				isDetected = 1
+				data = {'isDetected': isDetected}
+				r = requests.post(url, data)
 		else:
 			now_time = time.time()
 			if now_time - lastmove_time > 60:
