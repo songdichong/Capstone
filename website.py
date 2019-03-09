@@ -177,7 +177,7 @@ def index():
 			preference = result[3]
 			mode = MODE_INITIAL
 			print(username)
-			return jsonify({"mode":"login_success","username":username})
+			return jsonify({"mode":"login_success","username":username,"email":email,"preference":preference})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID == INVALID_USER) and (mode == MODE_LOGIN):
 			#unknown user
@@ -191,11 +191,13 @@ def index():
 				preference = "11111"
 				add_into_database(userID,username,email,preference,databaseName)
 				mode = MODE_INITIAL
+				userID = INVALID_USER
 				_thread.start_new_thread(execute_search_fingerprint,())
 				#TODO: logout after timeout
 				return jsonify({"mode":"register_success","username":username})
 			except Exception:
 				mode = MODE_INITIAL
+				userID = INVALID_USER
 				return jsonify({"mode":"register_fail"})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGOUT):
