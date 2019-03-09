@@ -11,7 +11,7 @@ var TAKE_PHOTO_SUCCESS = "photo_success";
 var LOGOUT_SUCCESS = "logout_success";
 
 
-let preference = window.location.href.split('/')[6];
+let preference = window.location.href.split('/')[6]; //calendar news stock weather
 
 document.addEventListener('keydown', function(e) {
 	if (e.keyCode == KEY_ENTER){
@@ -19,6 +19,39 @@ document.addEventListener('keydown', function(e) {
 	  runAjax(FRONT_END_MSG_TAKE_PHOTO);
 	}
 });
+
+
+if(preference[0]==='0'){
+
+	var div = document.getElementById('calendarList');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
+
+}
+if(preference[1]==='0'){
+
+	var div = document.getElementById('news');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
+
+}
+if(preference[2]==='0'){
+
+	var div = document.getElementById('trade');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
+
+}
+if(preference[3]==='0'){
+
+	var div = document.getElementById('weather');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
+
+}
+
+
+
 
 function runAjax(REQUEST) {
 	$.ajax({
