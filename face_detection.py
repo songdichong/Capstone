@@ -37,6 +37,7 @@ def PIRtask():
 			lastmove_time = time.time()
 			if DETECTEDUSER == False: 
 				print("turn on screen")
+				execute_cmd("vcgencmd display_power 1")
 				DETECTEDUSER = True
 				isDetected = 1
 				data = {'isDetected': isDetected}
@@ -47,6 +48,7 @@ def PIRtask():
 				if not FaceDetection():
 					# turn off monitor
 					DETECTEDUSER = False
+					execute_cmd("vcgencmd display_power 0")
 					isDetected = 0
 					data = {'isDetected': isDetected}
 					r = requests.post(url, data)

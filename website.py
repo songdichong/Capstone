@@ -18,7 +18,7 @@ Contents of file:
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
-# from pyfingerprint.pyfingerprint import PyFingerprint
+from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,os
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
@@ -251,11 +251,11 @@ def getUserFace():
 				print("here")
 				#turn off screen only when receive 2 continuous False
 				mode = MODE_LOGOUT
-				execute_cmd("vcgencmd display_power 0")
+				# execute_cmd("vcgencmd display_power 0")
 				execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		else:
 			#turn on screen immediately
-			execute_cmd("vcgencmd display_power 1")
+			# execute_cmd("vcgencmd display_power 1")
 			execute_cmd("sudo fuser -k /dev/ttyUSB0")
 			_thread.start_new_thread(execute_search_fingerprint,())
 		DETECTEDUSER.pop(0)
