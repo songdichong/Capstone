@@ -28,6 +28,7 @@ MODE_INITIAL = 0
 MODE_LOGIN = 1
 MODE_REGISTER = 2
 MODE_LOGOUT = 3
+MODE_FINGERPRINT_REGISTERED = 4
 NOT_SELECTED = "0"
 SELECETED = "1"
 ########################################################################
@@ -133,20 +134,23 @@ def index():
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_REGISTER):
 			#register
-			print("here")
 			try:
 				preference = calendarPref + newsPref + stockPref + weatherPref
 				add_into_database(userID,username,email,preference,databaseName)
 				mode = MODE_INITIAL
 				userID = INVALID_USER
 				_thread.start_new_thread(execute_search_fingerprint,())
-				#TODO: logout after timeout
 				return jsonify({"mode":"register_success","username":username})
 			except Exception:
 				mode = MODE_INITIAL
 				userID = INVALID_USER
 				return jsonify({"mode":"register_fail"})
 		
+		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_FINGERPRINT_REGISTERED):
+			mode = MODE_INITIAL
+			userID = INVALID_USER
+			return jsonify({"mode":"register_fail"})
+			
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (mode == MODE_LOGOUT):
 			#logout 
 			mode = MODE_INITIAL
@@ -228,8 +232,12 @@ def register():
 	if request.method == "POST":
 		print("here")
 		userID = request.form['positionNumber']
+		goToSignUp = int(request.form['goToSignUp'])
 		print(userID)
-		mode = MODE_REGISTER
+		if goToSignUp == 0:
+			mode = MODE_REGISTER
+		else:
+			mode = MODE_FINGERPRINT_REGISTERED
 		return "success"
 		
 @app.route('/getUserFace',methods = ['POST'])
