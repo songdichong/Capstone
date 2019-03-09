@@ -234,21 +234,25 @@ def signup():
 		
 		try:
 			newsPref = request.form['news']
+			newsPref = "1"
 		except Exception:
 			pass
 		
 		try:
 			weatherPref = request.form['fullWeather']
+			weatherPref = "1"
 		except Exception:
 			pass
 			
 		try:
 			stockPref = request.form['stock']
+			stockPref = "1"
 		except Exception:
 			pass
 			
 		try:
 			calendarPref = request.form['calendar']
+			calendarPref = "1"
 		except Exception:
 			pass
 		
