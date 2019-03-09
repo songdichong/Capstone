@@ -40,8 +40,11 @@ function runAjax(REQUEST) {
 			}
 			if (result.mode == LOGIN_SUCCESS) {
 				username = result.username;
+				useremail = result.email;//Yue add
+				userpreference = result.preference;//Yue add
+
 				console.log(username);
-				window.location.href="/specialUserPage";
+				window.location.href="/specialUserPage?/"+username+"/"+useremail+"/"+userpreference;
 			}
 		}
 	});
