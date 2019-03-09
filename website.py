@@ -18,11 +18,8 @@ Contents of file:
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
-# from pyfingerprint.pyfingerprint import PyFingerprint
+from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,os
-# import face_recognition
-# import picamera
-import numpy as np
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
 FRONT_END_MSG_TAKE_PHOTO = 2
@@ -31,6 +28,8 @@ MODE_INITIAL = 0
 MODE_LOGIN = 1
 MODE_REGISTER = 2
 MODE_LOGOUT = 3
+NOT_SELECTED = "0"
+SELECETED = "1"
 ########################################################################
 
 ###################### Initialization Division #########################
@@ -38,8 +37,12 @@ app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
+newsPref = NOT_SELECTED 
+weatherPref = NOT_SELECTED 
+stockPref = NOT_SELECTED 
+calendarPref = NOT_SELECTED 
 userID = INVALID_USER
-DETECTEDUSER = False
+DETECTEDUSER = [1,1,1,1,1,1,1,1,1,1]
 mode = MODE_INITIAL
 databaseName = 'test.db'
 ########################################################################
@@ -91,84 +94,28 @@ def createTable(databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	c.execute('''
-	CREATE TABLE IF NOT EXISTS USER(findex INTEGER PRIMARY KEY,username TEXT,email TEXT,preference TEXT)
+	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
 	''')
 	conn.commit()
 	conn.close()
 
 def execute_search_fingerprint():
-	global DETECTEDUSER
-	DETECTEDUSER = True
-	history_state = False
-	while True:
-		if DETECTEDUSER == True:
-			if history_state != DETECTEDUSER:
-				history_state = DETECTEDUSER
-				try:
-					execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
-				except Exception:
-					pass
-		else:
-			history_state = False
+	execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
+
 
 def execute_enroll_fingerprint():
 	execute_cmd("sudo python3 ./pyFingerprint/example_enroll.py")
 ########################################################################
 
-####################### FaceDetection Division #########################
-def FaceDetection():
-	print("FaceDetection")
-	camera = picamera.PiCamera()
-	camera.resolution = (320, 240)
-	frame = np.empty((240, 320, 3), dtype=np.uint8)	
-	# capture a frame
-	camera.capture(frame, format="rgb")
-	for i in range(5):
-		# detecting faces
-		face_locations = face_recognition.face_locations(frame)
-		face_encodings = face_recognition.face_encodings(frame, face_locations)
-		# if one or more than one face are detected
-		if len(face_encodings)>0:
-			print('Detected')
-			camera.close()
-			return True
-	camera.close()
-	return False
-
-def PIRtask():  
-	global DETECTEDUSER,mode 
-	from gpiozero import MotionSensor
-	pir = MotionSensor(4)
-	disp_on = True
-	while True:
-		if pir.motion_detected:
-			print("You moved")
-			DETECTEDUSER = True
-			execute_cmd("vcgencmd display_power 1")
-			disp_on = True
-			for i in range(60):
-				time.sleep(1)
-		else:
-			if disp_on:
-				if not FaceDetection():
-					# turn off monitor
-					execute_cmd("vcgencmd display_power 0")
-					DETECTEDUSER = False
-					disp_on = False
-					mode = MODE_LOGOUT
-					execute_cmd("sudo fuser -k /dev/ttyUSB0")
-########################################################################
-
 ########################## Flask Division ##############################
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID,username,email,mode,DETECTEDUSER
+	global userID,username,email,mode,calendarPref,newsPref,stockPref,weatherPref
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print("data",data)
 		print("userID",userID)
 		print("mode",mode)
-		print("DETECTEDUSER",DETECTEDUSER)
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID,databaseName)
@@ -188,7 +135,7 @@ def index():
 			#register
 			print("here")
 			try:
-				preference = "11111"
+				preference = calendarPref + newsPref + stockPref + weatherPref
 				add_into_database(userID,username,email,preference,databaseName)
 				mode = MODE_INITIAL
 				userID = INVALID_USER
@@ -200,7 +147,7 @@ def index():
 				userID = INVALID_USER
 				return jsonify({"mode":"register_fail"})
 		
-		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGOUT):
+		elif (int(data) == FRONT_END_MSG_RESPOND) and (mode == MODE_LOGOUT):
 			#logout 
 			mode = MODE_INITIAL
 			username = ""
@@ -223,10 +170,35 @@ def index():
 
 @app.route('/signup',methods=['POST'])
 def signup():
-	global username,email,mode,userID
+	global username,email,mode,userID,newsPref,weatherPref,stockPref,calendarPref
 	if request.method == "POST":
 		email = request.form['gml']
 		username = request.form['uname']
+		
+		try:
+			newsPref = request.form['news']
+			newsPref = SELECETED
+		except Exception:
+			pass
+		
+		try:
+			weatherPref = request.form['fullWeather']
+			weatherPref = SELECETED
+		except Exception:
+			pass
+			
+		try:
+			stockPref = request.form['stock']
+			stockPref = SELECETED
+		except Exception:
+			pass
+			
+		try:
+			calendarPref = request.form['calendar']
+			calendarPref = SELECETED
+		except Exception:
+			pass
+		
 		print(request.form)
 		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		print(r1)
@@ -259,13 +231,35 @@ def register():
 		print(userID)
 		mode = MODE_REGISTER
 		return "success"
+		
+@app.route('/getUserFace',methods = ['POST'])
+def getUserFace():
+	global mode,DETECTEDUSER
+	if request.method == "POST":
+		print(DETECTEDUSER)
+		data = int(request.form['isDetected'])
+		if data == 0:
+			if DETECTEDUSER == [0,0,0,0,0,0,0,0,0,0]:
+				print("here")
+				#turn off screen only when receive 2 continuous False
+				mode = MODE_LOGOUT
+				execute_cmd("vcgencmd display_power 0")
+				execute_cmd("sudo fuser -k /dev/ttyUSB0")
+		else:
+			#turn on screen immediately
+			execute_cmd("vcgencmd display_power 1")
+			execute_cmd("sudo fuser -k /dev/ttyUSB0")
+			_thread.start_new_thread(execute_search_fingerprint,())
+		DETECTEDUSER.pop(0)
+		DETECTEDUSER.append(data)
+		return "success"
 ########################################################################
 
 ######################### Main Function ################################
 if __name__=="__main__":
-	#~ _thread.start_new_thread(PIRtask,())
 	execute_cmd("sudo fuser -k /dev/ttyUSB0")
 	_thread.start_new_thread(execute_search_fingerprint,())
+	_thread.start_new_thread(write_to_json,())
 	createTable(databaseName)
 	app.debug=True
 	app.run(host='0.0.0.0',port=4310)
