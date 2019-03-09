@@ -21,20 +21,32 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-if(preference[0]===0){
-	console.log('whatttt')
+if(preference[0]==='0'){
+
 	var div = document.getElementById('calendarList');
 	div.style.visibility = "hidden";
 	div.style.display = "none";
 
 }
-else if(preference[1]===0){
+if(preference[1]==='0'){
+
+	var div = document.getElementById('news');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
 
 }
-else if(preference[2]===0){
+if(preference[2]==='0'){
+
+	var div = document.getElementById('trade');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
 
 }
-else if(preference[3]===0){
+if(preference[3]==='0'){
+
+	var div = document.getElementById('weather');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
 
 }
 
