@@ -91,6 +91,17 @@ def add_into_database(userID,username,email,preference,databaseName):
 	conn.commit()
 	conn.close()
 
+def update_database(userID,username,email,preference,databaseName):
+	conn = sqlite3.connect(databaseName)
+	c = conn.cursor()
+	c.execute('''
+	UPDATE User
+	set username=?,email=?,preference=?
+	where findex=?
+	''',(username,email,preference,userID))
+	conn.commit()
+	conn.close()	
+
 def createTable(databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
