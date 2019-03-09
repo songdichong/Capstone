@@ -227,8 +227,7 @@ def signup():
 	if request.method == "POST":
 		email = request.form['gml']
 		username = request.form['uname']
-		print(email)
-		print(username)
+		print(request.form)
 		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		print(r1)
 		mode = MODE_REGISTER

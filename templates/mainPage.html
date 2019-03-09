@@ -16,6 +16,7 @@ Contents of file:
 
     <link rel="stylesheet" type="text/css" href="../static/stylesheets/main.css">
 
+
     <script src= "/static/upload/login.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -48,12 +49,28 @@ Contents of file:
 
     <div class="containerForm">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 
       <label for="gml"><b>Gmail</b></label>
       <input type="text" placeholder="Enter Gmail Address" name="gml" required>
 
+        <input name = 'calendar' class="tgl tgl-flip" id="calendar" type="checkbox"/>
+        <label  class="tgl-btn" data-tg-off="No Calendar" data-tg-on="Calendar" for="calendar"></label>
+
+
+        <input name = 'news' class="tgl tgl-flip" id="news" type="checkbox"/>
+        <label  class="tgl-btn" data-tg-off="No News" data-tg-on="News" for="news"></label>
+
+
+        <input name = 'stock' class="tgl tgl-flip" id="stock" type="checkbox"/>
+        <label  class="tgl-btn" data-tg-off="No Stock" data-tg-on="Stock" for="stock"></label>
+
+
+        <input name = 'fullWeather' class="tgl tgl-flip" id="fullWeather" type="checkbox"/>
+        <label  class="tgl-btn" data-tg-off="No Weather" data-tg-on="Weather" for="fullWeather"></label>
+
       <button type="submit">Sign Up</button>
+
 
     </div>
 
