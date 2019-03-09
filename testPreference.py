@@ -18,10 +18,10 @@ Contents of file:
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
-# from pyfingerprint.pyfingerprint import PyFingerprint
+from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,os
-# import face_recognition
-# import picamera
+#~ import face_recognition
+#~ import picamera
 import numpy as np
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
@@ -38,6 +38,10 @@ app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
+newsPref = "0"
+weatherPref = "0"
+stockPref = "0"
+calendarPref = "0"
 userID = INVALID_USER
 DETECTEDUSER = False
 mode = MODE_INITIAL
@@ -188,7 +192,7 @@ def index():
 			#register
 			print("here")
 			try:
-				preference = "11111"
+				preference = calendarPref + newsPref + stockPref + weatherPref
 				add_into_database(userID,username,email,preference,databaseName)
 				mode = MODE_INITIAL
 				userID = INVALID_USER
@@ -223,10 +227,32 @@ def index():
 
 @app.route('/signup',methods=['POST'])
 def signup():
-	global username,email,mode,userID
+	global username,email,mode,userID,newsPref,weatherPref,stockPref,calendarPref
 	if request.method == "POST":
 		email = request.form['gml']
 		username = request.form['uname']
+		
+		try:
+			newsPref = request.form['news']
+		except Exception:
+			pass
+		
+		try:
+			weatherPref = request.form['fullWeather']
+		except Exception:
+			pass
+			
+		try:
+			stockPref = request.form['stock']
+		except Exception:
+			pass
+			
+		try:
+			calendarPref = request.form['calendar']
+		except Exception:
+			pass
+		
+		
 		print(request.form)
 		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		print(r1)
