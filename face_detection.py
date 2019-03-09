@@ -1,5 +1,5 @@
 from face_recognition import face_locations,face_encodings
-import picamera
+# import picamera
 import os,time,requests
 import numpy as np
 from gpiozero import MotionSensor
@@ -29,24 +29,28 @@ def PIRtask():
 	url = "http://0.0.0.0:4310/getUserFace"
 	pir = MotionSensor(4)
 	isDetected = 1
+	lastmove_time = time.time()
+	now_time = last_time
 	while True:
 		if pir.motion_detected:
+			lastmove_time = time.time()
+			print(this_time) # debug purpose
 			print("You moved")
 			DETECTEDUSER = True
 			isDetected = 1
 			data = {'isDetected': isDetected}
 			r = requests.post(url, data)
-			time.sleep(60)
-		
 		else:
-			if not FaceDetection():
-				# turn off monitor
-				DETECTEDUSER = False
-				isDetected = 0
-				data = {'isDetected': isDetected}
-				r = requests.post(url, data)
-				print("turn off screen")
-				time.sleep(0.5)
+			now_time = time.time()
+			if now_time - lastmove_time > 60:
+				if not FaceDetection():
+					# turn off monitor
+					DETECTEDUSER = False
+					isDetected = 0
+					data = {'isDetected': isDetected}
+					r = requests.post(url, data)
+					print("turn off screen")
+					time.sleep(0.5)
 				
 ########################################################################
 if __name__=="__main__":
