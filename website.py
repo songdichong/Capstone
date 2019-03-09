@@ -19,11 +19,10 @@ from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
 from pyfingerprint.pyfingerprint import PyFingerprint
-import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests
-import face_recognition
-import picamera
+import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,os
+#~ import face_recognition
+#~ import picamera
 import numpy as np
-
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
 FRONT_END_MSG_TAKE_PHOTO = 2
@@ -99,63 +98,21 @@ def createTable(databaseName):
 
 def execute_search_fingerprint():
 	global DETECTEDUSER
+	DETECTEDUSER = True
 	history_state = False
 	while True:
 		if DETECTEDUSER == True:
 			if history_state != DETECTEDUSER:
-				execute_cmd("sudo fuser -k /dev/ttyUSB0")
-				execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
 				history_state = DETECTEDUSER
+				try:
+					execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
+				except Exception:
+					pass
 		else:
 			history_state = False
-	
-def enroll_fingerprint():
-	try:
-		f = PyFingerprint('/dev/ttyUSB0', 57600, 0xFFFFFFFF, 0x00000000)
 
-		if ( f.verifyPassword() == False ):
-			raise ValueError('The given fingerprint sensor password is wrong!')
-
-	except Exception as e:
-		print('The fingerprint sensor could not be initialized!')
-		print('Exception message: ' + str(e))
-		exit(1)
-
-	## Gets some sensor information
-	print('Currently used templates: ' + str(f.getTemplateCount()) +'/'+ str(f.getStorageCapacity()))
-
-	## Tries to enroll new finger
-	try:
-		print('Waiting for finger...')
-
-		## Wait that finger is read
-		while ( f.readImage() == False ):
-			pass
-
-		## Converts read image to characteristics and stores it in charbuffer 1
-		f.convertImage(0x01)
-
-		## Checks if finger is already enrolled
-		result = f.searchTemplate()
-		positionNumber = result[0]
-
-		if ( positionNumber >= 0 ):
-			return positionNumber
-			#call search
-		
-		## Creates a template
-		f.createTemplate()
-
-		## Saves template at new position number
-		positionNumber = f.storeTemplate()
-		print('Finger enrolled successfully!')
-		print('New template position #' + str(positionNumber))
-		
-		return positionNumber
-	except Exception as e:
-		print('Operation failed!')
-		print('Exception message: ' + str(e))
-		
+def execute_enroll_fingerprint():
+	execute_cmd("sudo python3 ./pyFingerprint/example_enroll.py")
 ########################################################################
 
 ####################### FaceDetection Division #########################
@@ -189,7 +146,7 @@ def PIRtask():
 			DETECTEDUSER = True
 			execute_cmd("vcgencmd display_power 1")
 			disp_on = True
-			for i in range(30):
+			for i in range(60):
 				time.sleep(1)
 		else:
 			if disp_on:
@@ -251,6 +208,7 @@ def index():
 		
 		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
 			try:
+				print("take photo")
 				execute_cmd("mkdir -p " + username)
 				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
 				msg = execute_cmd("raspistill -n -o "+"./"+username +"/"+filename)
@@ -272,7 +230,8 @@ def signup():
 		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		print(r1)
 		mode = MODE_REGISTER
-		userID = enroll_fingerprint()
+		_thread.start_new_thread(execute_enroll_fingerprint,())
+		print("here signup")
 		
 	return redirect('/')
 		
@@ -303,7 +262,7 @@ def register():
 
 ######################### Main Function ################################
 if __name__=="__main__":
-	_thread.start_new_thread(PIRtask,())
+	#~ _thread.start_new_thread(PIRtask,())
 	_thread.start_new_thread(execute_search_fingerprint,())
 	createTable(databaseName)
 	app.debug=True

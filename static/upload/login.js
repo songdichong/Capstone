@@ -10,11 +10,14 @@ var KEY_F2 = 113;
 var KEY_Q = 81;
 var KEY_S = 83;
 var FRONT_END_MSG_RESPOND = 3;
+var FRONT_END_MSG_REISTER = 1;
 var LOGIN_FAIL = "login_fail";
 var LOGIN_SUCCESS = "login_success";
+var REGISTER_SUCCESS = "register_success";
 document.addEventListener('keydown', function(e) {
 	if (e.keyCode == KEY_F2 || e.keyCode == KEY_Q){
-	  runAjax(1)
+	  runAjax(FRONT_END_MSG_REISTER);
+	  clearInterval(keeppost);
 	}
 	else if(e.keyCode == KEY_S){
 		document.getElementById('id01').style.display='block';
@@ -29,7 +32,11 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			if (result.mode == LOGIN_FAIL){
-				alert("User cannot be recognized. Please register first!");
+				alert("User cannot be recognized.\n Please register first!");
+			}
+			if (result.mode ==  REGISTER_SUCCESS){
+				username = result.username;
+				alert("register success\n Your username is:"+username);
 			}
 			if (result.mode == LOGIN_SUCCESS) {
 				username = result.username;
@@ -49,7 +56,7 @@ window.onclick = function(event) {
     }
 }
 
-setInterval(readFace, 2000);
+var keeppost = setInterval(readFace, 2000);
 function readFace() {
     runAjax(FRONT_END_MSG_RESPOND);
 }
