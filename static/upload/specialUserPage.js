@@ -48,6 +48,10 @@ if(preference[3]==='0'){
 	div.style.visibility = "hidden";
 	div.style.display = "none";
 
+} else {
+	var div = document.getElementById('weather_small');
+	div.style.visibility = "hidden";
+	div.style.display = "none";
 }
 
 

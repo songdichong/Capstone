@@ -16,7 +16,7 @@ Contents of file:
 #newsTitle{
   text-align: center;
 }
-#weather{
+#weather,#weather_small{
     top:10px;
     position:absolute;
     right:0;
