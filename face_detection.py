@@ -12,7 +12,7 @@ def FaceDetection():
 	frame = np.empty((240, 320, 3), dtype=np.uint8)	
 	# capture a frame
 	camera.capture(frame, format="rgb")
-	for i in range(10):
+	for i in range(5):
 		# detecting faces
 		face_location = face_locations(frame)
 		face_encoding = face_encodings(frame, face_location)
