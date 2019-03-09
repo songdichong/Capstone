@@ -16,14 +16,15 @@ Contents of file:
 #newsTitle{
   text-align: center;
 }
-#weather{
+#weather,#weather_small{
     top:10px;
     position:absolute;
     right:0;
 }
 #trade{
-	position:relative;
-    bottom:150px;
+	position: absolute;;
+    bottom:0px;
+    vertical-align:bottom;
     float:right;
 	right:0;
 }
@@ -46,5 +47,5 @@ Contents of file:
 }
 .stockprice{
     position:relative;
-    margin-top:-105px;
+    margin-bottom:-105px;
 }
