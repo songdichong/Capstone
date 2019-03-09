@@ -91,7 +91,7 @@ def createTable(databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	c.execute('''
-	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
+	CREATE TABLE IF NOT EXISTS USER(findex INTEGER PRIMARY KEY,username TEXT,email TEXT,preference TEXT)
 	''')
 	conn.commit()
 	conn.close()
