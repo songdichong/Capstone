@@ -12,8 +12,8 @@ def FaceDetection():
 	frame = np.empty((240, 320, 3), dtype=np.uint8)	
 	# capture a frame
 	camera.capture(frame, format="rgb")
-	for i in range(5):
-		# detecting faces
+	# detecting faces
+	for i in range(2):
 		face_location = face_locations(frame)
 		face_encoding = face_encodings(frame, face_location)
 		# if one or more than one face are detected
@@ -34,26 +34,26 @@ def PIRtask():
 	now_time = lastmove_time
 	while True:
 		if pir.motion_detected:
-			lastmove_time = time.time()
-			if DETECTEDUSER == False: 
-				print("turn on screen")
-				execute_cmd("vcgencmd display_power 1")
-				DETECTEDUSER = True
-				isDetected = 1
-				data = {'isDetected': isDetected}
-				r = requests.post(url, data)
+			if pir.motion_detected:
+				lastmove_time = time.time()
+				if DETECTEDUSER == False: 
+					print("turn on screen")
+					#~ os.system("xset dpms force on")
+					DETECTEDUSER = True
+					isDetected = 1
+					data = {'isDetected': isDetected}
+					r = requests.post(url, data)
 		else:
 			now_time = time.time()
 			if now_time - lastmove_time > 10:
 				if not FaceDetection():
 					# turn off monitor
 					DETECTEDUSER = False
-					execute_cmd("vcgencmd display_power 0")
+					#~ os.system("xset dpms force off")
 					isDetected = 0
 					data = {'isDetected': isDetected}
 					r = requests.post(url, data)
 					print("turn off screen")
-					# time.sleep(0.5)
 				else: 
 					lastmove_time = time.time()
 				

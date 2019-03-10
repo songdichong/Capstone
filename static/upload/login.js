@@ -14,6 +14,7 @@ var FRONT_END_MSG_REISTER = 1;
 var LOGIN_FAIL = "login_fail";
 var LOGIN_SUCCESS = "login_success";
 var REGISTER_SUCCESS = "register_success";
+var UPDATES_SUCCESS = "update_success";
 document.addEventListener('keydown', function(e) {
 	if (e.keyCode == KEY_F2 || e.keyCode == KEY_Q){
 	  runAjax(FRONT_END_MSG_REISTER);
@@ -38,6 +39,11 @@ function runAjax(REQUEST) {
 				username = result.username;
 				alert("register success\n Your username is:"+username);
 			}
+			if (result.mode == UPDATES_SUCCESS){
+				username = result.username;
+				alert("update success\n Your new information is:" + username);
+			}
+			
 			if (result.mode == LOGIN_SUCCESS) {
 				username = result.username;
 				useremail = result.email;//Yue add

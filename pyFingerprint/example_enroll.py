@@ -55,7 +55,7 @@ def enroll_fingerprint():
 			print('Template already exists at position #' + str(positionNumber))
 			#post msg to website
 			url = "http://0.0.0.0:4310/register"
-			data = {'positionNumber': positionNumber}
+			data = {'positionNumber': positionNumber,"goToSignUp":0}
 			r = requests.post(url, data)
 			#call search
 			exit(0)
@@ -87,7 +87,7 @@ def enroll_fingerprint():
 		
 		#post msg to website:success
 		url = "http://0.0.0.0:4310/register"
-		data = {'positionNumber': positionNumber}
+		data = {'positionNumber': positionNumber,"goToSignUp":1}
 		try:
 			r = requests.post(url, data)
 			
