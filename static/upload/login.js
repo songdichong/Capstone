@@ -9,6 +9,13 @@ var username;
 var KEY_F2 = 113;
 var KEY_Q = 81;
 var KEY_ENTER = 13;
+var KEY_UPARROW = 38;
+var KEY_DOWNARROW = 40;
+
+var KEY_LEFTARROW = 37;
+
+var KEY_RIGHTARROW = 39;
+var KEY_DELETE = 46;
 var FRONT_END_MSG_RESPOND = 3;
 var FRONT_END_MSG_REISTER = 1;
 var LOGIN_FAIL = "login_fail";
@@ -16,14 +23,42 @@ var LOGIN_SUCCESS = "login_success";
 var REGISTER_SUCCESS = "register_success";
 var UPDATES_SUCCESS = "update_success";
 document.addEventListener('keydown', function(e) {
-	if (e.keyCode == KEY_F2 || e.keyCode == KEY_Q){
+	console.log(KEY_DELETE)
+	if (e.keyCode === KEY_F2 || e.keyCode === KEY_Q){
 	  runAjax(FRONT_END_MSG_REISTER);
 	  clearInterval(keeppost);
 	}
-	else if(e.keyCode == KEY_ENTER){
+	else if(e.keyCode === KEY_ENTER){
+
 		document.getElementById('id01').style.display='block';
+		document.getElementById("uname").focus();
 	}
+	else if(e.keyCode===KEY_UPARROW && isRegistering()){
+		document.getElementById("calendarButton").click();
+
+	}
+	else if(e.keyCode===KEY_DOWNARROW && isRegistering()){
+		document.getElementById("newsButton").click();
+
+	}
+	else if(e.keyCode===KEY_LEFTARROW && isRegistering()){
+		document.getElementById("stockButton").click();
+
+	}
+	else if(e.keyCode===KEY_RIGHTARROW && isRegistering()){
+		document.getElementById("weatherButton").click();
+
+	}
+	else if(e.keyCode===KEY_DELETE && isRegistering()){
+		document.getElementById('id01').style.display='none'
+	}
+
+
 });
+
+function isRegistering(){
+	return document.getElementById('id01').style.display==='block'
+}
 
 function runAjax(REQUEST) {
 	$.ajax({
@@ -43,7 +78,7 @@ function runAjax(REQUEST) {
 				username = result.username;
 				setTimeout(function(){ alert("update success\n Your new information is:" + username);}, 3000);
 			}
-			
+
 			if (result.mode == LOGIN_SUCCESS) {
 				username = result.username;
 				useremail = result.email;//Yue add

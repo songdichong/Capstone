@@ -52,39 +52,44 @@ Contents of file:
       <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 
       <label for="gml"><b>Gmail</b></label>
-      <input type="text" placeholder="Enter Gmail Address" name="gml" required>
+      <input type="text" placeholder="Enter Gmail Address" name="gml" id="gml" required>
       
       <h4>Preference</h4>
-      <ul class="tg-list">
+      <ul class="tg-list" id="firstLineUL">
         <li class="tg-list-item">
-          <input name = 'calendar' class="tgl tgl-flip" id="cb5" type="checkbox"/>
-          <label class="tgl-btn" data-tg-off="No Calendar" data-tg-on="Calendar" for="cb5"></label>
+          <input name = 'calendar' class="tgl tgl-flip" id="calendarButton" type="checkbox"/>
+          <label class="tgl-btn" data-tg-off="No Calendar" data-tg-on="Calendar" for="calendarButton"></label>
         </li>
 
-        <li class="tg-list-item">
-          <input name = 'news' class="tgl tgl-flip" id="cb3" type="checkbox"/>
-          <label class="tgl-btn" data-tg-off="No News" data-tg-on="News" for="cb3"></label>
-        </li>
-
-        <li class="tg-list-item">
-          <input name = 'stock' class="tgl tgl-flip" id="cb2" type="checkbox"/>
-          <label class="tgl-btn" data-tg-off="No Stock" data-tg-on="Stock" for="cb2"></label>
-        </li>
-
-        <li class="tg-list-item">
-          <input name = 'fullWeather' class="tgl tgl-flip" id="cb1" type="checkbox"/>
-          <label class="tgl-btn" data-tg-off="No Weather" data-tg-on="Weather" for="cb1"></label>
-        </li>
-      
       </ul>
-      <button type="submit">Sign Up</button>
+
+        <ul class="tg-list" id="secondLineUL">
+
+
+        <li class="tg-list-item">
+          <input name = 'stock' class="tgl tgl-flip" id="stockButton" type="checkbox"/>
+          <label class="tgl-btn" data-tg-off="No Stock" data-tg-on="Stock" for="stockButton"></label>
+        </li>
+        <li class="tg-list-item">
+          <input name = 'fullWeather' class="tgl tgl-flip" id="weatherButton" type="checkbox"/>
+          <label class="tgl-btn" data-tg-off="No Weather" data-tg-on="Weather" for="weatherButton"></label>
+        </li>
+
+        </ul>
+        <ul class="tg-list" id="thirdLineUL">
+        <li class="tg-list-item">
+          <input name = 'news' class="tgl tgl-flip" id="newsButton" type="checkbox"/>
+          <label class="tgl-btn" data-tg-off="No News" data-tg-on="News" for="newsButton"></label>
+        </li>
+
+        </ul>
+      <button type="submit">Enter</button>
+      <button type="button" onclick="" id="cancelButton">Del</button>
+
 
 
     </div>
 
-    <div class="containerForm" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
   </form>
 </div>
 
