@@ -65,6 +65,7 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			if (result.mode == TAKE_PHOTO_SUCCESS){
+				// the alert will disappear after 3 seconds. 
 				setTimeout(function(){ alert("A photo has been taken.\
 				 We will implement a way for you to check it later!");}, 3000);
 			}
