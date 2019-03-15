@@ -22,13 +22,15 @@ body, html {margin: 0; height: 100%; overflow: hidden}
     top:10px;
     position:absolute;
     right:0;
+    pointer-events: none;
 }
 #trade{
 	position: absolute;;
     bottom:0px;
     vertical-align:bottom;
     float:right;
-	right:0;
+    right:0;
+    pointer-events: none;
 }
 .border {
     margin-bottom:-200px;

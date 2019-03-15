@@ -139,7 +139,7 @@ span.psw {
 
 #weather{
     top:10px;
-
+    pointer-events: none;
     position:absolute;
     right:0;
 }
