@@ -65,8 +65,8 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			if (result.mode == TAKE_PHOTO_SUCCESS){
-				alert("A photo has been taken.\
-				 We will implement a way for you to check it later!");
+				setTimeout(function(){ alert("A photo has been taken.\
+				 We will implement a way for you to check it later!");}, 3000);
 			}
 			if (result.mode == LOGOUT_SUCCESS) {
 				window.location.href="/";

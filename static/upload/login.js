@@ -33,15 +33,15 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			if (result.mode == LOGIN_FAIL){
-				alert("User cannot be recognized.\n Please register first!");
+				setTimeout(function(){ alert("User cannot be recognized.\n Please register first!");}, 3000);
 			}
 			if (result.mode ==  REGISTER_SUCCESS){
 				username = result.username;
-				alert("register success\n Your username is:"+username);
+				setTimeout(function(){ alert("register success\n Your username is:"+username); }, 3000);
 			}
 			if (result.mode == UPDATES_SUCCESS){
 				username = result.username;
-				alert("update success\n Your new information is:" + username);
+				setTimeout(function(){ alert("update success\n Your new information is:" + username);}, 3000);
 			}
 			
 			if (result.mode == LOGIN_SUCCESS) {
