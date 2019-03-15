@@ -4,6 +4,8 @@ Creation date: Jan 18th, 2019
 Contents of file:
 	1. adjust calendar's style
 */
+body, html {margin: 0; height: 100%; overflow: hidden}
+
 #calendarList {
     position: relative;
     top: 0px;

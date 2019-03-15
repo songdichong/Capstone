@@ -8,7 +8,7 @@ Contents of file:
 var username;
 var KEY_F2 = 113;
 var KEY_Q = 81;
-var KEY_S = 83;
+var KEY_ENTER = 13;
 var FRONT_END_MSG_RESPOND = 3;
 var FRONT_END_MSG_REISTER = 1;
 var LOGIN_FAIL = "login_fail";
@@ -20,7 +20,7 @@ document.addEventListener('keydown', function(e) {
 	  runAjax(FRONT_END_MSG_REISTER);
 	  clearInterval(keeppost);
 	}
-	else if(e.keyCode == KEY_S){
+	else if(e.keyCode == KEY_ENTER){
 		document.getElementById('id01').style.display='block';
 	}
 });

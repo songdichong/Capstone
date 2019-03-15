@@ -4,6 +4,8 @@ Creation date: Feb 5th, 2019
 Contents of file:
 	1. control the style of specialUserPage.html
 */
+body, html {margin: 0; height: 100%; overflow: hidden}
+
 #news{
     position:absolute;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;

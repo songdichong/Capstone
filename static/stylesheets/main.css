@@ -17,6 +17,8 @@ Contents of file:
 
 
 /* Full-width input fields */
+body, html {margin: 0; height: 100%; overflow: hidden}
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
