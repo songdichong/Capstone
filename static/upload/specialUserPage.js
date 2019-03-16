@@ -80,3 +80,75 @@ setInterval(readFace, 2000);
 function readFace() {
     runAjax(FRONT_END_MSG_RESPOND);
 }
+//voice control
+
+
+// Create a variable that stores your instance
+const artyom = new Artyom();
+
+// Or if you are using it in the browser
+// var artyom = new Artyom();// or `new window.Artyom()`
+
+// Add command (Short code artisan way)
+artyom.on(['Good morning','Good afternoon']).then((i) => {
+	switch (i) {
+		case 0:
+			console.log('Good morning, how are you?');
+			break;
+		case 1:
+			console.log('Good afternoon, how are you?');
+			break;
+	}
+});
+
+// or add some commandsDemostrations in the normal way
+artyom.addCommands([
+	{
+		indexes: ['Hello','Hi','/^.*Hello.*$/i'],
+		action: (i) => {
+			artyom.say("Hello, it's me");
+		}
+	},
+	{
+		indexes: ['Log out','Bye','Goodbye','See you','buy','by'],
+		action: (i) => {
+			artyom.say("Ok, see you");
+		}
+	},
+	// The smart commands support regular expressions
+	{
+		indexes: [/^.*photo.*$/i],
+		smart:true,
+		action: (i,wildcard) => {
+			console.log('Ready for photo')
+			runAjax(FRONT_END_MSG_TAKE_PHOTO);
+
+		}
+	},
+	{
+		indexes: ['shut down yourself'],
+		action: (i,wildcard) => {
+			artyom.fatality().then(() => {
+				console.log("Artyom succesfully stopped");
+			});
+		}
+	},
+]);
+
+// Start the commands !
+artyom.initialize({
+	lang: "en-US", // GreatBritain english
+	continuous: true, // Listen forever
+	soundex: true,// Use the soundex algorithm to increase accuracy
+	debug: true, // Show messages in the console
+	executionKeyword: "and do it now",
+	listen: true, // Start to listen commands !
+
+	// If providen, you can only trigger a command if you say its name
+	// e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
+	//name:"Victoria"
+}).then(() => {
+	console.log("Artyom has been succesfully initialized");
+}).catch((err) => {
+	console.error("Artyom couldn't be initialized: ", err);
+});
