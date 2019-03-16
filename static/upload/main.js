@@ -120,8 +120,8 @@ artyom.addCommands([
 	{
 		indexes: ['/^.*sign up.*$/i','/^.*register.*$/i','sign up','sign me up'],
 		action: (i) => {
-			runAjax(FRONT_END_MSG_REISTER);
-	  		clearInterval(keeppost);
+			document.getElementById('id01').style.display='block';
+			document.getElementById("uname").focus();
 
 		}
 	},
