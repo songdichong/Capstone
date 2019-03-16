@@ -114,6 +114,8 @@ artyom.addCommands([
 		indexes: ['Log out','Bye','Goodbye','See you','buy','by'],
 		action: (i) => {
 			artyom.say("Ok, see you");
+			window.location.href="/";
+
 		}
 	},
 	// The smart commands support regular expressions
@@ -121,7 +123,7 @@ artyom.addCommands([
 		indexes: [/^.*photo.*$/i],
 		smart:true,
 		action: (i,wildcard) => {
-			console.log('Ready for photo')
+			console.log('Ready for photo');
 			runAjax(FRONT_END_MSG_TAKE_PHOTO);
 
 		}
