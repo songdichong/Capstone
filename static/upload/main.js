@@ -103,11 +103,44 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};
 
 var keeppost = setInterval(readFace, 2000);
 function readFace() {
     runAjax(FRONT_END_MSG_RESPOND);
 }
 
+//voice control
+// Create a variable that stores your instance
+const artyom = new Artyom();
 
+
+// or add some commandsDemostrations in the normal way
+artyom.addCommands([
+	{
+		indexes: ['/^.*sign up.*$/i','/^.*register.*$/i','sign up','sign me up'],
+		action: (i) => {
+			runAjax(FRONT_END_MSG_REISTER);
+	  		clearInterval(keeppost);
+
+		}
+	},
+]);
+
+// Start the commands !
+artyom.initialize({
+	lang: "en-US", // GreatBritain english
+	continuous: true, // Listen forever
+	soundex: true,// Use the soundex algorithm to increase accuracy
+	debug: true, // Show messages in the console
+	executionKeyword: "and do it now",
+	listen: true, // Start to listen commands !
+
+	// If providen, you can only trigger a command if you say its name
+	// e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
+	//name:"Victoria"
+}).then(() => {
+	console.log("Artyom has been succesfully initialized");
+}).catch((err) => {
+	console.error("Artyom couldn't be initialized: ", err);
+});

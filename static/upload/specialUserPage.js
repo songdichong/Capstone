@@ -107,13 +107,11 @@ artyom.addCommands([
 	{
 		indexes: ['Hello','Hi','/^.*Hello.*$/i'],
 		action: (i) => {
-			artyom.say("Hello, it's me");
 		}
 	},
 	{
 		indexes: ['Log out','Bye','Goodbye','See you','buy','by'],
 		action: (i) => {
-			artyom.say("Ok, see you");
 			window.location.href="/";
 
 		}
