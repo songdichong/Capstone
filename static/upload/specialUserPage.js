@@ -14,6 +14,7 @@ var LOGOUT_SUCCESS = "logout_success";
 let preference = window.location.href.split('/')[6]; //calendar news stock weather
 
 document.addEventListener('keydown', function(e) {
+
 	if (e.keyCode == KEY_ENTER){
 	  e.keypress = '1';
 	  runAjax(FRONT_END_MSG_TAKE_PHOTO);
@@ -66,7 +67,6 @@ function runAjax(REQUEST) {
 		success: function(result){
 			if (result.mode == TAKE_PHOTO_SUCCESS){
 				// the alert will disappear after 3 seconds. 
-				setTimeout(function(){ alert("");}, 3000);
 				$('.alert').html('A photo has been taken. We will implement a way for you to check it later!').addClass('alert-success').show().delay(2000).fadeOut();
 
 			}
