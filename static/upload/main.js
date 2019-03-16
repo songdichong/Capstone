@@ -5,6 +5,7 @@ Contents of file:
 	1. AJAX call to send signal from front-end to back-end
 	2. If login success, jumps to specialuserpage; otherwise, alert not correct
 */
+
 var username;
 var KEY_F2 = 113;
 var KEY_Q = 81;
@@ -21,7 +22,7 @@ var LOGIN_SUCCESS = "login_success";
 var REGISTER_SUCCESS = "register_success";
 var UPDATES_SUCCESS = "update_success";
 document.addEventListener('keydown', function(e) {
-	console.log(KEY_DELETE)
+
 	if (e.keyCode === KEY_F2 || e.keyCode === KEY_Q){
 	  runAjax(FRONT_END_MSG_REISTER);
 	  clearInterval(keeppost);
@@ -66,15 +67,20 @@ function runAjax(REQUEST) {
 		data: {'request':REQUEST},
 		success: function(result){
 			if (result.mode == LOGIN_FAIL){
-				setTimeout(function(){ alert("User cannot be recognized.\n Please register first!");}, 3000);
+				$('.alert').html('User cannot be recognized.\n Please register first!').addClass('alert-warning').show().delay(2000).fadeOut();
+
+
 			}
 			if (result.mode ==  REGISTER_SUCCESS){
 				username = result.username;
-				setTimeout(function(){ alert("register success\n Your username is:"+username); }, 3000);
+				$('.alert').html('register success\n Your username is:'+username).addClass('alert-success').show().delay(2000).fadeOut();
+
+
 			}
 			if (result.mode == UPDATES_SUCCESS){
 				username = result.username;
-				setTimeout(function(){ alert("update success\n Your new information is:" + username);}, 3000);
+				$('.alert').html("update success\n Your new information is:" + username).addClass('alert-success').show().delay(2000).fadeOut();
+
 			}
 
 			if (result.mode == LOGIN_SUCCESS) {
