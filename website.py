@@ -18,7 +18,7 @@ Contents of file:
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
-# from pyfingerprint.pyfingerprint import PyFingerprint
+from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,os
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
@@ -38,10 +38,12 @@ app=Flask(__name__)
 s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
-
+newsPref = NOT_SELECTED 
+weatherPref = NOT_SELECTED 
+stockPref = NOT_SELECTED 
+calendarPref = NOT_SELECTED 
 userID = INVALID_USER
-
-DETECTEDUSER = [1,1,1]
+DETECTEDUSER = [1,1,1,1,1,1,1,1,1,1]
 mode = MODE_INITIAL
 databaseName = 'test.db'
 ########################################################################
@@ -89,17 +91,6 @@ def add_into_database(userID,username,email,preference,databaseName):
 	conn.commit()
 	conn.close()
 
-def update_database(userID,username,email,preference,databaseName):
-	conn = sqlite3.connect(databaseName)
-	c = conn.cursor()
-	c.execute('''
-	UPDATE User
-	set username=?,email=?,preference=?
-	where findex=?
-	''',(username,email,preference,userID))
-	conn.commit()
-	conn.close()	
-
 def createTable(databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
@@ -115,12 +106,15 @@ def execute_search_fingerprint():
 
 def execute_enroll_fingerprint():
 	execute_cmd("sudo python3 ./pyFingerprint/example_enroll.py")
+
+def execute_send_email(filename, email):
+	os.system('''echo "" | mail -s "Photo taken from mirror" ''' + "-A " + filename + " " + email)
 ########################################################################
 
 ########################## Flask Division ##############################
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID,username,email,mode,preference
+	global userID,username,email,mode,calendarPref,newsPref,stockPref,weatherPref
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print("data",data)
@@ -139,24 +133,27 @@ def index():
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID == INVALID_USER) and (mode == MODE_LOGIN):
 			#unknown user
 			mode = MODE_INITIAL
-			_thread.start_new_thread(execute_search_fingerprint,())
 			return jsonify({"mode":"login_fail"})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_REGISTER):
 			#register
-			add_into_database(userID,username,email,preference,databaseName)
-			mode = MODE_INITIAL
-			userID = INVALID_USER
-			_thread.start_new_thread(execute_search_fingerprint,())
-			return jsonify({"mode":"register_success","username":username})
-		
+			try:
+				preference = calendarPref + newsPref + stockPref + weatherPref
+				add_into_database(userID,username,email,preference,databaseName)
+				mode = MODE_INITIAL
+				userID = INVALID_USER
+				_thread.start_new_thread(execute_search_fingerprint,())
+				return jsonify({"mode":"register_success","username":username})
+			except Exception:
+				mode = MODE_INITIAL
+				userID = INVALID_USER
+				return jsonify({"mode":"register_fail"})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_FINGERPRINT_REGISTERED):
-			update_database(userID,username,email,preference,databaseName)
+			#Mode register fail
 			mode = MODE_INITIAL
 			userID = INVALID_USER
-			_thread.start_new_thread(execute_search_fingerprint,())
-			return jsonify({"mode":"update_success","username":username})
+			return jsonify({"mode":"register_fail"})
 			
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (mode == MODE_LOGOUT):
 			#logout 
@@ -172,6 +169,7 @@ def index():
 				execute_cmd("mkdir -p " + username)
 				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
 				msg = execute_cmd("raspistill -n -o "+"./"+username +"/"+filename)
+				_thread.start_new_thread(execute_send_email,(filename,email,))
 				return jsonify({"mode":"photo_success"})
 			except Exception:
 				print("some error happens 1")
@@ -181,15 +179,10 @@ def index():
 
 @app.route('/signup',methods=['POST'])
 def signup():
-	global username,email,mode,userID,preference 
+	global username,email,mode,userID,newsPref,weatherPref,stockPref,calendarPref
 	if request.method == "POST":
 		email = request.form['gml']
 		username = request.form['uname']
-		newsPref = NOT_SELECTED 
-		weatherPref = NOT_SELECTED 
-		stockPref = NOT_SELECTED 
-		calendarPref = NOT_SELECTED 
-		preference = NOT_SELECTED	
 		
 		try:
 			newsPref = request.form['news']
@@ -214,7 +207,7 @@ def signup():
 			calendarPref = SELECETED
 		except Exception:
 			pass
-		preference = calendarPref + newsPref + stockPref + weatherPref
+		
 		print(request.form)
 		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		print(r1)
@@ -245,31 +238,31 @@ def register():
 		print("here")
 		userID = request.form['positionNumber']
 		goToSignUp = int(request.form['goToSignUp'])
-		print(userID,goToSignUp)
+		print(userID)
 		if goToSignUp == 0:
-			mode = MODE_FINGERPRINT_REGISTERED
-		else:
 			mode = MODE_REGISTER
+		else:
+			mode = MODE_FINGERPRINT_REGISTERED
 		return "success"
 		
 @app.route('/getUserFace',methods = ['POST'])
 def getUserFace():
 	global mode,DETECTEDUSER
 	if request.method == "POST":
+		print(DETECTEDUSER)
 		data = int(request.form['isDetected'])
 		if data == 0:
-			if DETECTEDUSER == [0,0,0]:
+			if DETECTEDUSER == [0,0,0,0,0,0,0,0,0,0]:
 				print("here")
 				#turn off screen only when receive 2 continuous False
 				mode = MODE_LOGOUT
-				execute_cmd("xset dpms force off")
+				execute_cmd("vcgencmd display_power 0")
 				execute_cmd("sudo fuser -k /dev/ttyUSB0")
 		else:
 			#turn on screen immediately
-			execute_cmd("xset dpms force on")
+			execute_cmd("vcgencmd display_power 1")
 			execute_cmd("sudo fuser -k /dev/ttyUSB0")
 			_thread.start_new_thread(execute_search_fingerprint,())
-		print(DETECTEDUSER)
 		DETECTEDUSER.pop(0)
 		DETECTEDUSER.append(data)
 		return "success"
