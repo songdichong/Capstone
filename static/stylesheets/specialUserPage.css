@@ -13,7 +13,7 @@ body, html {margin: 0; height: 100%; overflow: hidden}
     left:25%;
     width:50%;
     justify-content: center;
-    bottom:40px;
+    bottom:20px;
 }
 #newsTitle{
   text-align: center;
@@ -26,7 +26,7 @@ body, html {margin: 0; height: 100%; overflow: hidden}
 }
 #trade{
 	position: absolute;;
-    bottom:0px;
+    bottom:20px;
     vertical-align:bottom;
     float:right;
     right:0;
