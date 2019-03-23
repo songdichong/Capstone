@@ -10,8 +10,10 @@ var FRONT_END_MSG_TAKE_PHOTO = 2;
 var TAKE_PHOTO_SUCCESS = "photo_success";
 var LOGOUT_SUCCESS = "logout_success";
 
-
 let preference = window.location.href.split('/')[6]; //calendar news stock weather
+let name = window.location.href.split('/')[4]; //calendar news stock weather
+
+$('.alert').html('Hi, '+ name).addClass('alert-welcome').show().delay(2000).fadeOut();
 
 document.addEventListener('keydown', function(e) {
 

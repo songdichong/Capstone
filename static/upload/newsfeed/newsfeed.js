@@ -8,19 +8,23 @@ Contents of file:
 var newsString = '';
 var newsCounter = 0;
 var NewsTitle = 'CBC';
+var timerShort = 4000;
+var timerLong = 1800000;
 $.getJSON( "../static/upload/newsfeed/news.json", function( data ) {
     newsString = data;
 
 });
-setInterval(myTimer, 4000);
-setInterval(newsUpdateTime, 1800000);
+//every timerShort second, update and show next news
+setInterval(myTimer, timerShort);
+//every timerLong second, fetch news.json file to get the newest news
+setInterval(newsUpdateTime, timerLong);
 function myTimer() {
 
     if(newsCounter<newsString.length-1){
-        newsCounter+=1;
+        newsCounter += 1;
     }
     else{
-        newsCounter=0;
+        newsCounter = 0;
     }
     var currentNews = newsString[newsCounter];
     if(typeof(currentNews)!=='undefined' && currentNews.indexOf(NewsTitle)<0 ){
