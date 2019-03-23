@@ -29,9 +29,9 @@ MODE_LOGIN = 1
 MODE_REGISTER = 2
 MODE_LOGOUT = 3
 MODE_FINGERPRINT_REGISTERED = 4
-NOT_SELECTED = "0"
-SELECETED = "1"
-
+NOT_SELECTED = "A"
+SELECETED = "B"
+preference = "AAAA"
 ########################################################################
 
 ###################### Initialization Division #########################
@@ -104,17 +104,30 @@ def createTable(databaseName):
 	conn = sqlite3.connect(databaseName)
 	c = conn.cursor()
 	c.execute('''
-	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference int)
+	CREATE TABLE IF NOT EXISTS USER(findex int,username String,email String,preference String)
 	''')
 	conn.commit()
 	conn.close()
 
 def execute_search_fingerprint():
-	execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
+	url = "http://0.0.0.0:4311/search"
+	data = {'data': 1}
+	r = requests.post(url, data)
 
+def execute_activate_fingerprint():
+	url = "http://0.0.0.0:4311/activate"
+	data = {'data': 1}
+	r = requests.post(url, data)
 
 def execute_enroll_fingerprint():
-	execute_cmd("sudo python3 ./pyFingerprint/example_enroll.py")
+	url = "http://0.0.0.0:4311/register"
+	data = {'data': 1}
+	r = requests.post(url, data)
+
+def execute_exit_fingerprint():
+	url = "http://0.0.0.0:4311/exit"
+	data = {'data': 1}
+	r = requests.post(url, data)
 
 def execute_send_email(filename, email):
 	os.system('''echo "" | mail -s "Photo taken from mirror" ''' + "-A " + filename + " " + email)
@@ -142,7 +155,7 @@ def index():
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID == INVALID_USER) and (mode == MODE_LOGIN):
 			#unknown user
 			mode = MODE_INITIAL
-			_thread.start_new_thread(execute_search_fingerprint,())
+			execute_search_fingerprint()
 			return jsonify({"mode":"login_fail"})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_REGISTER):
@@ -150,15 +163,19 @@ def index():
 			add_into_database(userID,username,email,preference,databaseName)
 			mode = MODE_INITIAL
 			userID = INVALID_USER
-			_thread.start_new_thread(execute_search_fingerprint,())
-			return jsonify({"mode":"register_success","username":username})
-		
+			return jsonify({"mode":"register_success","username":username,"email":email,"preference":preference})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_FINGERPRINT_REGISTERED):
-			update_database(userID,username,email,preference,databaseName)
+			result = select_from_database(userID,databaseName)
+			if result == None:	
+				add_into_database(userID,username,email,preference,databaseName)
+			else:
+				update_database(userID,username,email,preference,databaseName)
+			
+				
 			mode = MODE_INITIAL
 			userID = INVALID_USER
-			_thread.start_new_thread(execute_search_fingerprint,())
+			execute_search_fingerprint()
 			return jsonify({"mode":"update_success","username":username})
 			
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (mode == MODE_LOGOUT):
@@ -194,7 +211,7 @@ def signup():
 		weatherPref = NOT_SELECTED 
 		stockPref = NOT_SELECTED 
 		calendarPref = NOT_SELECTED 
-		preference = NOT_SELECTED	
+		
 		
 		try:
 			newsPref = request.form['news']
@@ -220,11 +237,8 @@ def signup():
 		except Exception:
 			pass
 		preference = calendarPref + newsPref + stockPref + weatherPref
-		print(request.form)
-		r1 = execute_cmd("sudo fuser -k /dev/ttyUSB0")
-		print(r1)
 		mode = MODE_REGISTER
-		_thread.start_new_thread(execute_enroll_fingerprint,())
+		execute_enroll_fingerprint()
 		print("here signup")
 		
 	return redirect('/')
@@ -264,16 +278,14 @@ def getUserFace():
 		data = int(request.form['isDetected'])
 		if data == 0:
 			if DETECTEDUSER == [0,0,0]:
-				print("here")
-				#turn off screen only when receive 2 continuous False
+				#turn off screen only when receive 3 continuous False
 				mode = MODE_LOGOUT
 				execute_cmd("xset dpms force off")
-				execute_cmd("sudo fuser -k /dev/ttyUSB0")
+				execute_exit_fingerprint()
 		else:
 			#turn on screen immediately
 			execute_cmd("xset dpms force on")
-			execute_cmd("sudo fuser -k /dev/ttyUSB0")
-			_thread.start_new_thread(execute_search_fingerprint,())
+			execute_search_fingerprint()
 		print(DETECTEDUSER)
 		DETECTEDUSER.pop(0)
 		DETECTEDUSER.append(data)
@@ -283,7 +295,7 @@ def getUserFace():
 ######################### Main Function ################################
 if __name__=="__main__":
 	execute_cmd("sudo fuser -k /dev/ttyUSB0")
-	_thread.start_new_thread(execute_search_fingerprint,())
+	execute_search_fingerprint()
 	_thread.start_new_thread(write_to_json,())
 	createTable(databaseName)
 	

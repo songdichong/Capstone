@@ -22,28 +22,28 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-if(preference[0]==='0'){
+if(preference[0]==='A'){
 
 	var div = document.getElementById('calendarList');
 	div.style.visibility = "hidden";
 	div.style.display = "none";
 
 }
-if(preference[1]==='0'){
+if(preference[1]==='A'){
 
 	var div = document.getElementById('news');
 	div.style.visibility = "hidden";
 	div.style.display = "none";
 
 }
-if(preference[2]==='0'){
+if(preference[2]==='A'){
 
 	var div = document.getElementById('trade');
 	div.style.visibility = "hidden";
 	div.style.display = "none";
 
 }
-if(preference[3]==='0'){
+if(preference[3]==='A'){
 
 	var div = document.getElementById('weather');
 	div.style.visibility = "hidden";
@@ -67,7 +67,7 @@ function runAjax(REQUEST) {
 		success: function(result){
 			if (result.mode == TAKE_PHOTO_SUCCESS){
 				// the alert will disappear after 3 seconds. 
-				$('.alert').html('A photo has been taken. We will implement a way for you to check it later!').addClass('alert-success').show().delay(2000).fadeOut();
+				$('.alert').html('A photo has been taken. We have sent it to your email').addClass('alert-success').show().delay(2000).fadeOut();
 
 			}
 			if (result.mode == LOGOUT_SUCCESS) {

@@ -38,7 +38,7 @@ print('Currently used templates: ' + str(f.getTemplateCount()) +'/'+ str(f.getSt
 
 ## Tries to delete the template of the finger
 try:
-	for positionNumber  in range(0,10):
+	for positionNumber  in range(0,30):
     #~ positionNumber = input('Please enter the template position you want to delete: ')
     #~ positionNumber = int(positionNumber)
 

@@ -73,8 +73,10 @@ function runAjax(REQUEST) {
 			}
 			if (result.mode ==  REGISTER_SUCCESS){
 				username = result.username;
-				$('.alert').html('register success\n Your username is:'+username).addClass('alert-success').show().delay(2000).fadeOut();
-
+				useremail = result.email;//Yue add
+				userpreference = result.preference;//Yue add
+				window.location.href="/specialUserPage?/"+username+"/"+useremail+"/"+userpreference;
+			
 
 			}
 			if (result.mode == UPDATES_SUCCESS){
