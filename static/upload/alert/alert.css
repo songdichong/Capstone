@@ -34,8 +34,10 @@
     border-color: #faebcc;
 }
 
-.alert-danger {
-    color: #8a6d3b;
-    background-color: #f2dede;
-    border-color: #ebccd1;
+.alert-welcome {
+    color: rgba(255, 255, 255);
+    font-size:24px;
+    background-color: #000000;
+    border-color: #000000;
+
 }
