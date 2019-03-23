@@ -44,7 +44,7 @@ Contents of file:
 </div>
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/signup" method="post">
+  <form class="modal-content animate" autocomplete="off" action="/signup" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -55,8 +55,7 @@ Contents of file:
 
       <label for="gml"><b>Gmail</b></label>
       <input type="text" placeholder="Enter Gmail Address" name="gml" id="gml" required>
-      
-      <h4>Preference</h4>
+      <label><b>Preference</b></label>
       <ul class="tg-list" id="firstLineUL">
         <li class="tg-list-item">
           <input name = 'calendar' class="tgl tgl-flip" id="calendarButton" type="checkbox"/>
