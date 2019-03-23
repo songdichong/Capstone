@@ -18,7 +18,7 @@ Contents of file:
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
 from urllib.request import urlopen
-# from pyfingerprint.pyfingerprint import PyFingerprint
+from pyfingerprint.pyfingerprint import PyFingerprint
 import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,os
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
@@ -31,16 +31,16 @@ MODE_LOGOUT = 3
 MODE_FINGERPRINT_REGISTERED = 4
 NOT_SELECTED = "0"
 SELECETED = "1"
+
 ########################################################################
 
 ###################### Initialization Division #########################
 app=Flask(__name__)
+CURRENT_WORKING_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
-
 userID = INVALID_USER
-
 DETECTEDUSER = [1,1,1]
 mode = MODE_INITIAL
 databaseName = 'test.db'
@@ -123,7 +123,7 @@ def execute_send_email(filename, email):
 ########################## Flask Division ##############################
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID,username,email,mode,preference
+	global userID,username,email,mode,preference,CURRENT_WORKING_DIRECTORY
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print("data",data)
@@ -172,10 +172,11 @@ def index():
 		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
 			try:
 				print("take photo")
-				execute_cmd("mkdir -p " + username)
+				execute_cmd("mkdir -p " + CURRENT_WORKING_DIRECTORY + '/' + username)
 				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
-				msg = execute_cmd("raspistill -n -o "+"./"+username +"/"+filename)
-				_thread.start_new_thread(execute_send_email,(filename,email,))
+				path_file =  CURRENT_WORKING_DIRECTORY + "/" + username + "/" + filename
+				msg = execute_cmd("raspistill -n -o "+path_file)
+				_thread.start_new_thread(execute_send_email,(path_file,email,))
 				return jsonify({"mode":"photo_success"})
 			except Exception:
 				print("some error happens 1")
