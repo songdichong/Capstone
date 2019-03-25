@@ -13,14 +13,14 @@ def FaceDetection():
 	# capture a frame
 	camera.capture(frame, format="rgb")
 	# detecting faces
-	for i in range(2):
-		face_location = face_locations(frame)
-		face_encoding = face_encodings(frame, face_location)
-		# if one or more than one face are detected
-		if len(face_encoding)>0:
-			print('Detected')
-			camera.close()
-			return True
+	# for i in range(2):
+	face_location = face_locations(frame)
+	face_encoding = face_encodings(frame, face_location)
+	# if one or more than one face are detected
+	if len(face_encoding)>0:
+		print('Detected')
+		camera.close()
+		return True
 	camera.close()
 	return False
 
