@@ -151,8 +151,13 @@ def index():
 			result = select_from_database(userID,databaseName)
 			print(result)
 			if result == None:
+				mode = MODE_INITIAL
+				username = ""
+				email = ""
+				userID = INVALID_USER
 				execute_search_fingerprint()
 				return jsonify({"mode":"login_fail"})
+		
 			else:
 				username = result[1]
 				email = result[2]
@@ -165,6 +170,9 @@ def index():
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID == INVALID_USER) and (mode == MODE_LOGIN):
 			#unknown user
 			mode = MODE_INITIAL
+			username = ""
+			email = ""
+			userID = INVALID_USER
 			execute_search_fingerprint()
 			return jsonify({"mode":"login_fail"})
 		
