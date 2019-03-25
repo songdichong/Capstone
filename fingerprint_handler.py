@@ -1,12 +1,12 @@
 from flask import Flask,request
-import requests,shlex,subprocess,_thread
+import requests,shlex,subprocess,_thread,os
 SEARCH = 1
 REGISTER = 2
 OFF = 0
 
 app=Flask(__name__)
 mode = OFF
-
+CURRENT_WORKING_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 def execute_cmd(cmd):
 	args = shlex.split(cmd)
 	p = subprocess.run(args,stdout = subprocess.PIPE)
@@ -14,11 +14,11 @@ def execute_cmd(cmd):
 	return result
 
 def execute_search_fingerprint():
-	execute_cmd("sudo python3 ./pyFingerprint/example_search.py")
+	execute_cmd("sudo python3 "+ CURRENT_WORKING_DIRECTORY + "/pyFingerprint/example_search.py")
 
 
 def execute_enroll_fingerprint():
-	execute_cmd("sudo python3 ./pyFingerprint/example_enroll.py")
+	execute_cmd("sudo python3 "+ CURRENT_WORKING_DIRECTORY + "/pyFingerprint/example_enroll.py")
 
 @app.route('/register',methods = ['POST'])
 def register():
@@ -33,11 +33,10 @@ def register():
 def search():
 	global mode
 	if request.method == "POST":
-		try:
-			_thread.start_new_thread(execute_search_fingerprint,())
-			mode = SEARCH
-		except Exception:
-			pass
+	
+		execute_cmd("sudo fuser -k /dev/ttyUSB0")
+		_thread.start_new_thread(execute_search_fingerprint,())
+		mode = SEARCH
 	return "success"
 
 @app.route('/exit',methods = ['POST'])

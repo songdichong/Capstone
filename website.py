@@ -46,7 +46,7 @@ email = ""
 userID = INVALID_USER
 DETECTEDUSER = INITIAL_USER 
 mode = MODE_INITIAL
-databaseName = 'test.db'
+databaseName = CURRENT_WORKING_DIRECTORY+'/test.db'
 TAKE_PHOTO = True
 ########################################################################
 
@@ -62,8 +62,8 @@ def xmlfetcher(urllink):
 
 def write_to_json(): 
 	my_list = xmlfetcher("https://www.cbc.ca/cmlink/rss-topstories")
-	f1 = open("./static/upload/newsfeed/news.json","w")
-	with io.open('./static/upload/newsfeed/news.json', 'w', encoding='utf-8') as f:
+	f1 = open(CURRENT_WORKING_DIRECTORY+"/static/upload/newsfeed/news.json","w")
+	with io.open(CURRENT_WORKING_DIRECTORY+'/static/upload/newsfeed/news.json', 'w', encoding='utf-8') as f:
 		f.write(json.dumps(my_list, ensure_ascii=False))
 	s.enter(3600, 1, write_to_json)
 	s.run()
@@ -149,6 +149,7 @@ def index():
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID,databaseName)
+			print(result)
 			if result == None:
 				execute_search_fingerprint()
 				return jsonify({"mode":"login_fail"})
