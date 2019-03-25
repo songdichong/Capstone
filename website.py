@@ -32,6 +32,8 @@ MODE_FINGERPRINT_REGISTERED = 4
 NOT_SELECTED = "A"
 SELECETED = "B"
 preference = "AAAA"
+INITIAL_USER = [1,1,1,1,1]
+NO_USER = [0,0,0,0,0]
 ########################################################################
 
 ###################### Initialization Division #########################
@@ -41,9 +43,10 @@ s = sched.scheduler(time.time, time.sleep)
 username = ""
 email = ""
 userID = INVALID_USER
-DETECTEDUSER = [1,1,1]
+DETECTEDUSER = INITIAL_USER 
 mode = MODE_INITIAL
 databaseName = 'test.db'
+TAKE_PHOTO = True
 ########################################################################
 
 ################### Useful Function Division ###########################
@@ -136,7 +139,7 @@ def execute_send_email(filename, email):
 ########################## Flask Division ##############################
 @app.route('/',methods=['GET','POST'])
 def index():
-	global userID,username,email,mode,preference,CURRENT_WORKING_DIRECTORY
+	global userID,username,email,mode,preference,TAKE_PHOTO,CURRENT_WORKING_DIRECTORY
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
 		print("data",data)
@@ -187,18 +190,16 @@ def index():
 			return jsonify({"mode":"logout_success"})
 		
 		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
-			try:
-				print("take photo")
-				execute_cmd("mkdir -p " + CURRENT_WORKING_DIRECTORY + '/' + username)
-				filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
-				path_file =  CURRENT_WORKING_DIRECTORY + "/" + username + "/" + filename
+			print("take photo")
+			execute_cmd("mkdir -p " + CURRENT_WORKING_DIRECTORY + '/' + username)
+			filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
+			path_file =  CURRENT_WORKING_DIRECTORY + "/" + username + "/" + filename
+			if TAKE_PHOTO == True:
 				msg = execute_cmd("raspistill -n -o "+path_file)
 				_thread.start_new_thread(execute_send_email,(path_file,email,))
 				return jsonify({"mode":"photo_success"})
-			except Exception:
-				print("some error happens 1")
-				return render_template("specialUserPage.html")
-				
+			else:
+				return jsonify({"mode":"photo_fail"})
 	return render_template('mainPage.html')
 
 @app.route('/signup',methods=['POST'])
@@ -257,6 +258,16 @@ def login():
 		mode = MODE_LOGIN
 		return "success"
 
+@app.route('/photo',methods = ['POST'])
+def photo():
+	global TAKE_PHOTO
+	if request.method == "POST":
+		data = int(request.form['photo'])
+		if data == 0:
+			TAKE_PHOTO = False
+		elif data == 1:
+			TAKE_PHOTO = True
+		return 'success'
 @app.route('/register',methods = ['POST'])
 def register():
 	global userID,mode
@@ -277,7 +288,7 @@ def getUserFace():
 	if request.method == "POST":
 		data = int(request.form['isDetected'])
 		if data == 0:
-			if DETECTEDUSER == [0,0,0]:
+			if DETECTEDUSER == NO_USER:
 				#turn off screen only when receive 3 continuous False
 				mode = MODE_LOGOUT
 				execute_cmd("xset dpms force off")

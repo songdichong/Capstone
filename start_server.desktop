@@ -1,0 +1,8 @@
+[Desktop Entry]
+version = 1.0
+Name = start_server
+Exec = /home/pi/Capstone/start_server.sh
+Icon = /home/pi/Capstone/1.png
+Terminal = true
+Type = Application
+Categories = Development

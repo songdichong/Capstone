@@ -7,6 +7,9 @@ from gpiozero import MotionSensor
 ####################### FaceDetection Division #########################
 def FaceDetection():
 	print("FaceDetection")
+	url = "http://0.0.0.0:4310/photo"
+	data = {'photo': 0}
+	r = requests.post(url,data)
 	camera = picamera.PiCamera()
 	camera.resolution = (320, 240)
 	frame = np.empty((240, 320, 3), dtype=np.uint8)	
@@ -20,8 +23,13 @@ def FaceDetection():
 	if len(face_encoding)>0:
 		print('Detected')
 		camera.close()
+		data = {'photo': 1}
+		r = requests.post(url,data)
 		return True
 	camera.close()
+	data = {'photo': 1}
+	r = requests.post(url,data)
+	
 	return False
 
 def PIRtask():
