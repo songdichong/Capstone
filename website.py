@@ -23,6 +23,7 @@ import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,o
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
 FRONT_END_MSG_TAKE_PHOTO = 2
+FRONT_END_LOG_OUT = 10;
 INVALID_USER = -1
 MODE_INITIAL = 0
 MODE_LOGIN = 1
@@ -148,13 +149,18 @@ def index():
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID,databaseName)
-			username = result[1]
-			email = result[2]
-			preference = result[3]
-			mode = MODE_INITIAL
-			print(username)
-			return jsonify({"mode":"login_success","username":username,"email":email,"preference":preference})
-		
+			if result == None:
+				execute_search_fingerprint()
+				return jsonify({"mode":"login_fail"})
+			else:
+				username = result[1]
+				email = result[2]
+				preference = result[3]
+				mode = MODE_INITIAL
+				print(username)
+				return jsonify({"mode":"login_success","username":username,"email":email,"preference":preference})
+				
+				
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID == INVALID_USER) and (mode == MODE_LOGIN):
 			#unknown user
 			mode = MODE_INITIAL
@@ -174,8 +180,6 @@ def index():
 				add_into_database(userID,username,email,preference,databaseName)
 			else:
 				update_database(userID,username,email,preference,databaseName)
-			
-				
 			mode = MODE_INITIAL
 			userID = INVALID_USER
 			execute_search_fingerprint()
@@ -189,6 +193,15 @@ def index():
 			userID = INVALID_USER
 			return jsonify({"mode":"logout_success"})
 		
+		elif (int(data)) == FRONT_END_LOG_OUT:
+			#logout 
+			mode = MODE_INITIAL
+			username = ""
+			email = ""
+			userID = INVALID_USER
+			execute_search_fingerprint()
+			return jsonify({"mode":"logout_success"})
+		
 		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
 			print("take photo")
 			execute_cmd("mkdir -p " + CURRENT_WORKING_DIRECTORY + '/' + username)
@@ -200,6 +213,7 @@ def index():
 				return jsonify({"mode":"photo_success"})
 			else:
 				return jsonify({"mode":"photo_fail"})
+	
 	return render_template('mainPage.html')
 
 @app.route('/signup',methods=['POST'])

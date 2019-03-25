@@ -7,7 +7,9 @@ Contents of file:
 var KEY_ENTER = 13;
 var FRONT_END_MSG_RESPOND = 3;
 var FRONT_END_MSG_TAKE_PHOTO = 2;
+var FRONT_END_LOG_OUT = 10;
 var TAKE_PHOTO_SUCCESS = "photo_success";
+var TAKE_PHOTO_FAIL = "photo_fail";
 var LOGOUT_SUCCESS = "logout_success";
 
 let preference = window.location.href.split('/')[6]; //calendar news stock weather
@@ -72,6 +74,11 @@ function runAjax(REQUEST) {
 				$('.alert').html('A photo has been taken. We have sent it to your email').addClass('alert-success').show().delay(2000).fadeOut();
 
 			}
+			if (result.mode == TAKE_PHOTO_FAIL){
+				// the alert will disappear after 3 seconds. 
+				$('.alert').html('Take photo failed. Please try again.').addClass('alert-success').show().delay(2000).fadeOut();
+
+			}
 			if (result.mode == LOGOUT_SUCCESS) {
 				window.location.href="/";
 			}
@@ -114,6 +121,7 @@ artyom.addCommands([
 	{
 		indexes: ['Log out','Bye','Goodbye','See you','buy','by'],
 		action: (i) => {
+			runAjax(FRONT_END_LOG_OUT);
 			window.location.href="/";
 
 		}
