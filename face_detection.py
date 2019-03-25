@@ -5,8 +5,10 @@ import numpy as np
 from gpiozero import MotionSensor
 
 ####################### FaceDetection Division #########################
-def FaceDetection(camera):
+def FaceDetection():
 	print("FaceDetection")
+	camera = picamera.PiCamera()
+	camera.resolution = (320, 240)
 	frame = np.empty((240, 320, 3), dtype=np.uint8)	
 	# capture a frame
 	camera.capture(frame, format="rgb")
@@ -17,7 +19,9 @@ def FaceDetection(camera):
 		# if one or more than one face are detected
 		if len(face_encoding)>0:
 			print('Detected')
+			camera.close()
 			return True
+	camera.close()
 	return False
 
 def PIRtask():
@@ -28,9 +32,6 @@ def PIRtask():
 	isDetected = 1
 	lastmove_time = time.time()
 	now_time = lastmove_time
-
-	camera = picamera.PiCamera()
-	camera.resolution = (320, 240)
 	while True:
 		if pir.motion_detected:
 			if pir.motion_detected:
@@ -45,7 +46,7 @@ def PIRtask():
 		else:
 			now_time = time.time()
 			if now_time - lastmove_time > 10:
-				if not FaceDetection(camera):
+				if not FaceDetection():
 					# turn off monitor
 					DETECTEDUSER = False
 					#~ os.system("xset dpms force off")
@@ -55,7 +56,6 @@ def PIRtask():
 					print("turn off screen")
 				else: 
 					lastmove_time = time.time()
-	camera.close()
 				
 ########################################################################
 if __name__=="__main__":
