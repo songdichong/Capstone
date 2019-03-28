@@ -42,18 +42,17 @@ def PIRtask():
 	now_time = lastmove_time
 	while True:
 		if pir.motion_detected:
-			if pir.motion_detected:
-				lastmove_time = time.time()
-				if DETECTEDUSER == False: 
-					print("turn on screen")
-					#~ os.system("xset dpms force on")
-					DETECTEDUSER = True
-					isDetected = 1
-					data = {'isDetected': isDetected}
-					r = requests.post(url, data)
+			lastmove_time = time.time()
+			if DETECTEDUSER == False: 
+				print("turn on screen")
+				#~ os.system("xset dpms force on")
+				DETECTEDUSER = True
+				isDetected = 1
+				data = {'isDetected': isDetected}
+				r = requests.post(url, data)
 		else:
 			now_time = time.time()
-			if now_time - lastmove_time > 10:
+			if now_time - lastmove_time > 20:
 				if not FaceDetection():
 					# turn off monitor
 					DETECTEDUSER = False

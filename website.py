@@ -33,8 +33,8 @@ MODE_FINGERPRINT_REGISTERED = 4
 NOT_SELECTED = "A"
 SELECETED = "B"
 preference = "AAAA"
-INITIAL_USER = [1,1,1,1,1]
-NO_USER = [0,0,0,0,0]
+INITIAL_USER = [1,1,1,1,1,1,1,1,1,1]
+NO_USER = [0,0,0,0,0,0,0,0,0,0]
 ########################################################################
 
 ###################### Initialization Division #########################
@@ -264,9 +264,8 @@ def signup():
 		mode = MODE_REGISTER
 		execute_enroll_fingerprint()
 		print("here signup")
-		
-	return redirect('/')
-		
+		return redirect("/")
+
 @app.route('/specialUserPage',methods = ['GET'])
 def specialUserPage():
 	return render_template("specialUserPage.html")
@@ -291,6 +290,7 @@ def photo():
 		elif data == 1:
 			TAKE_PHOTO = True
 		return 'success'
+
 @app.route('/register',methods = ['POST'])
 def register():
 	global userID,mode
@@ -307,7 +307,7 @@ def register():
 		
 @app.route('/getUserFace',methods = ['POST'])
 def getUserFace():
-	global mode,DETECTEDUSER
+	global mode,DETECTEDUSER,userID
 	if request.method == "POST":
 		data = int(request.form['isDetected'])
 		if data == 0:
@@ -317,9 +317,10 @@ def getUserFace():
 				execute_cmd("xset dpms force off")
 				execute_exit_fingerprint()
 		else:
-			#turn on screen immediately
-			execute_cmd("xset dpms force on")
-			execute_search_fingerprint()
+			if mode == MODE_INITIAL and userID == INVALID_USER:
+				#turn on screen immediately
+				execute_cmd("xset dpms force on")
+				execute_search_fingerprint()
 		print(DETECTEDUSER)
 		DETECTEDUSER.pop(0)
 		DETECTEDUSER.append(data)

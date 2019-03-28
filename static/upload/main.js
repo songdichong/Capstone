@@ -21,6 +21,7 @@ var LOGIN_FAIL = "login_fail";
 var LOGIN_SUCCESS = "login_success";
 var REGISTER_SUCCESS = "register_success";
 var UPDATES_SUCCESS = "update_success";
+var RECORD_FINGERPRINT = "record_finger";
 document.addEventListener('keydown', function(e) {
 
 	if (e.keyCode === KEY_F2 || e.keyCode === KEY_Q){
@@ -69,16 +70,19 @@ function runAjax(REQUEST) {
 			if (result.mode == LOGIN_FAIL){
 				$('.alert').html('User cannot be recognized.\n Please register first!').addClass('alert-warning').show().delay(2000).fadeOut();
 
-
 			}
+			if (result.mode == RECORD_FINGERPRINT){
+				$('.alert').html('Now please record your fingerprint.\n You need to record it twice.').addClass('alert-warning').show().delay(2000).fadeOut();
+				window.location.href="/";
+			}
+			
 			if (result.mode ==  REGISTER_SUCCESS){
 				username = result.username;
 				useremail = result.email;//Yue add
 				userpreference = result.preference;//Yue add
 				window.location.href="/specialUserPage?/"+username+"/"+useremail+"/"+userpreference;
-			
-
 			}
+			
 			if (result.mode == UPDATES_SUCCESS){
 				username = result.username;
 				$('.alert').html("update success\n Your new information is:" + username).addClass('alert-success').show().delay(2000).fadeOut();
