@@ -60,9 +60,12 @@ def search_fingerprint():
 						print('Found template at position #' + str(positionNumber))
 						print('The accuracy score is: ' + str(accuracyScore))
 				#~ file1.write(str(positionNumber)+'\n')
-				url = "http://0.0.0.0:4310/login"
-				data = {'userID': positionNumber}
-				r = requests.post(url, data)
+				url1 = "http://0.0.0.0:4310/login"
+				data1 = {'userID': positionNumber}
+				r1 = requests.post(url1, data1)
+				url2 = "http://0.0.0.0:4311/exit"
+				daya2 = {"mode":"1"}
+				r2 = requests.post(url2,data2)
 				## OPTIONAL stuff
 				##
 				## Loads the found template to charbuffer 1

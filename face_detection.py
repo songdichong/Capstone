@@ -3,7 +3,6 @@ import picamera
 import os,time,requests
 import numpy as np
 from gpiozero import MotionSensor
-
 ####################### FaceDetection Division #########################
 def FaceDetection():
 	print("FaceDetection")
@@ -33,37 +32,29 @@ def FaceDetection():
 	return False
 
 def PIRtask():
-	global DETECTEDUSER
-	DETECTEDUSER = False
 	url = "http://0.0.0.0:4310/getUserFace"
 	pir = MotionSensor(4)
-	isDetected = 1
-	lastmove_time = time.time()
-	now_time = lastmove_time
 	while True:
 		if pir.motion_detected:
-			lastmove_time = time.time()
-			if DETECTEDUSER == False: 
-				print("turn on screen")
-				#~ os.system("xset dpms force on")
-				DETECTEDUSER = True
+			print("Motion Detected...")
+			isDetected = 1
+			data = {'isDetected': isDetected}
+			r = requests.post(url, data)
+			time.sleep(5) #to avoid multiple detection
+		else:
+			if not FaceDetection():
+				# turn off monitor
+				isDetected = 0
+				data = {'isDetected': isDetected}
+				r = requests.post(url, data)
+				print("turn off screen")
+				time.sleep(0.5)
+			else:
 				isDetected = 1
 				data = {'isDetected': isDetected}
 				r = requests.post(url, data)
-		else:
-			now_time = time.time()
-			if now_time - lastmove_time > 20:
-				if not FaceDetection():
-					# turn off monitor
-					DETECTEDUSER = False
-					#~ os.system("xset dpms force off")
-					isDetected = 0
-					data = {'isDetected': isDetected}
-					r = requests.post(url, data)
-					print("turn off screen")
-				else: 
-					lastmove_time = time.time()
-				
+				time.sleep(5)
+
 ########################################################################
 if __name__=="__main__":
 	PIRtask()

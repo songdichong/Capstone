@@ -85,15 +85,16 @@ function runAjax(REQUEST) {
 			
 			if (result.mode == UPDATES_SUCCESS){
 				username = result.username;
+				useremail = result.email;//Yue add
+				userpreference = result.preference;//Yue add
 				$('.alert').html("update success\n Your new information is:" + username).addClass('alert-success').show().delay(2000).fadeOut();
-
+				window.location.href="/specialUserPage?/"+username+"/"+useremail+"/"+userpreference;
 			}
 
 			if (result.mode == LOGIN_SUCCESS) {
 				username = result.username;
 				useremail = result.email;//Yue add
 				userpreference = result.preference;//Yue add
-
 				console.log(username);
 				window.location.href="/specialUserPage?/"+username+"/"+useremail+"/"+userpreference;
 			}

@@ -46,7 +46,7 @@ email = ""
 userID = INVALID_USER
 DETECTEDUSER = INITIAL_USER 
 mode = MODE_INITIAL
-databaseName = CURRENT_WORKING_DIRECTORY+'/test.db'
+databaseName = CURRENT_WORKING_DIRECTORY+'/mirror.db'
 TAKE_PHOTO = True
 ########################################################################
 
@@ -180,7 +180,6 @@ def index():
 			#register
 			add_into_database(userID,username,email,preference,databaseName)
 			mode = MODE_INITIAL
-			userID = INVALID_USER
 			return jsonify({"mode":"register_success","username":username,"email":email,"preference":preference})
 		
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_FINGERPRINT_REGISTERED):
@@ -190,8 +189,6 @@ def index():
 			else:
 				update_database(userID,username,email,preference,databaseName)
 			mode = MODE_INITIAL
-			userID = INVALID_USER
-			execute_search_fingerprint()
 			return jsonify({"mode":"update_success","username":username})
 			
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (mode == MODE_LOGOUT):
@@ -310,6 +307,11 @@ def getUserFace():
 	global mode,DETECTEDUSER,userID
 	if request.method == "POST":
 		data = int(request.form['isDetected'])
+		DETECTEDUSER.pop(0)
+		DETECTEDUSER.append(data)
+		print(DETECTEDUSER)
+		print(mode)
+		print(userID)
 		if data == 0:
 			if DETECTEDUSER == NO_USER:
 				#turn off screen only when receive 3 continuous False
@@ -321,9 +323,7 @@ def getUserFace():
 				#turn on screen immediately
 				execute_cmd("xset dpms force on")
 				execute_search_fingerprint()
-		print(DETECTEDUSER)
-		DETECTEDUSER.pop(0)
-		DETECTEDUSER.append(data)
+
 		return "success"
 ########################################################################
 

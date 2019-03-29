@@ -33,10 +33,9 @@ def register():
 def search():
 	global mode
 	if request.method == "POST":
-	
-		execute_cmd("sudo fuser -k /dev/ttyUSB0")
-		_thread.start_new_thread(execute_search_fingerprint,())
-		mode = SEARCH
+		if mode == OFF:
+			_thread.start_new_thread(execute_search_fingerprint,())
+			mode = SEARCH
 	return "success"
 
 @app.route('/exit',methods = ['POST'])

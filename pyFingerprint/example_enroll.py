@@ -54,9 +54,12 @@ def enroll_fingerprint():
 		if ( positionNumber >= 0 ):
 			print('Template already exists at position #' + str(positionNumber))
 			#post msg to website
-			url = "http://0.0.0.0:4310/register"
-			data = {'positionNumber': positionNumber,"goToSignUp":0}
-			r = requests.post(url, data)
+			url1 = "http://0.0.0.0:4310/register"
+			data1 = {'positionNumber': positionNumber,"goToSignUp":0}
+			r = requests.post(url1, data1)
+			url2 = "http://0.0.0.0:4311/exit"
+			daya2 = {"mode":"1"}
+			r2 = requests.post(url2,data2)
 			#call search
 			exit(0)
 
@@ -86,13 +89,12 @@ def enroll_fingerprint():
 		print('New template position #' + str(positionNumber))
 		
 		#post msg to website:success
-		url = "http://0.0.0.0:4310/register"
-		data = {'positionNumber': positionNumber,"goToSignUp":1}
-		try:
-			r = requests.post(url, data)
-			
-		except Exception as e:
-			print('Exception message: ' + str(e))
+		url1 = "http://0.0.0.0:4310/register"
+		data1 = {'positionNumber': positionNumber,"goToSignUp":1}
+		r1 = requests.post(url1, data1)
+		url2 = "http://0.0.0.0:4311/exit"
+		daya2 = {"mode":"1"}
+		r2 = requests.post(url2,data2)
 		exit(0)
 	except Exception as e:
 		print('Operation failed!')
