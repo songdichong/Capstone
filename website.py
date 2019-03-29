@@ -33,8 +33,8 @@ MODE_FINGERPRINT_REGISTERED = 4
 NOT_SELECTED = "A"
 SELECETED = "B"
 preference = "AAAA"
-INITIAL_USER = [1,1,1,1,1,1,1,1,1,1]
-NO_USER = [0,0,0,0,0,0,0,0,0,0]
+INITIAL_USER = [1 for i in range(0,15)]
+NO_USER = [0 for i in range(0,15)]
 ########################################################################
 
 ###################### Initialization Division #########################
@@ -155,6 +155,7 @@ def index():
 				username = ""
 				email = ""
 				userID = INVALID_USER
+				execute_exit_fingerprint()
 				execute_search_fingerprint()
 				return jsonify({"mode":"login_fail"})
 		
@@ -173,6 +174,7 @@ def index():
 			username = ""
 			email = ""
 			userID = INVALID_USER
+			execute_exit_fingerprint()
 			execute_search_fingerprint()
 			return jsonify({"mode":"login_fail"})
 		
@@ -189,7 +191,7 @@ def index():
 			else:
 				update_database(userID,username,email,preference,databaseName)
 			mode = MODE_INITIAL
-			return jsonify({"mode":"update_success","username":username})
+			return jsonify({"mode":"update_success","username":username,"email":email,"preference":preference})
 			
 		elif (int(data) == FRONT_END_MSG_RESPOND) and (mode == MODE_LOGOUT):
 			#logout 
@@ -205,6 +207,7 @@ def index():
 			username = ""
 			email = ""
 			userID = INVALID_USER
+			execute_exit_fingerprint()
 			execute_search_fingerprint()
 			return jsonify({"mode":"logout_success"})
 		
@@ -319,7 +322,7 @@ def getUserFace():
 				execute_cmd("xset dpms force off")
 				execute_exit_fingerprint()
 		else:
-			if mode == MODE_INITIAL and userID == INVALID_USER:
+			if (mode == MODE_INITIAL or mode == MODE_LOGOUT) and userID == INVALID_USER:
 				#turn on screen immediately
 				execute_cmd("xset dpms force on")
 				execute_search_fingerprint()
