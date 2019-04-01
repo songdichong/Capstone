@@ -5,6 +5,7 @@ Contents of file:
 	1. AJAX call to send signal from front-end to back-end
 */
 var KEY_ENTER = 13;
+var KEY_DELETE = 46;
 var FRONT_END_MSG_RESPOND = 3;
 var FRONT_END_MSG_TAKE_PHOTO = 2;
 var FRONT_END_LOG_OUT = 10;
@@ -20,11 +21,14 @@ $('.alert').html('Hi, '+ name).addClass('alert-welcome').show().delay(2000).fade
 document.addEventListener('keydown', function(e) {
 
 	if (e.keyCode == KEY_ENTER){
-	  e.keypress = '1';
+		
+	  $('.alert').html('Taking Photo').addClass('alert-success').show().delay(2000).fadeOut();
 	  runAjax(FRONT_END_MSG_TAKE_PHOTO);
 	}
+	if (e.keyCode == KEY_DELETE){
+	  runAjax(FRONT_END_LOG_OUT);
+	}
 });
-
 
 if(preference[0]==='A'){
 
@@ -76,7 +80,7 @@ function runAjax(REQUEST) {
 			}
 			if (result.mode == TAKE_PHOTO_FAIL){
 				// the alert will disappear after 3 seconds. 
-				$('.alert').html('Take photo failed. Please try again.').addClass('alert-success').show().delay(2000).fadeOut();
+				$('.alert').html('Take photo failed. Please try again.').addClass('alert-warning').show().delay(2000).fadeOut();
 
 			}
 			if (result.mode == LOGOUT_SUCCESS) {
@@ -131,6 +135,8 @@ artyom.addCommands([
 		indexes: [/^.*photo.*$/i],
 		smart:true,
 		action: (i,wildcard) => {
+			
+			$('.alert').html('Taking Photo').addClass('alert-success').show().delay(2000).fadeOut();
 			console.log('Ready for photo');
 			runAjax(FRONT_END_MSG_TAKE_PHOTO);
 

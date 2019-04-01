@@ -23,7 +23,6 @@ var REGISTER_SUCCESS = "register_success";
 var UPDATES_SUCCESS = "update_success";
 var RECORD_FINGERPRINT = "record_finger";
 document.addEventListener('keydown', function(e) {
-
 	if (e.keyCode === KEY_F2 || e.keyCode === KEY_Q){
 	  runAjax(FRONT_END_MSG_REISTER);
 	  clearInterval(keeppost);
@@ -52,8 +51,6 @@ document.addEventListener('keydown', function(e) {
 	else if(e.keyCode===KEY_DELETE && isRegistering()){
 		document.getElementById('id01').style.display='none'
 	}
-
-
 });
 
 function isRegistering(){

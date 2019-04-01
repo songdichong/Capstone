@@ -4,7 +4,7 @@ Creation date: Feb 5th, 2019
 Contents of file:
 	1. control the style of specialUserPage.html
 */
-body, html {margin: 0; height: 100%; overflow: hidden}
+body, html {margin: 0; height: 100%; overflow: hidden; cursor:none;}
 
 #news{
     position:absolute;

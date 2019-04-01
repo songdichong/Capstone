@@ -62,9 +62,12 @@ def xmlfetcher(urllink):
 
 def write_to_json(): 
 	my_list = xmlfetcher("https://www.cbc.ca/cmlink/rss-topstories")
-	f1 = open(CURRENT_WORKING_DIRECTORY+"/static/upload/newsfeed/news.json","w")
-	with io.open(CURRENT_WORKING_DIRECTORY+'/static/upload/newsfeed/news.json', 'w', encoding='utf-8') as f:
-		f.write(json.dumps(my_list, ensure_ascii=False))
+	try:
+		f1 = open(CURRENT_WORKING_DIRECTORY+"/static/upload/newsfeed/news.json","w")
+		with io.open(CURRENT_WORKING_DIRECTORY+'/static/upload/newsfeed/news.json', 'w', encoding='utf-8') as f:
+			f.write(json.dumps(my_list, ensure_ascii=False))
+	except Exception:
+		pass
 	s.enter(3600, 1, write_to_json)
 	s.run()
 	
