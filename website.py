@@ -146,13 +146,9 @@ def index():
 	global userID,username,email,mode,preference,TAKE_PHOTO,CURRENT_WORKING_DIRECTORY
 	if request.method == "POST":
 		data = request.form['request'].encode('utf-8')
-		print("data",data)
-		print("userID",userID)
-		print("mode",mode)
 		if (int(data) == FRONT_END_MSG_RESPOND) and (userID != INVALID_USER) and (mode == MODE_LOGIN):
 			#successfully login
 			result = select_from_database(userID,databaseName)
-			print(result)
 			if result == None:
 				mode = MODE_INITIAL
 				username = ""
@@ -167,7 +163,6 @@ def index():
 				email = result[2]
 				preference = result[3]
 				mode = MODE_INITIAL
-				print(username)
 				return jsonify({"mode":"login_success","username":username,"email":email,"preference":preference})
 				
 				
@@ -215,7 +210,6 @@ def index():
 			return jsonify({"mode":"logout_success"})
 		
 		elif (int(data) == FRONT_END_MSG_TAKE_PHOTO):
-			print("take photo")
 			execute_cmd("mkdir -p " + CURRENT_WORKING_DIRECTORY + '/' + username)
 			filename = username + "_" + datetime.datetime.now().strftime("%B_%d_%Y_%H:%M:%S")+".jpg"
 			path_file =  CURRENT_WORKING_DIRECTORY + "/" + username + "/" + filename
@@ -266,7 +260,6 @@ def signup():
 		preference = calendarPref + newsPref + stockPref + weatherPref
 		mode = MODE_REGISTER
 		execute_enroll_fingerprint()
-		print("here signup")
 		return redirect("/")
 
 @app.route('/specialUserPage',methods = ['GET'])
@@ -278,7 +271,6 @@ def login():
 	global userID,mode
 	if request.method == "POST":
 		data = request.form['userID']
-		print(data)
 		userID = int(data)
 		mode = MODE_LOGIN
 		return "success"
@@ -298,10 +290,8 @@ def photo():
 def register():
 	global userID,mode
 	if request.method == "POST":
-		print("here")
 		userID = request.form['positionNumber']
 		goToSignUp = int(request.form['goToSignUp'])
-		print(userID,goToSignUp)
 		if goToSignUp == 0:
 			mode = MODE_FINGERPRINT_REGISTERED
 		else:
@@ -315,9 +305,6 @@ def getUserFace():
 		data = int(request.form['isDetected'])
 		DETECTEDUSER.pop(0)
 		DETECTEDUSER.append(data)
-		print(DETECTEDUSER)
-		print(mode)
-		print(userID)
 		if data == 0:
 			if DETECTEDUSER == NO_USER:
 				#turn off screen only when receive 3 continuous False

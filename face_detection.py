@@ -20,7 +20,6 @@ def FaceDetection():
 	face_encoding = face_encodings(frame, face_location)
 	# if one or more than one face are detected
 	if len(face_encoding)>0:
-		print('Detected')
 		camera.close()
 		data = {'photo': 1}
 		r = requests.post(url,data)
@@ -36,7 +35,6 @@ def PIRtask():
 	pir = MotionSensor(4)
 	while True:
 		if pir.motion_detected:
-			print("Motion Detected...")
 			isDetected = 1
 			data = {'isDetected': isDetected}
 			r = requests.post(url, data)
@@ -47,7 +45,6 @@ def PIRtask():
 				isDetected = 0
 				data = {'isDetected': isDetected}
 				r = requests.post(url, data)
-				print("turn off screen")
 				time.sleep(0.5)
 			else:
 				isDetected = 1
