@@ -12,7 +12,6 @@ import numpy as np
 from gpiozero import MotionSensor
 ####################### FaceDetection Division #########################
 def FaceDetection():
-	print("FaceDetection")
 	url = "http://0.0.0.0:4310/photo"
 	data = {'photo': 0}
 	r = requests.post(url,data)
@@ -61,4 +60,5 @@ def PIRtask():
 
 ########################################################################
 if __name__=="__main__":
+	time.sleep(10)
 	PIRtask()

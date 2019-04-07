@@ -300,6 +300,7 @@ def getUserFace():
 		data = int(request.form['isDetected'])
 		DETECTEDUSER.pop(0)
 		DETECTEDUSER.append(data)
+		print(DETECTEDUSER)
 		if data == 0:
 			if DETECTEDUSER == NO_USER:
 				#turn off screen only when receive 3 continuous False
@@ -317,6 +318,7 @@ def getUserFace():
 
 ######################### Main Function ################################
 if __name__=="__main__":
+	time.sleep(3)
 	execute_cmd("sudo fuser -k /dev/ttyUSB0")
 	execute_search_fingerprint()
 	_thread.start_new_thread(write_to_json,())
