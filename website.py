@@ -23,7 +23,7 @@ import sched, time, _thread,json,io,shlex,subprocess,datetime,sqlite3,requests,o
 ######################### Constant Division ############################
 FRONT_END_MSG_RESPOND = 3
 FRONT_END_MSG_TAKE_PHOTO = 2
-FRONT_END_LOG_OUT = 10;
+FRONT_END_LOG_OUT = 10
 INVALID_USER = -1
 MODE_INITIAL = 0
 MODE_LOGIN = 1
