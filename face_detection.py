@@ -1,3 +1,10 @@
+'''
+Original Author: Shengyao Lu, Dichong Song
+Creation date: March 10, 2019
+Contents of file: 
+	Detect nearby environment with motion sensor and camera every second
+	and send result to website
+'''
 from face_recognition import face_locations,face_encodings
 import picamera
 import os,time,requests

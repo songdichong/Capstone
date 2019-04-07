@@ -1,5 +1,13 @@
+'''
+Original Author: Dichong Song
+Creation date: March 10, 2019
+Contents of file: 
+	Establish a server to handle all requests regarding fingerprint sensor.
+	Adjust current working mode of fingerprint sensor and decide to call it or not. 
+'''
 from flask import Flask,request
 import requests,shlex,subprocess,_thread,os
+
 SEARCH = 1
 REGISTER = 2
 OFF = 0

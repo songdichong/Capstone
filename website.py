@@ -8,12 +8,12 @@ Contents of file:
 		1.3 monitor the login/register state
 		1.4 handles the login/logout state and send corresponding data to front end
 		1.5 find information in database and register in database
-		1.6 always on
+		1.6 send requests to fingerprint_handler to start a search/enroll or end fingerprint
+		1.7 receive requests from face_recognition to handle screen shut down
+		1.8 always on
 	2. Xml fetcher (sub-thread)
 		2.1 parse content from given url
 		2.2 output in json format
-		2.3 repeat every hour
-	3. FaceDetection
 '''
 from flask import Flask,render_template,jsonify,request,session,redirect,url_for
 from xml.dom import minidom
