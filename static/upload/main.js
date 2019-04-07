@@ -122,7 +122,7 @@ const artyom = new Artyom();
 // or add some commandsDemostrations in the normal way
 artyom.addCommands([
 	{
-		indexes: ['/^.*sign up.*$/i','/^.*register.*$/i','sign up','sign me up'],
+		indexes: ['/^.*sign up.*$/i','/^.*register.*$/i','sign up','sign me up', 'log in'],
 		action: (i) => {
 			document.getElementById('id01').style.display='block';
 			document.getElementById("uname").focus();
