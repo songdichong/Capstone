@@ -324,5 +324,5 @@ if __name__=="__main__":
 	_thread.start_new_thread(write_to_json,())
 	createTable(databaseName)
 	
-	app.run(host='0.0.0.0',port = 4310)
+	app.run(host='localhost',port = 4310)
 ########################################################################

@@ -118,12 +118,7 @@ artyom.on(['Good morning','Good afternoon']).then((i) => {
 // or add some commandsDemostrations in the normal way
 artyom.addCommands([
 	{
-		indexes: ['Hello','Hi','/^.*Hello.*$/i'],
-		action: (i) => {
-		}
-	},
-	{
-		indexes: ['Log out','Bye','Goodbye','See you','buy','by'],
+		indexes: ['Log out','Bye','Goodbye','See you','buy','by', '/^.*log out.*$/i'],
 		action: (i) => {
 			runAjax(FRONT_END_LOG_OUT);
 			window.location.href="/";
