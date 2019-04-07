@@ -121,11 +121,6 @@ def execute_search_fingerprint():
 	data = {'data': 1}
 	r = requests.post(url, data)
 
-def execute_activate_fingerprint():
-	url = "http://0.0.0.0:4311/activate"
-	data = {'data': 1}
-	r = requests.post(url, data)
-
 def execute_enroll_fingerprint():
 	url = "http://0.0.0.0:4311/register"
 	data = {'data': 1}

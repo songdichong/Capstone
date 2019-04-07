@@ -6,9 +6,10 @@ Contents of file:
 '''
 import unittest,requests
 class BasicTests(unittest.TestCase): 
-###############
-#### tests ####
-###############
+###################################
+############ tests ################
+#### Run website.py before test####
+###################################
 	def test_main_page(self):
 		url = "http://0.0.0.0:4310/login"
 		data = {'userID': "-1"}

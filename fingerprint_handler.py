@@ -46,15 +46,5 @@ def exit():
 		mode = OFF
 	return "success"
 
-@app.route('/activate',methods = ['POST'])
-def activate():
-	global mode
-	if request.method == "POST":
-		if mode == OFF:
-			_thread.start_new_thread(execute_search_fingerprint,())
-			mode = SEARCH
-		else:
-			pass
-	return "success"
 
 app.run(host='0.0.0.0',port = 4311)
