@@ -17,7 +17,7 @@ class BasicTests(unittest.TestCase):
  
 	def test_post_page(self):
 		url = "http://0.0.0.0:4310/"
-		data = {'request': "2"}
+		data = {'request': "3"}
 		r = requests.post(url,data)
 		self.assertEqual(r.status_code, 200)
  

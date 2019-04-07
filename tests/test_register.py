@@ -13,7 +13,7 @@ class BasicTests(unittest.TestCase):
 ###################################
 	def test_main_page(self):
 		url = 'http://0.0.0.0:4310/register'
-		data = {'positionNumber': "2"}
+		data = {'positionNumber': "0","goToSignUp":"0"}
 		r = requests.post(url, data)
 		self.assertEqual(r.status_code, 200)
 
