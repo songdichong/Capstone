@@ -20,12 +20,12 @@ $('.alert').html('Hi, '+ name).addClass('alert-welcome').show().delay(2000).fade
 
 document.addEventListener('keydown', function(e) {
 
-	if (e.keyCode == KEY_ENTER){
+	if (e.keyCode === KEY_ENTER){
 		
 	  $('.alert').html('Taking Photo').addClass('alert-success').show().delay(2000).fadeOut();
 	  runAjax(FRONT_END_MSG_TAKE_PHOTO);
 	}
-	if (e.keyCode == KEY_DELETE){
+	if (e.keyCode === KEY_DELETE){
 	  runAjax(FRONT_END_LOG_OUT);
 	}
 });

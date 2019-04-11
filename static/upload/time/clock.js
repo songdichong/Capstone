@@ -20,6 +20,6 @@ var pkTxtClock = {
     className: 'clock-txt',
     //Text time
     TextTime: true,
-    region: 'Athens',
+    region: 'Edmonton',
     displayTextTime: "hh-mm-ss-date-region"
 };
